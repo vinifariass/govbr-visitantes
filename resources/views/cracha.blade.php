@@ -218,167 +218,98 @@
                     <div class="col mb-5">
 
                         <div class="main-content pl-sm-3 mt-4" id="main-content">
-                            <h1>Cadastro de Visitantes</h1>
-                            <div class="row">
-                                <!-- Campos do formulário -->
-                                <div class="col-md-10">
-                                    <div class="row">
-                                        {{--    <div class="col-md-4 mb-3">
-                                            <div class="br-select" multiple="multiple">
-                                                <div class="br-input">
-                                                    <label for="select-multiple">Tipo de Documento</label>
-                                                    <input id="select-multiple" type="text"
-                                                        placeholder="Selecione o item" />
-                                                    <button class="br-button" type="button" aria-label="Exibir lista"
-                                                        tabindex="-1" data-trigger="data-trigger">
-                                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="br-list" tabindex="0">
-                                                    <div class="br-item" tabindex="-1">
-                                                        <div class="br-checkbox">
-                                                            <input id="cbs0" name="cbs0" type="checkbox" />
-                                                            <label for="cbs0">CPF</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="br-item" tabindex="-1">
-                                                        <div class="br-checkbox">
-                                                            <input id="cbs1" name="cbs1" type="checkbox" />
-                                                            <label for="cbs1">Passaporte</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> --}}
-                                        <div class="col-md-4 mb-3">
-                                            <div class="br-input">
-                                                <label for="numero_documento">Documento</label>
-                                                <input id="numero_documento" type="text"
-                                                    placeholder="Informe o CPF ou Passaporte" />
-                                            </div>
 
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="br-input">
-                                                <label for="numero_documento">Nome do visitante</label>
-                                                <input id="numero_documento" type="text" />
+                            <div class="br-table" title="Tabela irregular 1">
+                                <div class="table-header">
+                                    <div class="top-bar">
+                                        <div class="table-title">Tabela irregular 1</div>
+                                        <div class="actions-trigger text-nowrap">
+                                            <button class="br-button circle" type="button" id="button-dropdown-density"
+                                                title="Ver mais opções" data-toggle="dropdown"
+                                                data-target="target01-4200" aria-label="Definir densidade da tabela"
+                                                aria-haspopup="true" aria-live="polite"><i class="fas fa-ellipsis-v"
+                                                    aria-hidden="true"></i>
+                                            </button>
+                                            <div class="br-list" id="target01-4200" role="menu"
+                                                aria-labelledby="button-dropdown-density" hidden="hidden">
+                                                <button class="br-item" type="button" data-density="small"
+                                                    role="menuitem">Densidade alta
+                                                </button><span class="br-divider"></span>
+                                                <button class="br-item" type="button" data-density="medium"
+                                                    role="menuitem">Densidade média
+                                                </button><span class="br-divider"></span>
+                                                <button class="br-item" type="button" data-density="large"
+                                                    role="menuitem">Densidade baixa
+                                                </button>
                                             </div>
-
                                         </div>
                                     </div>
-                                    <fieldset>
-                                        <div class="row">
-                                            <div class="col-md-4 mb-3">
-                                                <div class="br-select">
-                                                    <div class="br-input">
-                                                        <label for="select">Destino</label>
-                                                        <input id="select" type="text"
-                                                            placeholder="Busque pela sala" />
-                                                        <button class="br-button" type="button"
-                                                            aria-label="Exibir lista" tabindex="-1"
-                                                            data-trigger="data-trigger">
-                                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                    <div class="br-list" tabindex="0">
-                                                        <div class="br-item" tabindex="-1">
-                                                            <div class="br-checkbox">
-                                                                <input id="cbs0" name="cbs0" type="checkbox" />
-                                                                <label for="cbs0">DF > SUREG > Sala 03 >
-                                                                    Gabinete</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="br-item" tabindex="-1">
-                                                            <div class="br-checkbox">
-                                                                <input id="cbs1" name="cbs1" type="checkbox" />
-                                                                <label for="cbs1">DF > SUREG > Sala 06 > Divisão de
-                                                                    Gestão Interna (Dgint)</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-3">
-                                                <div class="br-select">
-                                                    <div class="br-input">
-                                                        <label for="select">Tipo de Visita</label>
-                                                        <input id="select" type="text"
-                                                            placeholder="Selecione o tipo de Visita" />
-                                                        <button class="br-button" type="button"
-                                                            aria-label="Exibir lista" tabindex="-1"
-                                                            data-trigger="data-trigger">
-                                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                    <div class="br-list" tabindex="0">
-                                                        <div class="br-item" tabindex="-1">
-                                                            <div class="br-checkbox">
-                                                                <input id="cbs0" name="cbs0" type="checkbox" />
-                                                                <label for="cbs0">Consulente</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="br-item" tabindex="-1">
-                                                            <div class="br-checkbox">
-                                                                <input id="cbs1" name="cbs1" type="checkbox" />
-                                                                <label for="cbs1">DF > SUREG > Sala 06 > Divisão de
-                                                                    Gestão Interna (Dgint)</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3 mb-3">
-                                                <div class="br-select">
-                                                    <div class="br-input">
-                                                        <label for="select">Atribuir Crachá</label>
-                                                        <input id="select" type="text"
-                                                            placeholder="Selecione o crachá" />
-                                                        <button class="br-button" type="button"
-                                                            aria-label="Exibir lista" tabindex="-1"
-                                                            data-trigger="data-trigger">
-                                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                    <div class="br-list" tabindex="0">
-                                                        <div class="br-item" tabindex="-1">
-                                                            <div class="br-checkbox">
-                                                                <input id="cbs0" name="cbs0" type="checkbox" />
-                                                                <label for="cbs0">ANV001</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="br-item" tabindex="-1">
-                                                            <div class="br-checkbox">
-                                                                <input id="cbs1" name="cbs1" type="checkbox" />
-                                                                <label for="cbs1">ANV002</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
                                 </div>
+                                <table>
+                                    <colgroup span="3"></colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="border-bottom border-left" colspan="6" scope="col">Numero do
+                                                Crachá</th>
+                                            <th class="border-bottom border-left" colspan="1" scope="colgroup">Status
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="6">ANVI001</td>
+                                            <td>Em cadastro</td>
+                                        </tr>
 
-                                <!-- Avatar -->
-                                <div
-                                    class="col-md-2 d-flex align-items-center justify-content-end flex-wrap flex-row-reverse">
-                                    <span class="br-avatar large mr-3" title="Fulano da Silva">
-                                        <span class="content"><i class="fas fa-user" aria-hidden="true"></i></span>
-                                    </span>
-                                </div>
+                                    </tbody>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="6">ANVI002</td>
+                                            <td>Disponível</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">ANVI003</td>
+                                            <td>Em uso</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-
-                            <!-- Botões de Ação -->
-
                         </div>
 
                         <div class="p-3">
-                            <button class="br-button primary active mr-3" type="button">Salvar
-                            </button>
-                            <button class="br-button primary mr-3" type="button" disabled="disabled">Editar
+
+                            <button class="br-button primary active mr-3" type="button" id="open-new-badge-modal">
+                                + Novo crachá
                             </button>
 
+
+                        </div>
+
+
+                        <div class="modal-backdrop d-none" id="modal-backdrop"></div>
+
+                        <div class="br-modal large d-none" aria-modal="true" role="dialog" id="new-badge-modal">
+                            <div class="br-modal-header">Inclusão de crachá</div>
+                            <div class="br-modal-body">
+                                <p>Insira o número de crachás que deseja inserir e o tipo.</p>
+                                <div class="form-group">
+                                    <label for="quantity">Quantidade</label>
+                                    <input type="number" id="quantity" class="form-control"
+                                        placeholder="Digite somente números" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="badge-type">Tipo de crachá</label>
+                                    <select id="badge-type" class="form-control">
+                                        <option value="consultant">Consultante</option>
+                                        <option value="employee">Funcionário</option>
+                                        <option value="visitor">Visitante</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="br-modal-footer justify-content-center">
+                                <button class="br-button secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                <button class="br-button primary ml-2" type="button">Incluir</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -399,8 +330,113 @@
             selectElements.forEach((selectElement, index) => {
                 new BRSelect(`example-select-${index}`, selectElement);
             });
+
+            const openModalButton = document.getElementById('open-new-badge-modal');
+            const modal = document.getElementById('new-badge-modal');
+            const backdrop = document.getElementById('modal-backdrop');
+
+            openModalButton.addEventListener('click', function() {
+                modal.classList.remove('d-none');
+                backdrop.classList.add('d-block');
+                console.log("Modal aberto:", modal.classList);
+                console.log("Backdrop exibido:", backdrop.classList);
+            });
+
+            cancelButton.addEventListener('click', function() {
+                modal.classList.add('d-none');
+                backdrop.classList.remove('d-block');
+                backdrop.classList.add('d-none');
+                console.log("Modal fechado:", modal.classList);
+                console.log("Backdrop oculto:", backdrop.classList);
+            });
+
+            backdrop.addEventListener('click', function() {
+                modal.classList.add('d-none');
+                backdrop.classList.remove('d-block');
+                backdrop.classList.add('d-none');
+                console.log("Modal fechado (por backdrop):", modal.classList);
+                console.log("Backdrop oculto (por backdrop):", backdrop.classList);
+            });
         });
     </script>
+
+    <style>
+        /* Estilo geral do modal */
+        .br-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 9999;
+            /* Garante que o modal fique na frente */
+            display: none;
+            /* Inicialmente oculto */
+        }
+
+        .br-modal.d-none {
+            display: none;
+        }
+
+        .br-modal.large {
+            max-width: 400px;
+        }
+
+        .br-modal-header {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .br-modal-body {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .br-modal-footer button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .br-button.secondary {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .br-button.primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+            display: none;
+        }
+
+        .modal-backdrop.d-block {
+            display: block;
+        }
+    </style>
 </body>
 
 

@@ -23,7 +23,7 @@ Route::get('/visitantes', function () {
 
 Route::get('/template', function () {
     return view('template');
-});
+})->name('template');
 
 Route::get('/table', function () {
     return view('table');
@@ -32,3 +32,15 @@ Route::get('/table', function () {
 Route::get('/registro', function () {
     return view('registro');
 })->name('registro');
+
+Route::get('/cracha', function () {
+    return view('cracha');
+})->name('cracha');
+
+Route::get('/relatorios', function () {
+    return view('relatorios');
+})->name('relatorios');
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
