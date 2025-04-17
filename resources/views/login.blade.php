@@ -49,13 +49,15 @@
             font-size: 2.5rem;
             font-weight: 650;
             margin-bottom: 10px;
-            
+
         }
 
         .login-left hr {
-            border: 1px solid #000;
+            border: 1.9px solid rgb(220, 220, 220);
             width: 3.7rem;
-            color: rgb(86, 86, 86);
+            margin-left: 10rem;
+            color: rgb(245, 245, 245);
+            border-radius: 50px 20px;
         }
 
         .login-right {
@@ -87,37 +89,21 @@
         }
 
         .form-login button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
             background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+
         }
 
         .form-login button:hover {
             background-color: #0056b3;
         }
 
-        .footer {
-            background-color: #002d5c;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
 
         .footer-logo {
             width: 150px;
             height: auto;
         }
-        
-        .login-right h2{
+
+        .login-right h2 {
             color: #0539af;
             font-weight: 500;
         }
@@ -145,27 +131,33 @@
                 <hr>
             </div>
             <div class="login-right">
-                <h2 >Acesse sua conta</h2>
+                <h2>Acesse sua conta</h2>
                 <form class="form-login">
                     <div class="form-group">
-                        <label for="numero_documento">Usuário</label>
-                        <input id="numero_documento" type="text" placeholder="Informe o CPF ou Passaporte">
+                        <div class="col col-6">
+                            <label for="numero_documento">Usuário</label>
+                            <input id="numero_documento" type="text" placeholder="Informe o CPF ou Passaporte">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input id="senha" type="password" placeholder="Digite sua senha">
+                        <div class="col col-6">
+
+                            <label for="senha">Senha</label>
+                            <input id="senha" type="password" placeholder="Digite sua senha">
+                        </div>
+
                     </div>
-                    <button class="br-button primary active mr-3 mt-3" type="button">Entrar</button>
+                    <div class="col mb-5">
+
+                        <button class="br-button primary active mr-3 mt-3" type="button">Entrar</button>
+
+                    </div>
                 </form>
             </div>
         </div>
     @endsection
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <img src="https://www.gov.br/++theme++plonegovbr.brasil.gov.br/static/assets/img/gov-br-logo.svg" alt="gov.br"
-            class="footer-logo">
-    </footer>
+
 </body>
 
 </html>
