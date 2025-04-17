@@ -24,3 +24,11 @@ Route::get('/visitantes', function () {
 Route::get('/template', function () {
     return view('template');
 });
+
+Route::get('/table', function () {
+    return view('table');
+});
+
+Route::get('/registro', function () {
+    return view('registro');
+})->name('registro');
