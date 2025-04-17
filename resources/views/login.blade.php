@@ -13,19 +13,7 @@
             font-family: 'Open Sans', sans-serif;
         }
 
-        .header {
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .header-logo {
-            width: 100px;
-            height: auto;
-        }
-
+       
         .header-title {
             margin-left: 10px;
         }
@@ -112,12 +100,20 @@
 
 <body>
     <!-- Cabeçalho -->
-    <div class="header">
-        <img src="https://www.arquivonacional.gov.br/sites/arquivonacional.gov.br/themes/custom/an/logo.svg"
-            alt="Arquivo Nacional" class="header-logo">
-        <div class="header-title">
-            <h3>Arquivo Nacional</h3>
-            <p>Ministério da Gestão e da Inovação em Serviços Públicos</p>
+    <div class="br-header">
+        <div class="container-lg">
+            <div class="header-logo">
+                <img src="{{ asset('images/arquivo_logo.png') }}" alt="Arquivo Nacional" class="header-logo"
+                   >
+            </div>
+            <div class="header-menu">
+
+                <div class="header-title">
+                    <h3>Arquivo Nacional</h3>
+                    <p>Ministério da Gestão e da Inovação em Serviços Públicos</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
