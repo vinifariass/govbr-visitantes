@@ -187,7 +187,7 @@
                                         1</span></a>
                             </nav>
                             <div class="menu-footer">
-                               <div class="menu-links"><a href="javascript: void(0)"><span class="mr-1">Link
+                                <div class="menu-links"><a href="javascript: void(0)"><span class="mr-1">Link
                                             externo 1</span><i class="fas fa-external-link-square-alt"
                                             aria-hidden="true"></i></a><a href="javascript: void(0)"><span
                                             class="mr-1">Link externo 2</span><i class="fas fa-external-link-square-alt"
@@ -279,16 +279,25 @@
                                 </div>
 
                                 <!-- Avatar -->
-                                <div class="col-md-2 d-flex align-items-center justify-content-end flex-wrap flex-row-reverse">
-                                    <span class="br-avatar large mr-3" title="Fulano da Silva">
+                                <div
+                                    class="col-md-2 d-flex align-items-center justify-content-end flex-wrap flex-row-reverse">
+                                    <span class="br-avatar large mr-3" id="avatar-preview" title="Fulano da Silva">
                                         <span class="content"><i class="fas fa-user" aria-hidden="true"></i></span>
                                     </span>
-                                    <button class="br-button primary" type="button" >Capturar Foto</button>
+                                    <button class="br-button primary" type="button"
+                                        onclick="document.getElementById('foto-input').click()">
+                                        Capturar Foto
+                                    </button>
+
+                                    <!-- Input de arquivo escondido -->
+                                    <input type="file" id="foto-input" accept="image/*" style="display: none;"
+                                        onchange="mostrarFoto(event)">
+
                                 </div>
                             </div>
 
                             <!-- Botões de Ação -->
-                       
+
                         </div>
 
                         <div class="p-3">
@@ -304,18 +313,33 @@
             </div>
         </div>
         </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const selectElement = document.querySelector('.br-select');
+                if (selectElement) {
+                    new BRSelect('example-select', selectElement);
+                }
+
+                window.mostrarFoto = function(event) {
+                    const file = event.target.files[0];
+                    if (!file) return;
+
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const avatar = document.getElementById('avatar-preview');
+                        avatar.innerHTML =
+                            `<span class="content"><img src="${e.target.result}" alt="Avatar" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></span>`;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        </script>
     @endsection
 
     <div class="br-cookiebar default d-none" tabindex="-1"></div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const selectElement = document.querySelector('.br-select');
-            if (selectElement) {
-                new BRSelect('example-select', selectElement);
-            }
-        });
-    </script>
+
 </body>
 
 
