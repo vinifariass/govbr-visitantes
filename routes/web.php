@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RelatorioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,3 +45,10 @@ Route::get('/relatorios', function () {
 Route::get('/login', function () {
     return view('login');
 })->name('login');
+
+Route::get('/qrcode', function () {
+    return view('qrcode');
+})->name('qrcode');
+
+Route::post('/relatorios/pdf', [RelatorioController::class, 'exportPDF'])->name('relatorios.exportarPdf');
+Route::post('/relatorios/excel', [RelatorioController::class, 'exportarExcel'])->name('relatorios.exportarExcel');
