@@ -252,6 +252,7 @@
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <div class="br-input">
+                                               {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
                                                 <label for="numero_documento">Número do Documento</label>
                                                 <input id="numero_documento" type="text" placeholder="Digite aqui" />
                                             </div>
@@ -307,6 +308,147 @@
                             </button>
 
                         </div>
+                    </div>
+                    <hr class="br-divider" />
+                    <h1>Visita</h1>
+
+                    <div class="row">
+                        <!-- Campos do formulário -->
+                        <div class="col-md-10">
+                            <div class="row">
+                                {{--    <div class="col-md-4 mb-3">
+                                    <div class="br-select" multiple="multiple">
+                                        <div class="br-input">
+                                            <label for="select-multiple">Tipo de Documento</label>
+                                            <input id="select-multiple" type="text"
+                                                placeholder="Selecione o item" />
+                                            <button class="br-button" type="button" aria-label="Exibir lista"
+                                                tabindex="-1" data-trigger="data-trigger">
+                                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="br-list" tabindex="0">
+                                            <div class="br-item" tabindex="-1">
+                                                <div class="br-checkbox">
+                                                    <input id="cbs0" name="cbs0" type="checkbox" />
+                                                    <label for="cbs0">CPF</label>
+                                                </div>
+                                            </div>
+                                            <div class="br-item" tabindex="-1">
+                                                <div class="br-checkbox">
+                                                    <input id="cbs1" name="cbs1" type="checkbox" />
+                                                    <label for="cbs1">Passaporte</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                <div class="col-md-4 mb-3">
+                                    <div class="br-input">
+                                        <label for="numero_documento">Documento</label>
+                                        <input id="numero_documento" type="text"
+                                            placeholder="Informe o CPF ou Passaporte" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="br-input">
+                                        <label for="numero_documento">Nome do visitante</label>
+                                        <input id="numero_documento" type="text" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="br-select">
+                                            <div class="br-input">
+                                                <label for="select">Destino</label>
+                                                <input id="select" type="text" placeholder="Busque pela sala" />
+                                                <button class="br-button" type="button" aria-label="Exibir lista"
+                                                    tabindex="-1" data-trigger="data-trigger">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="br-list" tabindex="0">
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-checkbox">
+                                                        <input id="cbs0" name="cbs0" type="checkbox" />
+                                                        <label for="cbs0">DF > SUREG > Sala 03 >
+                                                            Gabinete</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-checkbox">
+                                                        <input id="cbs1" name="cbs1" type="checkbox" />
+                                                        <label for="cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                            Gestão Interna (Dgint)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <div class="br-select">
+                                            <div class="br-input">
+                                                <label for="select">Tipo de Visita</label>
+                                                <input id="select" type="text"
+                                                    placeholder="Selecione o tipo de Visita" />
+                                                <button class="br-button" type="button" aria-label="Exibir lista"
+                                                    tabindex="-1" data-trigger="data-trigger">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="br-list" tabindex="0">
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-checkbox">
+                                                        <input id="cbs0" name="cbs0" type="checkbox" />
+                                                        <label for="cbs0">Consulente</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-checkbox">
+                                                        <input id="cbs1" name="cbs1" type="checkbox" />
+                                                        <label for="cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                            Gestão Interna (Dgint)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                        <div class="br-select">
+                                            <div class="br-input">
+                                                <label for="select">Atribuir Crachá</label>
+                                                <input id="select" type="text" placeholder="Selecione o crachá" />
+                                                <button class="br-button" type="button" aria-label="Exibir lista"
+                                                    tabindex="-1" data-trigger="data-trigger">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="br-list" tabindex="0">
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-checkbox">
+                                                        <input id="cbs0" name="cbs0" type="checkbox" />
+                                                        <label for="cbs0">ANV001</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-checkbox">
+                                                        <input id="cbs1" name="cbs1" type="checkbox" />
+                                                        <label for="cbs1">ANV002</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    
                     </div>
                 </div>
 

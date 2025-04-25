@@ -60,7 +60,15 @@
                                 <td id="cpf">999.999.999-80</td>
                                 <td>{{ \Carbon\Carbon::parse('2025-04-24')->format('d/m/Y H:i') }}</td>
                                 <td>{{ '2025-04-27' ? \Carbon\Carbon::parse('2025-04-27')->format('d/m/Y H:i') : '---' }}
-                                <td>Brasília</td>
+                                <td>ANV001</td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>JOAO MARCOS CASTRO</td>
+                                <td id="cpf">888.888.888-80</td>
+                                <td>{{ \Carbon\Carbon::parse('2025-04-11')->format('d/m/Y H:i') }}</td>
+                                <td>{{ '2025-04-27' ? \Carbon\Carbon::parse('2025-04-27')->format('d/m/Y H:i') : '---' }}
+                                <td>ANV0021</td>
                                 </td>
                             </tr>
                             <tr>
@@ -185,3 +193,4 @@
         });
     </script>
 @endsection
+    
