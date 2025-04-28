@@ -277,38 +277,38 @@
                         </div>
 
                         <div class="p-3">
+                            <div class="scrimutilexamplemodal">
 
-                            <button class="br-button primary active mr-3" type="button" id="open-new-badge-modal">
-                                + Novo crachá
-                            </button>
-
-
+                                <button class="br-button primary active mr-3" type="button" id="buttonactivatemodal">
+                                    + Novo crachá
+                                </button>
+                            </div>
                         </div>
 
-
-                        <div class="modal-backdrop d-none" id="modal-backdrop"></div>
-
-                        <div class="br-modal large d-none" aria-modal="true" role="dialog" id="new-badge-modal">
-                            <div class="br-modal-header">Inclusão de crachá</div>
-                            <div class="br-modal-body">
-                                <p>Insira o número de crachás que deseja inserir e o tipo.</p>
-                                <div class="form-group">
-                                    <label for="quantity">Quantidade</label>
-                                    <input type="number" id="quantity" class="form-control"
-                                        placeholder="Digite somente números" required>
+                        <div class="br-scrim-util foco" id="scrimutilexamplemodal" data-scrim="true"
+                            style="display: none;">
+                            <div class="br-modal" aria-labelledby="titulomodalexemplo">
+                                <div class="br-modal-header" id="titulomodalexemplo">Inclusão de crachá</div>
+                                <div class="br-modal-body">
+                                    <p>Insira o número de crachás que deseja inserir e o tipo.</p>
+                                    <div class="form-group">
+                                        <label for="quantity">Quantidade</label>
+                                        <input type="number" id="quantity" class="form-control"
+                                            placeholder="Digite somente números" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="badge-type">Tipo de crachá</label>
+                                        <select id="badge-type" class="form-control">
+                                            <option value="consultant">Consultante</option>
+                                            <option value="employee">Funcionário</option>
+                                            <option value="visitor">Visitante</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="badge-type">Tipo de crachá</label>
-                                    <select id="badge-type" class="form-control">
-                                        <option value="consultant">Consultante</option>
-                                        <option value="employee">Funcionário</option>
-                                        <option value="visitor">Visitante</option>
-                                    </select>
+                                <div class="br-modal-footer justify-content-center">
+                                    <button class="br-button secondary" type="button"
+                                        onclick="closeModal()">Cancelar</button>
                                 </div>
-                            </div>
-                            <div class="br-modal-footer justify-content-center">
-                                <button class="br-button secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                <button class="br-button primary ml-2" type="button">Incluir</button>
                             </div>
                         </div>
                     </div>
@@ -335,28 +335,15 @@
             const modal = document.getElementById('new-badge-modal');
             const backdrop = document.getElementById('modal-backdrop');
 
-            openModalButton.addEventListener('click', function() {
-                modal.classList.remove('d-none');
-                backdrop.classList.add('d-block');
-                console.log("Modal aberto:", modal.classList);
-                console.log("Backdrop exibido:", backdrop.classList);
-            });
+            document.getElementById('buttonactivatemodal').addEventListener('click', openPhotoModal);
+            // Função para abrir o modal
+            function openPhotoModal() {
+                document.getElementById('scrimutilexamplemodal').style.display = 'flex';
+                document.getElementById('optionsSection').classList.remove('d-none');
+                document.getElementById('uploadSection').classList.add('d-none');
+                document.getElementById('webcamSection').classList.add('d-none');
+            }
 
-            cancelButton.addEventListener('click', function() {
-                modal.classList.add('d-none');
-                backdrop.classList.remove('d-block');
-                backdrop.classList.add('d-none');
-                console.log("Modal fechado:", modal.classList);
-                console.log("Backdrop oculto:", backdrop.classList);
-            });
-
-            backdrop.addEventListener('click', function() {
-                modal.classList.add('d-none');
-                backdrop.classList.remove('d-block');
-                backdrop.classList.add('d-none');
-                console.log("Modal fechado (por backdrop):", modal.classList);
-                console.log("Backdrop oculto (por backdrop):", backdrop.classList);
-            });
         });
     </script>
 

@@ -440,7 +440,7 @@
                                 </div>
                             </fieldset>
                         </div>
-                    
+
                         <div class="p-3">
                             <button class="br-button primary active mr-3" type="button">Salvar
                             </button>
@@ -489,13 +489,7 @@
                 </div>
             </div>
 
-
-
-
-
             <script>
-
-
                 // Variáveis globais
                 let stream = null;
                 let capturedPhoto = null;
@@ -520,10 +514,13 @@
 
                 // Função para voltar às opções
                 function backToOptions() {
-                    document.querySelector('.br-scrim-util').style.display = 'none';
-                    /*  document.getElementById('uploadSection').classList.add('d-none');
-                                 document.getElementById('webcamSection').classList.add('d-none'); */
+                    // Oculta as seções de upload e webcam
+                    document.getElementById('uploadSection').classList.add('d-none');
+                    document.getElementById('webcamSection').classList.add('d-none');
+                    document.getElementById('optionsSection').classList.remove('d-none');
+
                     stopWebcam();
+
                     resetModal();
                 }
 
