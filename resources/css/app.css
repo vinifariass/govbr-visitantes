@@ -1,0 +1,6 @@
+.step-progress-btn.active {
+    background-color: #007bff;
+    /* Azul */
+    color: white;
+    border-color: #007bff;
+}

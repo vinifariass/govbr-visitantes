@@ -50,5 +50,17 @@ Route::get('/qrcode', function () {
     return view('qrcode');
 })->name('qrcode');
 
+Route::get('/template2', function () {
+    return view('template2');
+})->name('template2');
+
 Route::post('/relatorios/pdf', [RelatorioController::class, 'exportPDF'])->name('relatorios.exportarPdf');
 Route::post('/relatorios/excel', [RelatorioController::class, 'exportarExcel'])->name('relatorios.exportarExcel');
+
+Route::get('/cracha-step', function () {
+    return view('cracha-step');
+})->name('cracha-step');
+
+Route::get('/relatorios-step', function () {
+    return view('relatorios-step');
+})->name('relatorios-step');

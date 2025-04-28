@@ -11,7 +11,7 @@
                     </span>
                 </button>
             </li>
-            <li class="tab-item {{ Route::is('registro') ? 'active' : '' }}">
+       {{--      <li class="tab-item {{ Route::is('registro') ? 'active' : '' }}">
                 <button type="button" onclick="window.location.href='{{ route('registro') }}'">
                     <span class="name">
                         <span class="d-flex flex-column flex-sm-row">
@@ -20,7 +20,7 @@
                         </span>
                     </span>
                 </button>
-            </li>
+            </li> --}}
             <li class="tab-item {{ Route::is('cracha') ? 'active' : '' }}">
                 <button type="button" data-panel="panel-3-icon" onclick="window.location.href='{{ route('cracha') }}'">
                     <span class="name">

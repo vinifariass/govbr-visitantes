@@ -24,7 +24,7 @@
             @extends('base')
             <div class="container-lg">
 
-                @include('layouts.tab')
+                @include('layouts.step')
 
                 <div class="br-menu" id="main-navigation">
                     <div class="menu-container">
