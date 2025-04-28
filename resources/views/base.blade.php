@@ -13,7 +13,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&amp;display=swap" />
     <!-- Design System GOV.BR CSS -->
-    <link rel="stylesheet" href="govbr/core.min.css" />
+    <link rel="stylesheet" href="{{ asset('govbr/core.min.css') }}" />
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 </head>
@@ -26,8 +26,24 @@
     @include('layouts.footer')
 
     <!-- Scripts de componentes -->
-    <script type="module" src="govbr/core.min.js"></script>
+    <script type="module" src="{{ asset('govbr/core.min.js') }}"></script>
     <script src="{{ asset('js/brselect.js') }}"></script>
+    <script>
+          document.addEventListener('DOMContentLoaded', () => {
+        const uploadList = [];
+
+        function uploadTimeout() {
+            return new Promise((resolve) => {
+                // Simulação de upload para o servidor
+                return setTimeout(resolve, 3000);
+            });
+        }
+
+        for (const brUpload of window.document.querySelectorAll('.br-upload')) {
+            uploadList.push(new core.BRUpload('br-upload', brUpload, uploadTimeout));
+        }
+    });
+    </script>
 </body>
 
 </html>

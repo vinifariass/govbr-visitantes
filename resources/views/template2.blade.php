@@ -252,7 +252,7 @@
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <div class="br-input">
-                                               {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
+                                                {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
                                                 <label for="numero_documento">Número do Documento</label>
                                                 <input id="numero_documento" type="text" placeholder="Digite aqui" />
                                             </div>
@@ -285,11 +285,12 @@
                                     <span class="br-avatar large mr-3" id="avatar-preview" title="Fulano da Silva">
                                         <span class="content"><i class="fas fa-user" aria-hidden="true"></i></span>
                                     </span>
-                                    <button class="br-button primary" type="button"
-                                        onclick="document.getElementById('foto-input').click()">
-                                        Capturar Foto
-                                    </button>
 
+                                    <div class="scrimutilexamplemodal">
+                                        <button class="br-button primary" type="button"
+                                            id="buttonactivatemodal">Capturar Foto
+                                        </button>
+                                    </div>
                                     <!-- Input de arquivo escondido -->
                                     <input type="file" id="foto-input" accept="image/*" style="display: none;"
                                         onchange="mostrarFoto(event)">
@@ -301,10 +302,10 @@
 
                         </div>
 
-                      
+
                     </div>
                     <hr class="br-divider" />
-                    <h1>Registro de Visita</h1> 
+                    <h1>Registro de Visita</h1>
 
                     <div class="row">
                         <!-- Campos do formulário -->
@@ -439,7 +440,7 @@
                                 </div>
                             </fieldset>
                         </div>
-
+                    
                         <div class="p-3">
                             <button class="br-button primary active mr-3" type="button">Salvar
                             </button>
@@ -448,36 +449,189 @@
 
                         </div>
                     </div>
+
                 </div>
 
             </div>
-        </div>
-        </div>
+            <div class="br-scrim-util foco" id="scrimutilexamplemodal" data-scrim="true" style="display: none;">
+                <div class="br-modal" aria-labelledby="titulomodalexemplo">
+                    <div class="br-modal-header" id="titulomodalexemplo">Capturar Foto ou Fazer Upload</div>
+                    <div class="br-modal-body">
+                        <div id="optionsSection">
+                            <button class="br-button primary w-100 mb-3" type="button"
+                                onclick="showWebcamOption()">Capturar Foto com Webcam</button>
+                            <button class="br-button secondary w-100" type="button" onclick="showUploadOption()">Fazer
+                                Upload de Foto</button>
+                        </div>
+                        <div id="webcamSection" class="d-none">
+                            <video id="webcam" autoplay playsinline
+                                style="width: 100%; max-width: 400px; margin: auto;"></video>
+                            <button class="br-button primary mt-3 w-100" type="button" onclick="capturePhoto()">Capturar
+                                Foto</button>
+                            <button class="br-button secondary mt-3 w-100" type="button"
+                                onclick="backToOptions()">Voltar</button>
+                            <canvas id="canvas" style="display: none;"></canvas>
+                        </div>
+                        <div id="uploadSection" class="d-none">
+                            <div class="br-upload">
+                                <input class="upload-input" id="file-upload" accept="image/*" type="file"
+                                    aria-label="enviar arquivo" onchange="handleFileUpload()" />
+                                <label class="upload-input" for="file-upload">Selecione uma foto</label>
+                                <div class="upload-list"></div>
+                            </div>
+                            <button class="br-button secondary mt-3 w-100" type="button"
+                                onclick="backToOptions()">Voltar</button>
+                        </div>
+                    </div>
+                    <div class="br-modal-footer justify-content-center">
+                        <button class="br-button secondary" type="button" onclick="closeModal()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const selectElement = document.querySelector('.br-select');
-                if (selectElement) {
-                    new BRSelect('example-select', selectElement);
+
+
+
+
+            <script>
+
+
+                // Variáveis globais
+                let stream = null;
+                let capturedPhoto = null;
+
+                // Inicialização quando o DOM estiver pronto
+                document.getElementById('buttonactivatemodal').addEventListener('click', openPhotoModal);
+                // Função para abrir o modal
+                function openPhotoModal() {
+                    document.getElementById('scrimutilexamplemodal').style.display = 'flex';
+                    document.getElementById('optionsSection').classList.remove('d-none');
+                    document.getElementById('uploadSection').classList.add('d-none');
+                    document.getElementById('webcamSection').classList.add('d-none');
                 }
 
-                window.mostrarFoto = function(event) {
-                    const file = event.target.files[0];
-                    if (!file) return;
-
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const avatar = document.getElementById('avatar-preview');
-                        avatar.innerHTML =
-                            `<span class="content"><img src="${e.target.result}" alt="Avatar" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></span>`;
-                    };
-                    reader.readAsDataURL(file);
+                // Função para fechar o modal
+                function closeModal() {
+                    document.querySelector('.br-scrim-util').style.display = 'none';
+                    document.getElementById('photoModal').style.display = 'none';
+                    stopWebcam();
+                    resetModal();
                 }
-            });
-        </script>
-    @endsection
 
-    <div class="br-cookiebar default d-none" tabindex="-1"></div>
+                // Função para voltar às opções
+                function backToOptions() {
+                    document.querySelector('.br-scrim-util').style.display = 'none';
+                    /*  document.getElementById('uploadSection').classList.add('d-none');
+                                 document.getElementById('webcamSection').classList.add('d-none'); */
+                    stopWebcam();
+                    resetModal();
+                }
+
+                // Função para mostrar a opção de upload
+                function showUploadOption() {
+                    document.getElementById('optionsSection').classList.add('d-none');
+                    document.getElementById('uploadSection').classList.remove('d-none');
+                    document.querySelector('.upload-label').textContent = 'Selecione uma foto';
+                }
+
+                // Função para mostrar a opção de webcam
+                function showWebcamOption() {
+                    document.getElementById('optionsSection').classList.add('d-none');
+                    document.getElementById('uploadSection').classList.add('d-none');
+                    document.getElementById('webcamSection').classList.remove('d-none');
+                    startWebcam();
+                }
+
+                // Função para iniciar a webcam
+                async function startWebcam() {
+                    try {
+                        const video = document.getElementById('webcam');
+                        stream = await navigator.mediaDevices.getUserMedia({
+                            video: {
+                                width: {
+                                    ideal: 640
+                                },
+                                height: {
+                                    ideal: 480
+                                },
+                                facingMode: 'user'
+                            },
+                            audio: false
+                        });
+                        video.srcObject = stream;
+                    } catch (err) {
+                        console.error("Erro ao acessar a webcam:", err);
+                        alert("Não foi possível acessar a webcam. Por favor, verifique as permissões.");
+                        backToOptions();
+                    }
+                }
+
+                // Função para parar a webcam
+                function stopWebcam() {
+                    if (stream) {
+                        stream.getTracks().forEach(track => track.stop());
+                        stream = null;
+                    }
+                }
+
+                // Função para capturar foto da webcam
+                function capturePhoto() {
+                    const video = document.getElementById('webcam');
+                    const canvas = document.getElementById('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    capturedPhoto = canvas.toDataURL('image/png');
+                    updateAvatar(capturedPhoto);
+                    closeModal();
+                }
+
+                // Função para usar a foto capturada
+                function useCapturedPhoto() {
+                    if (capturedPhoto) {
+                        updateAvatar(capturedPhoto);
+                        closeModal();
+                    }
+                }
+
+                // Função para lidar com upload de arquivo
+                function handleFileUpload() {
+                    const fileInput = document.getElementById('file-upload');
+                    if (fileInput.files && fileInput.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            updateAvatar(e.target.result);
+                            closeModal();
+                        };
+                        reader.readAsDataURL(fileInput.files[0]);
+                    } else {
+                        alert("Por favor, selecione uma foto primeiro.");
+                    }
+                }
+
+                // Função para atualizar o avatar com a nova foto
+                function updateAvatar(imageData) {
+                    const avatar = document.getElementById('avatar-preview');
+                    avatar.innerHTML = `
+            <span class="content">
+                <img src="${imageData}" alt="Foto do visitante" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            </span>
+        `;
+                }
+
+                // Função para resetar o modal
+                function resetModal() {
+                    capturedPhoto = null;
+                    document.getElementById('usePhotoBtn').disabled = true;
+                    const video = document.getElementById('webcam');
+                    video.srcObject = null;
+                    document.getElementById('file-upload').value = '';
+                }
+            </script>
+        @endsection
+
+        <div class="br-cookiebar default d-none" tabindex="-1"></div>
     </div>
 
 </body>
