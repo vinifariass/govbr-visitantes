@@ -305,9 +305,12 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="br-modal-footer justify-content-center">
+                                <div class="br-modal-footer justify-content-between">
                                     <button class="br-button secondary" type="button"
                                         onclick="closeModal()">Cancelar</button>
+                                    <button class="br-button primary" type="button"
+                                        onclick="closeModal()">Incluir</button>
+
                                 </div>
                             </div>
                         </div>
@@ -317,7 +320,6 @@
             </div>
         </div>
         </div>
-    @endsection
 
     <div class="br-cookiebar default d-none" tabindex="-1"></div>
     </div>
@@ -335,17 +337,20 @@
             const modal = document.getElementById('new-badge-modal');
             const backdrop = document.getElementById('modal-backdrop');
 
-            document.getElementById('buttonactivatemodal').addEventListener('click', openPhotoModal);
+            document.getElementById('buttonactivatemodal').addEventListener('click', openModal);
             // Função para abrir o modal
-            function openPhotoModal() {
+            function openModal() {
                 document.getElementById('scrimutilexamplemodal').style.display = 'flex';
-                document.getElementById('optionsSection').classList.remove('d-none');
-                document.getElementById('uploadSection').classList.add('d-none');
-                document.getElementById('webcamSection').classList.add('d-none');
+
             }
 
+            
         });
+        function closeModal() {
+            document.querySelector('.br-scrim-util').style.display = 'none';
+        }
     </script>
+    @endsection
 
     <style>
         /* Estilo geral do modal */
