@@ -13,10 +13,16 @@
                     <form method="GET">
                         <div class="row mb-4">
                             <div class="col-md-2">
-                                <div class="br-input">
-                                    <label for="data_inicio">Data de Início</label>
-                                    <input id="data_inicio" name="data_inicio" type="date"
-                                        value="{{ request('data_inicio') }}">
+                                <div class="br-datetimepicker" data-mode="single" data-type="text">
+                                    <div class="br-input has-icon">
+                                        <label for="simples-input">Datepicker</label>
+                                        <input id="simples-input" type="text" placeholder="exemplo: 02/02/2024"
+                                            data-input="data-input" />
+                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker"
+                                            data-toggle="data-toggle" id="simples-input-btn" tabindex="-1"
+                                            aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -95,6 +101,8 @@
                 Exportar PDF</a>
         </div> --}}
     </div>
+@endsection
+@push('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const exportarPdfBtn = document.getElementById('exportarPdfBtn');
@@ -111,7 +119,7 @@
 
                 function mascararCPF(cpf) {
                     // Verifica se o CPF tem 11 dígitos
-                    cpf = cpf.replace(/\D/g, ''); 
+                    cpf = cpf.replace(/\D/g, '');
                     if (cpf.length !== 11) {
                         throw new Error("CPF inválido. Deve conter 11 dígitos.");
                     }
@@ -192,5 +200,4 @@
             }
         });
     </script>
-@endsection
-    
+@endpush

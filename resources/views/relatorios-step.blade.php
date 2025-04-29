@@ -13,16 +13,29 @@
                     <form method="GET">
                         <div class="row mb-4">
                             <div class="col-md-2">
-                                <div class="br-input">
-                                    <label for="data_inicio">Data de Início</label>
-                                    <input id="data_inicio" name="data_inicio" type="date"
-                                        value="{{ request('data_inicio') }}">
+                                <div class="br-datetimepicker" data-mode="single" data-type="text">
+                                    <div class="br-input has-icon">
+                                        <label for="data_inicio">Data Início</label>
+                                        <input id="data_inicio" type="text" placeholder="02/02/2024"
+                                            data-input="data-input" />
+                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker"
+                                            data-toggle="data-toggle" id="data_inicio-btn" tabindex="-1"
+                                            aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="br-input">
-                                    <label for="data_fim">Data de Fim</label>
-                                    <input id="data_fim" name="data_fim" type="date" value="{{ request('data_fim') }}">
+                                <div class="br-datetimepicker" data-mode="single" data-type="text">
+                                    <div class="br-input has-icon">
+                                        <label for="data_fim">Data Fim</label>
+                                        <input id="data_fim" type="text" placeholder="02/04/2024"
+                                            data-input="data-input" />
+                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker"
+                                            data-toggle="data-toggle" id="data_fim-btn" tabindex="-1"
+                                            aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 

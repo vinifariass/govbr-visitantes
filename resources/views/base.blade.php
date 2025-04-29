@@ -64,6 +64,16 @@
                 brSelect.addEventListener('onChange', function(e) {})
                 selectList.push(brselect)
             }
+
+            const datetimepickerList = [];
+            for (const brDateTimePicker of window.document.querySelectorAll(
+                    '.br-datetimepicker'
+                )) {
+                datetimepickerList.push(
+                    new core.BRDateTimePicker('br-datetimepicker', brDateTimePicker, {
+                    })
+                );
+            }
         });
     </script>
 
