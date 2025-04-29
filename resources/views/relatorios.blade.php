@@ -15,20 +15,27 @@
                             <div class="col-md-2">
                                 <div class="br-datetimepicker" data-mode="single" data-type="text">
                                     <div class="br-input has-icon">
-                                        <label for="simples-input">Datepicker</label>
-                                        <input id="simples-input" type="text" placeholder="exemplo: 02/02/2024"
+                                        <label for="data_inicio">Data Início</label>
+                                        <input id="data_inicio" type="text" placeholder="02/02/2024"
                                             data-input="data-input" />
                                         <button class="br-button circle small" type="button" aria-label="Abrir Timepicker"
-                                            data-toggle="data-toggle" id="simples-input-btn" tabindex="-1"
+                                            data-toggle="data-toggle" id="data_inicio-btn" tabindex="-1"
                                             aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="br-input">
-                                    <label for="data_fim">Data de Fim</label>
-                                    <input id="data_fim" name="data_fim" type="date" value="{{ request('data_fim') }}">
+                                <div class="br-datetimepicker" data-mode="single" data-type="text">
+                                    <div class="br-input has-icon">
+                                        <label for="data_fim">Data Fim</label>
+                                        <input id="data_fim" type="text" placeholder="02/04/2024"
+                                            data-input="data-input" />
+                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker"
+                                            data-toggle="data-toggle" id="data_fim-btn" tabindex="-1" aria-hidden="true"><i
+                                                class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -78,20 +85,22 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="4">Nenhum visitante encontrado nesse período.</td>
+                                <td colspan="5">Nenhum visitante encontrado nesse período.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex gap-3 mt-4">
-                    <button id="exportarPdfBtn" class="br-button danger mr-2">
+                <div class="d-flex gap-3 mt-4 justify-content-end">
+                    <button id="exportarPdfBtn" class="br-button danger mr-2" style="display: flex; align-items: center;">
+                        <i class="fas fa-file-pdf mr-2" style="font-size: 1.2em;"></i>
                         Exportar PDF
                     </button>
-
-                    <button id="exportarExcelBtn" class="br-button success">
+                    <button id="exportarExcelBtn" class="br-button success" style="display: flex; align-items: center;">
+                        <i class="fas fa-file-excel mr-2" style="font-size: 1.2em;"></i>
                         Exportar Excel
                     </button>
                 </div>
+               
             </div>
         </div>
     </div>
@@ -105,6 +114,40 @@
 @push('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
+            const dataInicio = document.getElementById('data_inicio');
+            const dataFim = document.getElementById('data_fim');
+            const form = document.querySelector('form');
+
+            function parseDate(str) {
+                // Espera formato dd/mm/yyyy
+                const [d, m, y] = str.split('/');
+                if (!d || !m || !y) return null;
+                return new Date(`${y}-${m}-${d}`);
+            }
+
+            function validarDatas() {
+                const inicio = parseDate(dataInicio.value);
+                const fim = parseDate(dataFim.value);
+
+                if (inicio && fim && inicio > fim) {
+                    showBrMessage('danger', 'Data inválida', 'A Data Início não pode ser maior que a Data Fim.');
+                         dataInicio.value = '';
+                    dataInicio.focus();
+                    return false;
+                }
+                return true;
+            }
+
+            dataInicio.addEventListener('change', validarDatas);
+            dataFim.addEventListener('change', validarDatas);
+
+            form.addEventListener('submit', function(e) {
+                if (!validarDatas()) {
+                    e.preventDefault();
+                }
+            });
+
             const exportarPdfBtn = document.getElementById('exportarPdfBtn');
             const exportarExcelBtn = document.getElementById('exportarExcelBtn');
 
@@ -194,10 +237,12 @@
                         document.body.appendChild(form);
                         form.submit();
                     } else {
-                        alert('Nenhum dado na tabela para exportar.');
+                        showBrMessage('danger', 'Nenhum dado encontrado', 'Nenhum dado na tabela para exportar.');
                     }
                 }
             }
+
+            
         });
     </script>
 @endpush

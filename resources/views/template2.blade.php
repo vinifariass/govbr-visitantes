@@ -1,7 +1,7 @@
 @extends('base')
 
 <div class="template-base">
-  
+
     @section('content')
         <div class="container-lg">
 
@@ -68,14 +68,14 @@
                                                 2</span></a></li>
                                 </ul>
                             </div>
-                            <div class="menu-folder"><a class="menu-item" href="javascript: void(0)"
-                                    role="treeitem"><span class="icon"><i class="fas fa-bell"
-                                            aria-hidden="true"></i></span><span class="content">Camada
+                            <div class="menu-folder"><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
+                                        class="icon"><i class="fas fa-bell" aria-hidden="true"></i></span><span
+                                        class="content">Camada
                                         1</span></a>
                                 <ul>
                                     <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                class="icon"><i class="fas fa-heart"
-                                                    aria-hidden="true"></i></span><span class="content">Camada
+                                                class="icon"><i class="fas fa-heart" aria-hidden="true"></i></span><span
+                                                class="content">Camada
                                                 2</span></a></li>
                                     <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
                                                 class="icon"><i class="fas fa-address-book"
@@ -307,16 +307,16 @@
                                         </div>
                                         <div class="br-list" tabindex="0">
                                             <div class="br-item" tabindex="-1">
-                                                <div class="br-checkbox">
-                                                    <input id="cbs0" name="cbs0" type="checkbox" />
-                                                    <label for="cbs0">DF > SUREG > Sala 03 >
+                                                <div class="br-radio">
+                                                    <input id="destino-cbs0" name="destino-cbs0" type="radio" />
+                                                    <label for="destino-cbs0">DF > SUREG > Sala 03 >
                                                         Gabinete</label>
                                                 </div>
                                             </div>
                                             <div class="br-item" tabindex="-1">
-                                                <div class="br-checkbox">
-                                                    <input id="cbs1" name="cbs1" type="checkbox" />
-                                                    <label for="cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                <div class="br-radio">
+                                                    <input id="destino-cbs1" name="destino-cbs1" type="radio" />
+                                                    <label for="destino-cbs1">DF > SUREG > Sala 06 > Divisão de
                                                         Gestão Interna (Dgint)</label>
                                                 </div>
                                             </div>
@@ -503,7 +503,8 @@
                 video.srcObject = stream;
             } catch (err) {
                 console.error("Erro ao acessar a webcam:", err);
-                alert("Não foi possível acessar a webcam. Por favor, verifique as permissões.");
+                showBrMessage('danger', 'Erro',
+                    'Não foi possível acessar a webcam. Por favor, verifique as permissões.');
                 backToOptions();
             }
         }
@@ -548,7 +549,8 @@
                 };
                 reader.readAsDataURL(fileInput.files[0]);
             } else {
-                alert("Por favor, selecione uma foto primeiro.");
+                showBrMessage('danger', 'Erro',
+                    'Por favor, selecione uma foto primeiro.');
             }
         }
 

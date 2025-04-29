@@ -222,14 +222,8 @@
                             <div class="br-table" title="Tabela irregular 1">
                                 <div class="table-header">
                                     <div class="top-bar">
-                                        <div class="table-title">Tabela irregular 1</div>
                                         <div class="actions-trigger text-nowrap">
-                                            <button class="br-button circle" type="button" id="button-dropdown-density"
-                                                title="Ver mais opções" data-toggle="dropdown"
-                                                data-target="target01-4200" aria-label="Definir densidade da tabela"
-                                                aria-haspopup="true" aria-live="polite"><i class="fas fa-ellipsis-v"
-                                                    aria-hidden="true"></i>
-                                            </button>
+                                   
                                             <div class="br-list" id="target01-4200" role="menu"
                                                 aria-labelledby="button-dropdown-density" hidden="hidden">
                                                 <button class="br-item" type="button" data-density="small"

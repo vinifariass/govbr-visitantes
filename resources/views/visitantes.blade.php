@@ -87,7 +87,9 @@
                     <div class="header-login">
                         <div class="header-sign-in">
                             <button class="br-sign-in small" type="button" data-trigger="login"><i class="fas fa-user"
-                                    aria-hidden="true"></i><span class="d-sm-inline">Entrar</span>
+                                    aria-hidden="true"></i><span class="d-sm-inline">
+                                        <a href="{{ route('login') }}" style=" text-decoration: none;">Entrar</a>
+                                    </span>
                             </button>
                         </div>
                         <div class="header-avatar"></div>

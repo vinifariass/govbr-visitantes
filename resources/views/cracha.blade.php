@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
 @section('content')
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Template básico</title>
-    </head>
-
-    <body>
         <div class="template-base">
             <nav class="br-skiplink" role="menubar"><a class="br-item" href="#main-content" role="menuitem" accesskey="1">Ir
                     para o conteúdo <span aria-hidden="true">(1/4)</span> <span aria-hidden="true"
@@ -75,9 +65,9 @@
                                                                     4</span></a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a class="menu-item" href="javascript: void(0)"><span
-                                                            class="icon"><i class="fas fa-moon"
-                                                                aria-hidden="true"></i></span><span class="content">Camada
+                                                <li><a class="menu-item" href="javascript: void(0)"><span class="icon"><i
+                                                                class="fas fa-moon" aria-hidden="true"></i></span><span
+                                                            class="content">Camada
                                                             3</span></a></li>
                                             </ul>
                                         </li>
@@ -222,14 +212,8 @@
                             <div class="br-table" title="Tabela irregular 1">
                                 <div class="table-header">
                                     <div class="top-bar">
-                                        <div class="table-title">Tabela irregular 1</div>
                                         <div class="actions-trigger text-nowrap">
-                                            <button class="br-button circle" type="button" id="button-dropdown-density"
-                                                title="Ver mais opções" data-toggle="dropdown"
-                                                data-target="target01-4200" aria-label="Definir densidade da tabela"
-                                                aria-haspopup="true" aria-live="polite"><i class="fas fa-ellipsis-v"
-                                                    aria-hidden="true"></i>
-                                            </button>
+
                                             <div class="br-list" id="target01-4200" role="menu"
                                                 aria-labelledby="button-dropdown-density" hidden="hidden">
                                                 <button class="br-item" type="button" data-density="small"
@@ -275,6 +259,7 @@
                                 </table>
                             </div>
                         </div>
+
                         <div class="p-3">
                             <div class="scrimutilexamplemodal">
 
@@ -285,69 +270,104 @@
                         </div>
 
                         <div class="br-scrim-util foco" id="scrimutilexamplemodal" data-scrim="true"
-                        style="display: none;">
-                        <div class="br-modal" aria-labelledby="titulomodalexemplo">
-                            <div class="br-modal-header" id="titulomodalexemplo">Inclusão de crachá</div>
-                            <div class="br-modal-body">
-                                <p>Insira o número de crachás que deseja inserir e o tipo.</p>
-                                <div class="form-group">
-                                    <label for="quantity">Quantidade</label>
-                                    <input type="number" id="quantity" class="form-control"
-                                        placeholder="Digite somente números" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="badge-type">Tipo de crachá</label>
-                                    <select id="badge-type" class="form-control">
-                                        <option value="consultant">Consultante</option>
-                                        <option value="employee">Funcionário</option>
-                                        <option value="visitor">Visitante</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="br-modal-footer justify-content-between">
-                                <button class="br-button secondary" type="button"
-                                    onclick="closeModal()">Cancelar</button>
-                                <button class="br-button primary" type="button"
-                                    onclick="closeModal()">Incluir</button>
+                            style="display: none;">
+                            <div class="br-modal" aria-labelledby="titulomodalexemplo">
+                                <div class="br-modal-header" id="titulomodalexemplo">Inclusão de crachá</div>
+                                <div class="br-modal-body">
+                                    <p>Insira o número de crachás que deseja inserir e o tipo.</p>
+                                    <div class="form-group">
+                                        <label for="quantity">Quantidade</label>
+                                        <input type="number" id="quantity" class="form-control"
+                                            placeholder="Digite somente números" required>
+                                    </div>
+                                    <div class="form-group">
 
+
+                                        <div class="br-select">
+                                            <div class="br-input">
+                                                <label for="tipoDocumento">Tipo de crachá</label>
+                                                <input id="tipoDocumento" type="text"
+                                                    placeholder="Selecione o item" />
+                                                <button class="br-button" type="button" aria-label="Exibir lista"
+                                                    tabindex="-1" data-trigger="data-trigger">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="br-list" tabindex="0">
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="cbs0" name="cbs0" type="radio" />
+                                                        <label for="cbs0">Consultante</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="cbs1" name="cbs1" type="radio" />
+                                                        <label for="cbs1">Funcionário</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="cbs2" name="cbs2" type="radio" />
+                                                        <label for="cbs2">Visitante</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="br-modal-footer justify-content-between">
+                                    <button class="br-button secondary" type="button"
+                                        onclick="closeModal()">Cancelar</button>
+                                    <button class="br-button primary" type="button"
+                                        onclick="closeModal()">Incluir</button>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </div>
 
             </div>
         </div>
         </div>
-    @endsection
 
-    <div class="br-cookiebar default d-none" tabindex="-1"></div>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Seleciona todos os elementos com a classe 'br-select'
-            const selectElements = document.querySelectorAll('.br-select');
+        <div class="br-cookiebar default d-none" tabindex="-1"></div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Seleciona todos os elementos com a classe 'br-select'
+                const selectElements = document.querySelectorAll('.br-select');
 
-            // Itera sobre cada elemento e inicializa o BRSelect
-            selectElements.forEach((selectElement, index) => {
-                new BRSelect(`example-select-${index}`, selectElement);
+                // Itera sobre cada elemento e inicializa o BRSelect
+                selectElements.forEach((selectElement, index) => {
+                    new BRSelect(`example-select-${index}`, selectElement);
+                });
+
+                const openModalButton = document.getElementById('open-new-badge-modal');
+                const modal = document.getElementById('new-badge-modal');
+                const backdrop = document.getElementById('modal-backdrop');
+
+                document.getElementById('buttonactivatemodal').addEventListener('click', openModal);
+                // Função para abrir o modal
+
             });
 
-            const openModalButton = document.getElementById('open-new-badge-modal');
-            const modal = document.getElementById('new-badge-modal');
-            const backdrop = document.getElementById('modal-backdrop');
-            document.getElementById('buttonactivatemodal').addEventListener('click', openModal);
             function openModal() {
                 document.getElementById('scrimutilexamplemodal').style.display = 'flex';
-
+                const modal = document.querySelector('.br-modal');
+                modal.classList.add('large');
+                modal.style.display = 'flex'; // Garante que o modal aparece corretamente
             }
 
-            
-        });
-        function closeModal() {
-            document.querySelector('.br-scrim-util').style.display = 'none';
-        }
-    </script>
+            function closeModal() {
+                document.querySelector('.br-scrim-util').style.display = 'none';
+                const modal = document.querySelector('.br-modal');
+                modal.classList.remove('large');
+                modal.style.display = 'none';
+            }
+        </script>
+    @endsection
 
     <style>
         /* Estilo geral do modal */
@@ -368,10 +388,6 @@
 
         .br-modal.d-none {
             display: none;
-        }
-
-        .br-modal.large {
-            max-width: 400px;
         }
 
         .br-modal-header {
@@ -425,8 +441,25 @@
         .modal-backdrop.d-block {
             display: block;
         }
+
+        .br-modal.large {
+            max-width: 90vw;
+            width: 600px;
+            min-width: 320px;
+            height: auto;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 700px) {
+            .br-modal.large {
+                width: 98vw;
+                min-width: unset;
+                max-width: 98vw;
+                padding: 10px;
+            }
+        }
     </style>
-</body>
 
 
 </html>
