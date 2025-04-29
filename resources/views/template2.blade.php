@@ -589,50 +589,13 @@
                 }
                 $(document).ready(function() {
 
-                    function setupBrSelectBehavior() {
-                        const selects = document.querySelectorAll(".br-select");
-
-                        selects.forEach(select => {
-                            const input = select.querySelector(".br-input input");
-
-                            if (input && input.id === "tipoDocumento") {
-                                return;
-                            }
-
-                            const radios = select.querySelectorAll("input[type='radio']");
-                            const list = select.querySelector(".br-list");
-                            const button = select.querySelector(".br-button");
-
-                            // 1. Configuração dos radios (seleção)
-                            radios.forEach(radio => {
-                                radio.addEventListener("change", function() {
-                                    if (this.checked) {
-                                        const label = this.labels[0];
-                                        const selectedValue = label ? label.textContent.trim() : "";
-
-                                        input.value = selectedValue;
-                                        list.classList.add("d-none");
-
-                                        const event = new Event("change", {
-                                            bubbles: true
-                                        });
-                                        input.dispatchEvent(event);
-                                    }
-                                });
-                            });
-
-                            select._inputElement = input;
-                            select._buttonElement = button;
-                        });
-                    }
-
                     function checkFieldsAndSetReadonly() {
                         const tipoDocumento = $("#tipoDocumento").val().trim();
                         const numeroDocumento = $("#numero_documento").val().trim();
                         const nomeVisitante = $("#nomeVisitante").val().trim();
                         const telefone = $("#telefone").val().trim();
 
-                        const isAllEmpty = !tipoDocumento && !numeroDocumento && !nomeVisitante && !telefone;
+                        const isAllEmpty = !(tipoDocumento && numeroDocumento && nomeVisitante && telefone);
 
                         // Seleciona todos os .br-select já inicializados
                         const selects = document.querySelectorAll(".br-select");
@@ -640,7 +603,9 @@
                         selects.forEach(select => {
                             const input = select._inputElement;
                             const button = select._buttonElement;
-
+                            if (input && input.id === "tipoDocumento") {
+                                return;
+                            }
                             if (isAllEmpty) {
                                 if (input) {
                                     input.readOnly = true;
@@ -669,14 +634,17 @@
                             }
                         });
                     }
-                    setupBrSelectBehavior();
 
                     $("#tipoDocumento, #numero_documento, #nomeVisitante, #telefone")
                         .on("input change", checkFieldsAndSetReadonly);
 
                     checkFieldsAndSetReadonly();
 
+                    $('.br-radio input[type="radio"]').on('change', function() {
+        // Seu código aqui
+        checkFieldsAndSetReadonly();
 
+    });
                 })
             </script>
         @endsection
