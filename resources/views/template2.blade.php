@@ -224,10 +224,10 @@
                                 <div class="col-md-10">
                                     <div class="row">
                                         <div class="col-md-4 mb-3">
-                                            <div class="br-select" multiple="multiple">
+                                            <div class="br-select">
                                                 <div class="br-input">
-                                                    <label for="select-multiple">Tipo de Documento</label>
-                                                    <input id="select-multiple" type="text"
+                                                    <label for="tipoDocumento">Tipo de Documento</label>
+                                                    <input id="tipoDocumento" type="text"
                                                         placeholder="Selecione o item" />
                                                     <button class="br-button" type="button" aria-label="Exibir lista"
                                                         tabindex="-1" data-trigger="data-trigger">
@@ -236,14 +236,14 @@
                                                 </div>
                                                 <div class="br-list" tabindex="0">
                                                     <div class="br-item" tabindex="-1">
-                                                        <div class="br-checkbox">
-                                                            <input id="cbs0" name="cbs0" type="checkbox" />
+                                                        <div class="br-radio">
+                                                            <input id="cbs0" name="cbs0" type="radio" />
                                                             <label for="cbs0">CPF</label>
                                                         </div>
                                                     </div>
                                                     <div class="br-item" tabindex="-1">
-                                                        <div class="br-checkbox">
-                                                            <input id="cbs1" name="cbs1" type="checkbox" />
+                                                        <div class="br-radio">
+                                                            <input id="cbs1" name="cbs1" type="radio" />
                                                             <label for="cbs1">Passaporte</label>
                                                         </div>
                                                     </div>
@@ -265,14 +265,14 @@
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
                                                 <div class="br-input">
-                                                    <label for="surname">Nome do Visitante</label>
-                                                    <input id="surname" type="text" />
+                                                    <label for="nomeVisitante">Nome do Visitante</label>
+                                                    <input id="nomeVisitante" type="text" />
                                                 </div>
                                             </div>
                                             <div class="col-md-4 mb-3">
                                                 <div class="br-input">
-                                                    <label for="cpf">Telefone</label>
-                                                    <input id="cpf" type="text" placeholder="(21) 99999-9999" />
+                                                    <label for="telefone">Telefone</label>
+                                                    <input id="telefone" type="text" placeholder="(21) 99999-9999" />
                                                 </div>
                                             </div>
                                         </div>
@@ -311,54 +311,15 @@
                         <!-- Campos do formulário -->
                         <div class="col-md-10">
                             <div class="row">
-                                {{--    <div class="col-md-4 mb-3">
-                                    <div class="br-select" multiple="multiple">
-                                        <div class="br-input">
-                                            <label for="select-multiple">Tipo de Documento</label>
-                                            <input id="select-multiple" type="text"
-                                                placeholder="Selecione o item" />
-                                            <button class="br-button" type="button" aria-label="Exibir lista"
-                                                tabindex="-1" data-trigger="data-trigger">
-                                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                        <div class="br-list" tabindex="0">
-                                            <div class="br-item" tabindex="-1">
-                                                <div class="br-checkbox">
-                                                    <input id="cbs0" name="cbs0" type="checkbox" />
-                                                    <label for="cbs0">CPF</label>
-                                                </div>
-                                            </div>
-                                            <div class="br-item" tabindex="-1">
-                                                <div class="br-checkbox">
-                                                    <input id="cbs1" name="cbs1" type="checkbox" />
-                                                    <label for="cbs1">Passaporte</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{--     <div class="br-input">
-                                        <label for="numero_documento">Documento</label>
-                                        <input id="numero_documento" type="text"
-                                            placeholder="Informe o CPF ou Passaporte" />
-                                    </div> --}}
 
-                                {{-- <div class="col-md-6 mb-3">
-                                    <div class="br-input">
-                                        <label for="numero_documento">Nome do visitante</label>
-                                        <input id="numero_documento" type="text" />
-                                    </div>
-
-                                </div> --}}
                             </div>
                             <fieldset>
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <div class="br-select">
                                             <div class="br-input">
-                                                <label for="select">Destino</label>
-                                                <input id="select" type="text" placeholder="Busque pela sala" />
+                                                <label for="destino">Destino</label>
+                                                <input id="destino" type="text" placeholder="Busque pela sala" />
                                                 <button class="br-button" type="button" aria-label="Exibir lista"
                                                     tabindex="-1" data-trigger="data-trigger">
                                                     <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -385,8 +346,8 @@
                                     <div class="col-md-3 mb-3">
                                         <div class="br-select">
                                             <div class="br-input">
-                                                <label for="select">Tipo de Visita</label>
-                                                <input id="select" type="text"
+                                                <label for="tipoVisita">Tipo de Visita</label>
+                                                <input id="tipoVisita" type="text"
                                                     placeholder="Selecione o tipo de Visita" />
                                                 <button class="br-button" type="button" aria-label="Exibir lista"
                                                     tabindex="-1" data-trigger="data-trigger">
@@ -414,8 +375,9 @@
                                     <div class="col-md-3 mb-3">
                                         <div class="br-select">
                                             <div class="br-input">
-                                                <label for="select">Atribuir Crachá</label>
-                                                <input id="select" type="text" placeholder="Selecione o crachá" />
+                                                <label for="atribuirCracha">Atribuir Crachá</label>
+                                                <input id="atribuirCracha" type="text"
+                                                    placeholder="Selecione o crachá" />
                                                 <button class="br-button" type="button" aria-label="Exibir lista"
                                                     tabindex="-1" data-trigger="data-trigger">
                                                     <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -458,8 +420,8 @@
                     <div class="br-modal-header" id="titulomodalexemplo">Capturar Foto ou Fazer Upload</div>
                     <div class="br-modal-body">
                         <div id="optionsSection">
-                            <button class="br-button primary w-100 mb-3" type="button"
-                                onclick="showWebcamOption()">Capturar Foto com Webcam</button>
+                            <button class="br-button primary w-100 " type="button" onclick="showWebcamOption()">Tirar
+                                foto</button>
                             <button class="br-button secondary w-100" type="button" onclick="showUploadOption()">Fazer
                                 Upload de Foto</button>
                         </div>
@@ -611,10 +573,10 @@
                 function updateAvatar(imageData) {
                     const avatar = document.getElementById('avatar-preview');
                     avatar.innerHTML = `
-            <span class="content">
-                <img src="${imageData}" alt="Foto do visitante" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-            </span>
-        `;
+                    <span class="content">
+                        <img src="${imageData}" alt="Foto do visitante" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    </span>
+                `;
                 }
 
                 // Função para resetar o modal
@@ -625,6 +587,97 @@
                     video.srcObject = null;
                     document.getElementById('file-upload').value = '';
                 }
+                $(document).ready(function() {
+
+                    function setupBrSelectBehavior() {
+                        const selects = document.querySelectorAll(".br-select");
+
+                        selects.forEach(select => {
+                            const input = select.querySelector(".br-input input");
+
+                            if (input && input.id === "tipoDocumento") {
+                                return;
+                            }
+
+                            const radios = select.querySelectorAll("input[type='radio']");
+                            const list = select.querySelector(".br-list");
+                            const button = select.querySelector(".br-button");
+
+                            // 1. Configuração dos radios (seleção)
+                            radios.forEach(radio => {
+                                radio.addEventListener("change", function() {
+                                    if (this.checked) {
+                                        const label = this.labels[0];
+                                        const selectedValue = label ? label.textContent.trim() : "";
+
+                                        input.value = selectedValue;
+                                        list.classList.add("d-none");
+
+                                        const event = new Event("change", {
+                                            bubbles: true
+                                        });
+                                        input.dispatchEvent(event);
+                                    }
+                                });
+                            });
+
+                            select._inputElement = input;
+                            select._buttonElement = button;
+                        });
+                    }
+
+                    function checkFieldsAndSetReadonly() {
+                        const tipoDocumento = $("#tipoDocumento").val().trim();
+                        const numeroDocumento = $("#numero_documento").val().trim();
+                        const nomeVisitante = $("#nomeVisitante").val().trim();
+                        const telefone = $("#telefone").val().trim();
+
+                        const isAllEmpty = !tipoDocumento && !numeroDocumento && !nomeVisitante && !telefone;
+
+                        // Seleciona todos os .br-select já inicializados
+                        const selects = document.querySelectorAll(".br-select");
+
+                        selects.forEach(select => {
+                            const input = select._inputElement;
+                            const button = select._buttonElement;
+
+                            if (isAllEmpty) {
+                                if (input) {
+                                    input.readOnly = true;
+                                    input.disabled = true;
+                                    input.style.backgroundColor = '#f2f2f2';
+                                }
+
+                                if (button) {
+                                    button.disabled = true;
+                                    button.style.pointerEvents = "none";
+                                    button.style.opacity = "0.5";
+                                }
+
+                            } else {
+                                if (input) {
+                                    input.readOnly = false;
+                                    input.disabled = false;
+                                    input.style.backgroundColor = '';
+                                }
+
+                                if (button) {
+                                    button.disabled = false;
+                                    button.style.pointerEvents = "auto";
+                                    button.style.opacity = "1";
+                                }
+                            }
+                        });
+                    }
+                    setupBrSelectBehavior();
+
+                    $("#tipoDocumento, #numero_documento, #nomeVisitante, #telefone")
+                        .on("input change", checkFieldsAndSetReadonly);
+
+                    checkFieldsAndSetReadonly();
+
+
+                })
             </script>
         @endsection
 

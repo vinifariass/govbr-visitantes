@@ -29,7 +29,7 @@
                 <div class="header-logo"><img
                         src="{{asset('images/logo_big.png')}}"
                         alt="logo" /><span class="br-divider vertical"></span>
-                    <div class="header-sign">Assinatura</div>
+                    <div class="header-sign">Arquivo Nacional</div>
                 </div>
                 <div class="header-actions">
                     <div class="header-links dropdown">

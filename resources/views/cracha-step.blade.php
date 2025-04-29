@@ -343,7 +343,6 @@
                 document.getElementById('scrimutilexamplemodal').style.display = 'flex';
 
             }
-
             
         });
         function closeModal() {

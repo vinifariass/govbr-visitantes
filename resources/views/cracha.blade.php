@@ -275,21 +275,19 @@
                                 </table>
                             </div>
                         </div>
-
                         <div class="p-3">
+                            <div class="scrimutilexamplemodal">
 
-                            <button class="br-button primary active mr-3" type="button" id="open-new-badge-modal">
-                                + Novo crachá
-                            </button>
-
-
+                                <button class="br-button primary active mr-3" type="button" id="buttonactivatemodal">
+                                    + Novo crachá
+                                </button>
+                            </div>
                         </div>
 
-
-                        <div class="modal-backdrop d-none" id="modal-backdrop"></div>
-
-                        <div class="br-modal large d-none" aria-modal="true" role="dialog" id="new-badge-modal">
-                            <div class="br-modal-header">Inclusão de crachá</div>
+                        <div class="br-scrim-util foco" id="scrimutilexamplemodal" data-scrim="true"
+                        style="display: none;">
+                        <div class="br-modal" aria-labelledby="titulomodalexemplo">
+                            <div class="br-modal-header" id="titulomodalexemplo">Inclusão de crachá</div>
                             <div class="br-modal-body">
                                 <p>Insira o número de crachás que deseja inserir e o tipo.</p>
                                 <div class="form-group">
@@ -306,11 +304,15 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="br-modal-footer justify-content-center">
-                                <button class="br-button secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                <button class="br-button primary ml-2" type="button">Incluir</button>
+                            <div class="br-modal-footer justify-content-between">
+                                <button class="br-button secondary" type="button"
+                                    onclick="closeModal()">Cancelar</button>
+                                <button class="br-button primary" type="button"
+                                    onclick="closeModal()">Incluir</button>
+
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
 
@@ -334,30 +336,17 @@
             const openModalButton = document.getElementById('open-new-badge-modal');
             const modal = document.getElementById('new-badge-modal');
             const backdrop = document.getElementById('modal-backdrop');
+            document.getElementById('buttonactivatemodal').addEventListener('click', openModal);
+            function openModal() {
+                document.getElementById('scrimutilexamplemodal').style.display = 'flex';
 
-            openModalButton.addEventListener('click', function() {
-                modal.classList.remove('d-none');
-                backdrop.classList.add('d-block');
-                console.log("Modal aberto:", modal.classList);
-                console.log("Backdrop exibido:", backdrop.classList);
-            });
+            }
 
-            cancelButton.addEventListener('click', function() {
-                modal.classList.add('d-none');
-                backdrop.classList.remove('d-block');
-                backdrop.classList.add('d-none');
-                console.log("Modal fechado:", modal.classList);
-                console.log("Backdrop oculto:", backdrop.classList);
-            });
-
-            backdrop.addEventListener('click', function() {
-                modal.classList.add('d-none');
-                backdrop.classList.remove('d-block');
-                backdrop.classList.add('d-none');
-                console.log("Modal fechado (por backdrop):", modal.classList);
-                console.log("Backdrop oculto (por backdrop):", backdrop.classList);
-            });
+            
         });
+        function closeModal() {
+            document.querySelector('.br-scrim-util').style.display = 'none';
+        }
     </script>
 
     <style>
