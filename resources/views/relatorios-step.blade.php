@@ -39,8 +39,8 @@
                             </div>
                         </div>
 
+                    </form>
                 </div>
-                </form>
 
 
                 <div class="br-table">
@@ -61,7 +61,6 @@
                                 <td>{{ \Carbon\Carbon::parse('2025-04-24')->format('d/m/Y H:i') }}</td>
                                 <td>{{ '2025-04-27' ? \Carbon\Carbon::parse('2025-04-27')->format('d/m/Y H:i') : '---' }}
                                 <td>ANV001</td>
-                                </td>
                             </tr>
                             <tr>
                                 <td>JOAO MARCOS CASTRO</td>
@@ -111,7 +110,7 @@
 
                 function mascararCPF(cpf) {
                     // Verifica se o CPF tem 11 dígitos
-                    cpf = cpf.replace(/\D/g, ''); 
+                    cpf = cpf.replace(/\D/g, '');
                     if (cpf.length !== 11) {
                         throw new Error("CPF inválido. Deve conter 11 dígitos.");
                     }
@@ -193,4 +192,3 @@
         });
     </script>
 @endsection
-    

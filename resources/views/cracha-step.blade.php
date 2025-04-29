@@ -297,12 +297,39 @@
                                             placeholder="Digite somente números" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="badge-type">Tipo de crachá</label>
-                                        <select id="badge-type" class="form-control">
-                                            <option value="consultant">Consultante</option>
-                                            <option value="employee">Funcionário</option>
-                                            <option value="visitor">Visitante</option>
-                                        </select>
+
+
+                                        <div class="br-select">
+                                            <div class="br-input">
+                                                <label for="tipoDocumento">Tipo de crachá</label>
+                                                <input id="tipoDocumento" type="text"
+                                                    placeholder="Selecione o item" />
+                                                <button class="br-button" type="button" aria-label="Exibir lista"
+                                                    tabindex="-1" data-trigger="data-trigger">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="br-list" tabindex="0">
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="cbs0" name="cbs0" type="radio" />
+                                                        <label for="cbs0">Consultante</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="cbs1" name="cbs1" type="radio" />
+                                                        <label for="cbs1">Funcionário</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="cbs2" name="cbs2" type="radio" />
+                                                        <label for="cbs2">Visitante</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="br-modal-footer justify-content-between">
@@ -321,34 +348,41 @@
         </div>
         </div>
 
-    <div class="br-cookiebar default d-none" tabindex="-1"></div>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Seleciona todos os elementos com a classe 'br-select'
-            const selectElements = document.querySelectorAll('.br-select');
+        <div class="br-cookiebar default d-none" tabindex="-1"></div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Seleciona todos os elementos com a classe 'br-select'
+                const selectElements = document.querySelectorAll('.br-select');
 
-            // Itera sobre cada elemento e inicializa o BRSelect
-            selectElements.forEach((selectElement, index) => {
-                new BRSelect(`example-select-${index}`, selectElement);
+                // Itera sobre cada elemento e inicializa o BRSelect
+                selectElements.forEach((selectElement, index) => {
+                    new BRSelect(`example-select-${index}`, selectElement);
+                });
+
+                const openModalButton = document.getElementById('open-new-badge-modal');
+                const modal = document.getElementById('new-badge-modal');
+                const backdrop = document.getElementById('modal-backdrop');
+
+                document.getElementById('buttonactivatemodal').addEventListener('click', openModal);
+                // Função para abrir o modal
+
             });
 
-            const openModalButton = document.getElementById('open-new-badge-modal');
-            const modal = document.getElementById('new-badge-modal');
-            const backdrop = document.getElementById('modal-backdrop');
-
-            document.getElementById('buttonactivatemodal').addEventListener('click', openModal);
-            // Função para abrir o modal
             function openModal() {
                 document.getElementById('scrimutilexamplemodal').style.display = 'flex';
-
+                const modal = document.querySelector('.br-modal');
+                modal.classList.add('large');
+                modal.style.display = 'flex'; // Garante que o modal aparece corretamente
             }
-            
-        });
-        function closeModal() {
-            document.querySelector('.br-scrim-util').style.display = 'none';
-        }
-    </script>
+
+            function closeModal() {
+                document.querySelector('.br-scrim-util').style.display = 'none';
+                const modal = document.querySelector('.br-modal');
+                modal.classList.remove('large');
+                modal.style.display = 'none';
+            }
+        </script>
     @endsection
 
     <style>
@@ -370,10 +404,6 @@
 
         .br-modal.d-none {
             display: none;
-        }
-
-        .br-modal.large {
-            max-width: 400px;
         }
 
         .br-modal-header {
@@ -426,6 +456,24 @@
 
         .modal-backdrop.d-block {
             display: block;
+        }
+
+        .br-modal.large {
+            max-width: 90vw;
+            width: 600px;
+            min-width: 320px;
+            height: auto;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 700px) {
+            .br-modal.large {
+                width: 98vw;
+                min-width: unset;
+                max-width: 98vw;
+                padding: 10px;
+            }
         }
     </style>
 </body>
