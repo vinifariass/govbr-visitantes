@@ -268,75 +268,57 @@
                         </div>
                     </div>
 
-                    <div class="br-scrim-util foco" id="scrimutilexamplemodal" data-scrim="true" style="display: none;">
-                        <div class="br-modal" aria-labelledby="titulomodalexemplo">
-                            <div class="br-modal-header" id="titulomodalexemplo">Inclusão de crachá</div>
-                            <div class="br-modal-body">
-                                <p>Insira o número de crachás que deseja inserir e o tipo.</p>
-                                <div class="form-group">
-                                    <label for="quantity">Quantidade</label>
-                                    <input type="number" id="quantity" class="form-control"
-                                        placeholder="Digite somente números" required>
+                    <x-modal id="scrimutilexamplemodal" labelledby="titulomodalexemplo" title="Inclusão de crachá" size="large">
+                        <p>Insira o número de crachás que deseja inserir e o tipo.</p>
+                        <div class="form-group">
+                            <label for="quantity">Quantidade</label>
+                            <input type="number" id="quantity" class="form-control" placeholder="Digite somente números" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="br-select">
+                                <div class="br-input">
+                                    <label for="tipoCracha">Tipo de crachá</label>
+                                    <input id="tipoCracha" type="text" placeholder="Selecione o item" />
+                                    <button class="br-button" type="button" aria-label="Exibir lista"
+                                        tabindex="-1" data-trigger="data-trigger">
+                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </button>
                                 </div>
-                                <div class="form-group">
-
-
-                                    <div class="br-select">
-                                        <div class="br-input">
-                                            <label for="tipoCracha">Tipo de crachá</label>
-                                            <input id="tipoCracha" type="text" placeholder="Selecione o item" />
-                                            <button class="br-button" type="button" aria-label="Exibir lista"
-                                                tabindex="-1" data-trigger="data-trigger">
-                                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                            </button>
+                                <div class="br-list" tabindex="0">
+                                    <div class="br-item" tabindex="-1">
+                                        <div class="br-radio">
+                                            <input id="cbs0" name="cbs0" type="radio" />
+                                            <label for="cbs0">Consultante</label>
                                         </div>
-                                        <div class="br-list" tabindex="0">
-                                            <div class="br-item" tabindex="-1">
-                                                <div class="br-radio">
-                                                    <input id="cbs0" name="cbs0" type="radio" />
-                                                    <label for="cbs0">Consultante</label>
-                                                </div>
-                                            </div>
-                                            <div class="br-item" tabindex="-1">
-                                                <div class="br-radio">
-                                                    <input id="cbs1" name="cbs1" type="radio" />
-                                                    <label for="cbs1">Funcionário</label>
-                                                </div>
-                                            </div>
-                                            <div class="br-item" tabindex="-1">
-                                                <div class="br-radio">
-                                                    <input id="cbs2" name="cbs2" type="radio" />
-                                                    <label for="cbs2">Visitante</label>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="br-item" tabindex="-1">
+                                        <div class="br-radio">
+                                            <input id="cbs1" name="cbs1" type="radio" />
+                                            <label for="cbs1">Funcionário</label>
+                                        </div>
+                                    </div>
+                                    <div class="br-item" tabindex="-1">
+                                        <div class="br-radio">
+                                            <input id="cbs2" name="cbs2" type="radio" />
+                                            <label for="cbs2">Visitante</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="br-modal-footer justify-content-between">
-                                <button class="br-button secondary" type="button"
-                                    onclick="closeModal()">Cancelar</button>
-                                <button class="br-button primary" type="button"
-                                    onclick="openConfirmModal()">Incluir</button>
-                            </div>
                         </div>
-                    </div>
+                        <x-slot name="footer">
+                            <button class="br-button secondary" type="button" onclick="closeModal()">Cancelar</button>
+                            <button class="br-button primary" type="button" onclick="openConfirmModal()">Incluir</button>
+                        </x-slot>
+                    </x-modal>
 
-                    <div class="br-scrim-util foco" id="confirmModalScrim" data-scrim="true" style="display: none;">
-                        <div class="br-modal" aria-labelledby="tituloConfirmModal">
-                            <div class="br-modal-header" id="tituloConfirmModal">Inclusão de crachá
-                            </div>
-                            <div class="br-modal-body">
-                                <p id="confirmModalText"></p>
-                            </div>
-                            <div class="br-modal-footer justify-content-between">
-                                <button class="br-button secondary" type="button"
-                                    onclick="closeConfirmModal()">Cancelar</button>
-                                <button class="br-button primary" type="button"
-                                    onclick="confirmarInclusao()">Confirmar</button>
-                            </div>
-                        </div>
-                    </div>
+                    <x-modal id="confirmModalScrim" labelledby="tituloConfirmModal" title="Inclusão de crachá" size="large">
+                        <p id="confirmModalText"></p>
+                        <x-slot name="footer">
+                            <button class="br-button secondary" type="button" onclick="closeConfirmModal()">Cancelar</button>
+                            <button class="br-button primary" type="button" onclick="confirmarInclusao()">Confirmar</button>
+                        </x-slot>
+                    </x-modal>
                 </div>
             </div>
 

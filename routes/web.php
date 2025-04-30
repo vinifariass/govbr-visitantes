@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/visitantes', function () {
-    return view('visitantes');
-});
+    return view('pages.visitantes');
+})->name('visitantes');
 
 Route::get('/template', function () {
     return view('template');
@@ -35,15 +35,15 @@ Route::get('/registro', function () {
 })->name('registro');
 
 Route::get('/cracha', function () {
-    return view('cracha');
+    return view('pages.cracha');
 })->name('cracha');
 
 Route::get('/relatorios', function () {
-    return view('relatorios');
+    return view('pages.relatorios');
 })->name('relatorios');
 
 Route::get('/login', function () {
-    return view('login');
+    return view('auth.login');
 })->name('login');
 
 Route::get('/qrcode', function () {
@@ -51,7 +51,7 @@ Route::get('/qrcode', function () {
 })->name('qrcode');
 
 Route::get('/cadastro-visitante', function () {
-    return view('cadastro-visitante');
+    return view('pages.cadastro-visitante');
 })->name('cadastro-visitante');
 
 Route::post('/relatorios/pdf', [RelatorioController::class, 'exportPDF'])->name('relatorios.exportarPdf');
@@ -66,7 +66,7 @@ Route::get('/relatorios-step', function () {
 })->name('relatorios-step');
 
 Route::get('/registro-visita', function () {
-    return view('registro-visita');
+    return view('pages.registro-visita');
 })->name('registro-visita');
 
 Route::get('/atribuir-cracha', function () {

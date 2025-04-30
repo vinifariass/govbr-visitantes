@@ -198,7 +198,7 @@
                     <div class="menu-scrim" data-dismiss="menu" tabindex="0"></div>
                 </div>
 
-                <hr class="br-divider" />
+      
                 <h1>Atribuição de Crachá</h1>
                 <div class="col-md-10">
                     <fieldset>

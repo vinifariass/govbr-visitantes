@@ -139,7 +139,7 @@
     <!-- Cabeçalho -->
     <div class="template-base" style="min-height: auto;">
 
-        @extends('login-base')
+        @extends('layouts.login-base')
         @section('content')
             <!-- Conteúdo principal -->
             <div class="main-container">
