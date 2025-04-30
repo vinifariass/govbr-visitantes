@@ -323,8 +323,7 @@
     </div>
 @endsection
 <style>
- 
-    #atribuirCrachaStepBtn{
+    #atribuirCrachaStepBtn {
         transition: opacity 0.3s ease;
     }
 
@@ -336,7 +335,6 @@
     #atribuirCrachaStepBtn.active {
         opacity: 1;
     }
-
 </style>
 @push('scripts')
     <script>
@@ -351,11 +349,11 @@
 
                 const atribuirCrachaStepBtn = document.getElementById("atribuirCrachaStepBtn");
 
-                if(atribuirCrachaStepBtn) {
+                if (atribuirCrachaStepBtn) {
                     atribuirCrachaStepBtn.disabled = !isAllFilled;
                 }
 
-              
+
             }
 
             $("#destino, #tipoVisita").on("input change", checkFieldsAndSetReadonly);
@@ -365,6 +363,23 @@
             });
 
             checkFieldsAndSetReadonly();
+            
+            $('.br-button.primary.active').on('click', function(e) {
+                const destino = $("#destino").val().trim();
+                const tipoVisita = $("#tipoVisita").val().trim();
+
+                if (!destino || !tipoVisita) {
+                    showBrMessage('danger', 'Campos obrigatórios',
+                        'Preencha todos os campos antes de salvar.');
+                    e.preventDefault();
+                    return false;
+                }
+
+                window.location.href = "{{ route('atribuir-cracha') }}";
+
+            });
+
+
         });
     </script>
 @endpush

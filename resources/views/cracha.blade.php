@@ -387,12 +387,26 @@
             const tipoCrachaSelect = document.querySelector('.br-select');
             let tipo = '';
             if (tipoCrachaSelect) {
-                const radioSelecionado = tipoCrachaSelect.querySelector('input[type="radio"]:checked');
+                 radioSelecionado = tipoCrachaSelect.querySelector('input[type="radio"]:checked');
                 if (radioSelecionado) {
                     const label = tipoCrachaSelect.querySelector(`label[for="${radioSelecionado.id}"]`);
                     tipo = label ? label.innerText : '';
                 }
             }
+
+            if (!quantidade || !radioSelecionado) {
+                let msg = '';
+                if (!quantidade && !radioSelecionado) {
+                    msg = 'Preencha a quantidade e selecione o tipo de crachá.';
+                } else if (!quantidade) {
+                    msg = 'O campo quantidade é obrigatório.';
+                } else {
+                    msg = 'Selecione o tipo de crachá.';
+                }
+                showBrMessage('danger', 'Campos obrigatórios', msg);
+                return;
+            }
+
             document.getElementById('confirmModalText').innerHTML =
                 `Você confirma a inclusão de <strong>${quantidade} crachá(s) do tipo ${tipo}</strong>?`;
 

@@ -16,22 +16,28 @@
                                 <div class="br-datetimepicker" data-mode="single" data-type="text">
                                     <div class="br-input has-icon">
                                         <label for="data_inicio">Data Início</label>
-                                     
 
-                                        <input id="data_inicio-input" type="datetime-local" placeholder="exemplo: 02/02/2024 02:02" data-input="data-input"/>
-                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker" data-toggle="data-toggle" id="data_inicio-input-btn" tabindex="-1" aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
+
+                                        <input id="data_inicio" type="datetime-local"
+                                            placeholder="exemplo: 02/02/2024 02:02" data-input="data-input" />
+                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker"
+                                            data-toggle="data-toggle" id="data_inicio-btn" tabindex="-1"
+                                            aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
                                         </button>
                                     </div>
-                                 
+
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="br-datetimepicker" data-mode="single" data-type="text">
                                     <div class="br-input has-icon">
                                         <label for="data_fim">Data Fim</label>
-                                        
-                                        <input id="data_fim-input" type="datetime-local" placeholder="exemplo: 02/02/2024 02:02" data-input="data-input"/>
-                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker" data-toggle="data-toggle" id="data_fim-input-btn" tabindex="-1" aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
+
+                                        <input id="data_fim" type="datetime-local"
+                                            placeholder="exemplo: 02/02/2024 02:02" data-input="data-input" />
+                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker"
+                                            data-toggle="data-toggle" id="data_fim-btn" tabindex="-1"
+                                            aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -45,7 +51,7 @@
                             </div>
 
 
-                            <div class="col-md-3 d-flex align-items-end">
+                            <div class="col-md-4 d-flex align-items-end">
                                 <button class="br-button primary" type="submit">Filtrar</button>
                             </div>
                         </div>
@@ -76,7 +82,7 @@
                             </tr>
                             <tr>
                                 <td>JOAO MARCOS CASTRO</td>
-                                <td id="cpf">888.888.888-80</td>
+                                <td class="cpf">888.888.888-80</td>
                                 <td>{{ \Carbon\Carbon::parse('2025-04-11')->format('d/m/Y H:i') }}</td>
                                 <td>{{ '2025-04-27' ? \Carbon\Carbon::parse('2025-04-27')->format('d/m/Y H:i') : '---' }}
                                 <td>ANV0021</td>
@@ -98,7 +104,7 @@
                         Exportar Excel
                     </button>
                 </div>
-               
+
             </div>
         </div>
     </div>
@@ -130,7 +136,7 @@
 
                 if (inicio && fim && inicio > fim) {
                     showBrMessage('danger', 'Data inválida', 'A Data Início não pode ser maior que a Data Fim.');
-                         dataInicio.value = '';
+                    dataInicio.value = '';
                     dataInicio.focus();
                     return false;
                 }
@@ -170,9 +176,7 @@
                     return cpfMascarado;
                 }
 
-                const cpfCells = document.querySelectorAll('#cpf'); // Seleciona todas as TDs com o ID "cpf"
-
-
+                const cpfCells = document.querySelectorAll('.cpf');
                 cpfCells.forEach(cell => {
                     const cpfLimpo = cell.innerText.trim().replace(/\D/g, '');
                     cell.innerText = mascararCPF(cpfLimpo);
@@ -240,7 +244,7 @@
                 }
             }
 
-            
+
         });
     </script>
 @endpush

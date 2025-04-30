@@ -22,7 +22,7 @@
                                 </button>
                             </div>
                         </div>
-                
+
                     </div>
                     <div class="menu-scrim" data-dismiss="menu" tabindex="0"></div>
                 </div>
@@ -38,8 +38,7 @@
                                         <div class="br-select">
                                             <div class="br-input">
                                                 <label for="tipoDocumento">Tipo de Documento</label>
-                                                <input id="tipoDocumento" type="text"
-                                                    placeholder="Selecione o item" />
+                                                <input id="tipoDocumento" type="text" placeholder="Selecione o item" />
                                                 <button class="br-button" type="button" aria-label="Exibir lista"
                                                     tabindex="-1" data-trigger="data-trigger">
                                                     <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -67,8 +66,8 @@
                                             <label for="numero_documento">Número do Documento</label>
                                             <input id="numero_documento" type="text" placeholder="Digite aqui" />
                                         </div>
-                                        <span class="feedback warning" role="alert"><i
-                                                class="fas fa-exclamation-triangle" aria-hidden="true"></i>Não inserir
+                                        <span class="feedback warning" role="alert"><i class="fas fa-exclamation-triangle"
+                                                aria-hidden="true"></i>Não inserir
                                             caracteres especiais</span>
                                     </div>
                                 </div>
@@ -352,7 +351,7 @@
                     registroVisitaStepBtn.disabled = !isAllFilled;
                 }
 
-                    atribuirCrachaStepBtn.disabled = true;
+                atribuirCrachaStepBtn.disabled = true;
 
                 //Quando carregar a tela o botao de atribuirCracha deve estar desabilitado e depois que preencher os campos ele continua desabilitado
 
@@ -388,12 +387,33 @@
                     }
                 });
             }
+
             $("#tipoDocumento, #numero_documento, #nomeVisitante, #telefone")
                 .on("input change", checkFieldsAndSetReadonly);
 
             $('.br-radio input[type="radio"]').on('change', checkFieldsAndSetReadonly);
 
             checkFieldsAndSetReadonly()
+
+            $('.br-button.primary.active').on('click', function(e) {
+                const tipoDocumento = $("#tipoDocumento").val().trim();
+                const numeroDocumento = $("#numero_documento").val().trim();
+                const nomeVisitante = $("#nomeVisitante").val().trim();
+                const telefone = $("#telefone").val().trim();
+
+                if (!tipoDocumento || !numeroDocumento || !nomeVisitante || !telefone) {
+                    showBrMessage('danger', 'Campos obrigatórios',
+                        'Preencha todos os campos antes de salvar.');
+                    e.preventDefault();
+                    return false;
+                }
+                // Se quiser impedir avanço para próxima tela, coloque aqui o return false ou lógica de navegação
+
+                window.location.href = "{{ route('registro-visita') }}";
+
+            });
+
+        
         })
     </script>
 @endpush

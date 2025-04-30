@@ -23,8 +23,8 @@
     @include('layouts.header')
 
 
-    <div id="alert-container" style="position: fixed; top: 80px; right: 32px; z-index: 9999; max-width: 400px;"></div>
-
+    <div id="alert-container" style="position: fixed; top: 120px; right: 32px; z-index: 9999; max-width: 400px;"></div>
+    
     @yield('content')
     @include('layouts.footer')
 
@@ -39,10 +39,8 @@
             const container = document.getElementById('alert-container');
             if (!container) return;
 
-            // Remove mensagens antigas
             container.innerHTML = '';
 
-            // Tipos: 'danger', 'warning', 'success', 'info'
             const iconMap = {
                 danger: 'fa-times-circle',
                 warning: 'fa-exclamation-triangle',
@@ -52,24 +50,21 @@
             const icon = iconMap[type] || 'fa-info-circle';
 
             const brMessage = document.createElement('div');
-                    brMessage.className = `br-message ${type}`;
-                    brMessage.innerHTML = `
-                    <div class="icon"><i class="fas ${icon} fa-lg" aria-hidden="true"></i></div>
-                    <div class="content" role="alert">
-                        <span class="message-title">${title}</span> 
-                        <span class="message-body">${message}</span>
-                    </div>
-                    <div class="close">
-                        <button class="br-button circle small" type="button" aria-label="Fechar a mensagem">
-                            <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                    `;
+            brMessage.className = `br-message ${type}`;
+            brMessage.innerHTML = `
+        <div class="icon"><i class="fas ${icon} fa-lg" aria-hidden="true"></i></div>
+        <div class="content" role="alert">
+            <span class="message-title" style="display:block;font-weight:bold;">${title}</span>
+            <span class="message-body" style="display:block;margin-top:4px;">${message}</span>
+        </div>
+        <div class="close">
+            <button class="br-button circle small" type="button" aria-label="Fechar a mensagem">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    `;
 
-            // Fechar ao clicar no X
             brMessage.querySelector('.close button').onclick = () => brMessage.remove();
-
-            // Remover automaticamente após 5 segundos
             setTimeout(() => brMessage.remove(), 5000);
 
             container.appendChild(brMessage);
