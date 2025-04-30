@@ -1,4 +1,4 @@
-<header class="br-header mb-4" id="header" data-sticky="data-sticky">
+<header class="br-header" id="header" data-sticky="data-sticky">
     <div class="container-lg">
         <div class="header-top d-flex align-items-center">
             <div class="header-logo d-flex align-items-center">

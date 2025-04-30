@@ -336,15 +336,15 @@
                                         </div>
                                         <div class="br-list" tabindex="0">
                                             <div class="br-item" tabindex="-1">
-                                                <div class="br-checkbox">
-                                                    <input id="cbs0" name="cbs0" type="checkbox" />
-                                                    <label for="cbs0">Consulente</label>
+                                                <div class="br-radio">
+                                                    <input id="tipoVisita-cbs0" name="tipoVisita-cbs0" type="radio" />
+                                                    <label for="tipoVisita-cbs0">Consulente</label>
                                                 </div>
                                             </div>
                                             <div class="br-item" tabindex="-1">
-                                                <div class="br-checkbox">
-                                                    <input id="cbs1" name="cbs1" type="checkbox" />
-                                                    <label for="cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                <div class="br-radio">
+                                                    <input id="tipoVisita-cbs1" name="tipoVisita-cbs1" type="radio" />
+                                                    <label for="tipoVisita-cbs1">DF > SUREG > Sala 06 > Divisão de
                                                         Gestão Interna (Dgint)</label>
                                                 </div>
                                             </div>
@@ -364,15 +364,17 @@
                                         </div>
                                         <div class="br-list" tabindex="0">
                                             <div class="br-item" tabindex="-1">
-                                                <div class="br-checkbox">
-                                                    <input id="cbs0" name="cbs0" type="checkbox" />
-                                                    <label for="cbs0">ANV001</label>
+                                                <div class="br-radio">
+                                                    <input id="atribuirCracha-cbs0" name="atribuirCracha-cbs0"
+                                                        type="radio" />
+                                                    <label for="atribuirCracha-cbs0">ANV001</label>
                                                 </div>
                                             </div>
                                             <div class="br-item" tabindex="-1">
-                                                <div class="br-checkbox">
-                                                    <input id="cbs1" name="cbs1" type="checkbox" />
-                                                    <label for="cbs1">ANV002</label>
+                                                <div class="br-radio">
+                                                    <input id="atribuirCracha-cbs1" name="atribuirCracha-cbs1"
+                                                        type="radio" />
+                                                    <label for="atribuirCracha-cbs1">ANV002</label>
                                                 </div>
                                             </div>
                                         </div>

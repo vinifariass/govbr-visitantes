@@ -14,14 +14,14 @@
             font-family: 'Open Sans', sans-serif;
         }
 
-       
+
         .header-title {
             margin-left: 10px;
         }
 
         .main-container {
             display: flex;
-            min-height: calc(72vh - 120px);
+            min-height: calc(97vh - 120px);
         }
 
         .login-left {
@@ -101,41 +101,43 @@
 
 <body>
     <!-- Cabeçalho -->
-   
-    @extends('login-base')
-    @section('content')
-        <!-- Conteúdo principal -->
-        <div class="main-container">
-            <div class="login-left">
-                <h1>Controle de</h1>
-                <h1 style="padding-left:2.5rem;">Visitantes</h1>
-                <hr>
-            </div>
-            <div class="login-right">
-                <h2>Acesse sua conta</h2>
-                <form class="form-login">
-                    <div class="form-group">
-                        <div class="col col-6">
-                            <label for="numero_documento">Usuário</label>
-                            <input id="numero_documento" type="text" placeholder="Informe o CPF ou Passaporte">
+    <div class="template-base">
+
+        @extends('login-base')
+        @section('content')
+            <!-- Conteúdo principal -->
+            <div class="main-container">
+                <div class="login-left">
+                    <h1>Controle de</h1>
+                    <h1 style="padding-left:2.5rem;">Visitantes</h1>
+                    <hr>
+                </div>
+                <div class="login-right">
+                    <h2>Acesse sua conta</h2>
+                    <form class="form-login">
+                        <div class="form-group">
+                            <div class="col col-6">
+                                <label for="numero_documento">Usuário</label>
+                                <input id="numero_documento" type="text" placeholder="Informe o CPF ou Passaporte">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col col-6">
+                        <div class="form-group">
+                            <div class="col col-6">
 
-                            <label for="senha">Senha</label>
-                            <input id="senha" type="password" placeholder="Digite sua senha">
+                                <label for="senha">Senha</label>
+                                <input id="senha" type="password" placeholder="Digite sua senha">
+                            </div>
+
                         </div>
+                        <div class="col mb-5">
 
-                    </div>
-                    <div class="col mb-5">
+                            <button class="br-button primary active mr-3 mt-3" type="button">
+                                <a href="{{ route('template2') }}" style="color: white; text-decoration: none;">Entrar</a>
+                            </button>
 
-                        <button class="br-button primary active mr-3 mt-3" type="button">
-                            <a href="{{ route('template2') }}" style="color: white; text-decoration: none;">Entrar</a>
-                        </button>
-
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     @endsection
