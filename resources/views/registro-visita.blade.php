@@ -197,91 +197,75 @@
                     </div>
                     <div class="menu-scrim" data-dismiss="menu" tabindex="0"></div>
                 </div>
-                <div class="col mb-5">
 
-                    <div class="main-content pl-sm-3 mt-4" id="main-content">
-                        <h1>Cadastro de Visitantes</h1>
-                        <div class="row">
-                            <!-- Campos do formulário -->
-                            <div class="col-md-10">
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <div class="br-select">
-                                            <div class="br-input">
-                                                <label for="tipoDocumento">Tipo de Documento</label>
-                                                <input id="tipoDocumento" type="text"
-                                                    placeholder="Selecione o item" />
-                                                <button class="br-button" type="button" aria-label="Exibir lista"
-                                                    tabindex="-1" data-trigger="data-trigger">
-                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                                </button>
-                                            </div>
-                                            <div class="br-list" tabindex="0">
-                                                <div class="br-item" tabindex="-1">
-                                                    <div class="br-radio">
-                                                        <input id="cbs0" name="cbs0" type="radio" />
-                                                        <label for="cbs0">CPF</label>
-                                                    </div>
-                                                </div>
-                                                <div class="br-item" tabindex="-1">
-                                                    <div class="br-radio">
-                                                        <input id="cbs1" name="cbs1" type="radio" />
-                                                        <label for="cbs1">Passaporte</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <div class="br-input">
-                                            {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
-                                            <label for="numero_documento">Número do Documento</label>
-                                            <input id="numero_documento" type="text" placeholder="Digite aqui" />
-                                        </div>
-                                        <span class="feedback warning" role="alert"><i
-                                                class="fas fa-exclamation-triangle" aria-hidden="true"></i>Não inserir
-                                            caracteres especiais</span>
-                                    </div>
-                                </div>
-                                <fieldset>
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="br-input">
-                                                <label for="nomeVisitante">Nome do Visitante</label>
-                                                <input id="nomeVisitante" type="text" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="br-input">
-                                                <label for="telefone">Telefone</label>
-                                                <input id="telefone" type="text" placeholder="(21) 99999-9999" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>
+                <h1>Registro de Visita</h1>
 
-                            <!-- Avatar -->
-                            <div
-                                class="col-md-2 col-12 d-flex align-items-center justify-content-end justify-content-center justify-content-md-end flex-wrap flex-row-reverse mb-3 mb-md-0">
-                                <span class="br-avatar large mr-3" id="avatar-preview" title="Fulano da Silva">
-                                    <span class="content"><i class="fas fa-user" aria-hidden="true"></i></span>
-                                </span>
-                                <div class="scrimutilexamplemodal">
-                                    <button class="br-button primary" type="button" id="buttonactivatemodal">Capturar
-                                        Foto</button>
-                                </div>
-                                <!-- Input de arquivo escondido -->
-                                <input type="file" id="foto-input" accept="image/*" style="display: none;"
-                                    onchange="mostrarFoto(event)">
-                            </div>
-                        </div>
-
-                        <!-- Botões de Ação -->
+                <!-- Campos do formulário -->
+                <div class="col-md-10">
+                    <div class="row">
 
                     </div>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="br-select">
+                                    <div class="br-input">
+                                        <label for="destino">Destino</label>
+                                        <input id="destino" type="text" placeholder="Busque pela sala" />
+                                        <button class="br-button" type="button" aria-label="Exibir lista"
+                                            tabindex="-1" data-trigger="data-trigger">
+                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <div class="br-list" tabindex="0">
+                                        <div class="br-item" tabindex="-1">
+                                            <div class="br-radio">
+                                                <input id="destino-cbs0" name="destino-cbs0" type="radio" />
+                                                <label for="destino-cbs0">DF > SUREG > Sala 03 >
+                                                    Gabinete</label>
+                                            </div>
+                                        </div>
+                                        <div class="br-item" tabindex="-1">
+                                            <div class="br-radio">
+                                                <input id="destino-cbs1" name="destino-cbs1" type="radio" />
+                                                <label for="destino-cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                    Gestão Interna (Dgint)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="br-select">
+                                    <div class="br-input">
+                                        <label for="tipoVisita">Tipo de Visita</label>
+                                        <input id="tipoVisita" type="text" placeholder="Selecione o tipo de Visita" />
+                                        <button class="br-button" type="button" aria-label="Exibir lista"
+                                            tabindex="-1" data-trigger="data-trigger">
+                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <div class="br-list" tabindex="0">
+                                        <div class="br-item" tabindex="-1">
+                                            <div class="br-radio">
+                                                <input id="tipoVisita-cbs0" name="tipoVisita-cbs0" type="radio" />
+                                                <label for="tipoVisita-cbs0">Consulente</label>
+                                            </div>
+                                        </div>
+                                        <div class="br-item" tabindex="-1">
+                                            <div class="br-radio">
+                                                <input id="tipoVisita-cbs1" name="tipoVisita-cbs1" type="radio" />
+                                                <label for="tipoVisita-cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                    Gestão Interna (Dgint)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
+                        </div>
+                    </fieldset>
                 </div>
 
 
@@ -337,235 +321,50 @@
 
         <div class="br-cookiebar default d-none" tabindex="-1"></div>
     </div>
-
-    <style>
-        #registroVisitaStepBtn {
-            transition: opacity 0.3s ease;
-        }
-
-        #registroVisitaStepBtn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        #registroVisitaStepBtn.active {
-            opacity: 1;
-            /* Cor padrão do botão ativo */
-        }
-
-        #atribuirCrachaStepBtn{
-            transition: opacity 0.3s ease;
-        }
-
-        #atribuirCrachaStepBtn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        #atribuirCrachaStepBtn.active {
-            opacity: 1;
-        }
-
-    </style>
 @endsection
+<style>
+ 
+    #atribuirCrachaStepBtn{
+        transition: opacity 0.3s ease;
+    }
+
+    #atribuirCrachaStepBtn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    #atribuirCrachaStepBtn.active {
+        opacity: 1;
+    }
+
+</style>
 @push('scripts')
     <script>
-        // Variáveis globais
-        let stream = null;
-        let capturedPhoto = null;
-
-        // Inicialização quando o DOM estiver pronto
-        document.getElementById('buttonactivatemodal').addEventListener('click', openPhotoModal);
-        // Função para abrir o modal
-        function openPhotoModal() {
-            document.getElementById('scrimutilexamplemodal').style.display = 'flex';
-            document.getElementById('optionsSection').classList.remove('d-none');
-            document.getElementById('uploadSection').classList.add('d-none');
-            document.getElementById('webcamSection').classList.add('d-none');
-        }
-
-        // Função para fechar o modal
-        function closeModal() {
-            document.querySelector('.br-scrim-util').style.display = 'none';
-            stopWebcam();
-            resetModal();
-        }
-
-        // Função para voltar às opções
-        function backToOptions() {
-            // Oculta as seções de upload e webcam
-            document.getElementById('uploadSection').classList.add('d-none');
-            document.getElementById('webcamSection').classList.add('d-none');
-            document.getElementById('optionsSection').classList.remove('d-none');
-
-            stopWebcam();
-
-            resetModal();
-        }
-
-        // Função para mostrar a opção de upload
-        function showUploadOption() {
-            document.getElementById('optionsSection').classList.add('d-none');
-            document.getElementById('uploadSection').classList.remove('d-none');
-        }
-
-        // Função para mostrar a opção de webcam
-        function showWebcamOption() {
-            document.getElementById('optionsSection').classList.add('d-none');
-            document.getElementById('uploadSection').classList.add('d-none');
-            document.getElementById('webcamSection').classList.remove('d-none');
-            startWebcam();
-        }
-
-        // Função para iniciar a webcam
-        async function startWebcam() {
-            try {
-                const video = document.getElementById('webcam');
-                stream = await navigator.mediaDevices.getUserMedia({
-                    video: {
-                        width: {
-                            ideal: 640
-                        },
-                        height: {
-                            ideal: 480
-                        },
-                        facingMode: 'user'
-                    },
-                    audio: false
-                });
-                video.srcObject = stream;
-            } catch (err) {
-                console.error("Erro ao acessar a webcam:", err);
-                showBrMessage('danger', 'Erro',
-                    'Não foi possível acessar a webcam. Por favor, verifique as permissões.');
-                backToOptions();
-            }
-        }
-
-        // Função para parar a webcam
-        function stopWebcam() {
-            if (stream) {
-                stream.getTracks().forEach(track => track.stop());
-                stream = null;
-            }
-        }
-
-        // Função para capturar foto da webcam
-        function capturePhoto() {
-            const video = document.getElementById('webcam');
-            const canvas = document.getElementById('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-            capturedPhoto = canvas.toDataURL('image/png');
-            updateAvatar(capturedPhoto);
-            closeModal();
-        }
-
-        // Função para usar a foto capturada
-        function useCapturedPhoto() {
-            if (capturedPhoto) {
-                updateAvatar(capturedPhoto);
-                closeModal();
-            }
-        }
-
-        // Função para lidar com upload de arquivo
-        function handleFileUpload() {
-            const fileInput = document.getElementById('file-upload');
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    updateAvatar(e.target.result);
-                    closeModal();
-                };
-                reader.readAsDataURL(fileInput.files[0]);
-            } else {
-                showBrMessage('danger', 'Erro',
-                    'Por favor, selecione uma foto primeiro.');
-            }
-        }
-
-        // Função para atualizar o avatar com a nova foto
-        function updateAvatar(imageData) {
-            const avatar = document.getElementById('avatar-preview');
-            avatar.innerHTML = `
-            <span class="content">
-                <img src="${imageData}" alt="Foto do visitante" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-            </span>
-        `;
-        }
-
-        // Função para resetar o modal
-        function resetModal() {
-            capturedPhoto = null;
-            const video = document.getElementById('webcam');
-            video.srcObject = null;
-            document.getElementById('file-upload').value = '';
-        }
         $(document).ready(function() {
-
             function checkFieldsAndSetReadonly() {
-                // Obter valores dos campos
-                const tipoDocumento = $("#tipoDocumento").val().trim();
-                const numeroDocumento = $("#numero_documento").val().trim();
-                const nomeVisitante = $("#nomeVisitante").val().trim();
-                const telefone = $("#telefone").val().trim();
+                const destino = $("#destino").val().trim();
+                const tipoVisita = $("#tipoVisita").val().trim();
+                const isAllFilled = destino && tipoVisita;
 
-                // Verificar se todos os campos estão preenchidos
-                const isAllFilled = tipoDocumento && numeroDocumento && nomeVisitante && telefone;
+                const selects = document.querySelectorAll(".br-select");
 
-                // Selecionar botão de próximo passo (ajuste o seletor conforme sua estrutura)
-                const nextStepBtn = document.getElementById("registroVisitaStepBtn");
+
                 const atribuirCrachaStepBtn = document.getElementById("atribuirCrachaStepBtn");
-                // Habilitar/desabilitar botão de próximo passo
-                if (nextStepBtn) {
-                    nextStepBtn.disabled = !isAllFilled;
-                }
 
-                if (atribuirCrachaStepBtn) {
+                if(atribuirCrachaStepBtn) {
                     atribuirCrachaStepBtn.disabled = !isAllFilled;
                 }
 
-                // Lógica existente para desabilitar outros campos (mantenha-a)
-                const selects = document.querySelectorAll(".br-select");
-                selects.forEach(select => {
-                    const input = select.querySelector('input[type="text"]');
-                    const button = select.querySelector('button');
-                    if (input && input.id === "tipoDocumento") return;
-
-                    if (isAllFilled) {
-                        if (input) {
-                            input.readOnly = true;
-                            input.disabled = true;
-                            input.style.backgroundColor = '#f2f2f2';
-                        }
-                        if (button) {
-                            button.disabled = true;
-                            button.style.pointerEvents = "none";
-                            button.style.opacity = "0.5";
-                        }
-                    } else {
-                        if (input) {
-                            input.readOnly = false;
-                            input.disabled = false;
-                            input.style.backgroundColor = '';
-                        }
-                        if (button) {
-                            button.disabled = false;
-                            button.style.pointerEvents = "auto";
-                            button.style.opacity = "1";
-                        }
-                    }
-                });
+              
             }
-            $("#tipoDocumento, #numero_documento, #nomeVisitante, #telefone")
-                .on("input change", checkFieldsAndSetReadonly);
 
-            $('.br-radio input[type="radio"]').on('change', checkFieldsAndSetReadonly);
+            $("#destino, #tipoVisita").on("input change", checkFieldsAndSetReadonly);
 
-            checkFieldsAndSetReadonly()
-        })
+            $('.br-radio input[type="radio"]').on('change', function() {
+                checkFieldsAndSetReadonly();
+            });
+
+            checkFieldsAndSetReadonly();
+        });
     </script>
 @endpush

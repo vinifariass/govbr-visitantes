@@ -3,17 +3,17 @@
         <div class="step-progress" role="listbox" aria-orientation="horizontal" aria-label="Lista de Opções">
             <button class="step-progress-btn {{ Route::is('template2') ? 'active' : '' }}" role="option" aria-posinset="1"
                 aria-setsize="3" type="button" onclick="window.location.href='{{ route('template2') }}'">
-                <span class="step-info">Template</span>
+                <span class="step-info">Cadastro de Visitantes</span>
             </button>
 
-            <button class="step-progress-btn {{ Route::is('cracha-step') ? 'active' : '' }}" role="option" aria-posinset="2"
-                aria-setsize="3" type="button" onclick="window.location.href='{{ route('cracha-step') }}'">
-                <span class="step-info">Crachá</span>
+            <button class="step-progress-btn {{ Route::is('registro-visita') ? 'active' : '' }}" role="option" id="registroVisitaStepBtn" aria-posinset="2"
+                aria-setsize="3" type="button" onclick="window.location.href='{{ route('registro-visita') }}'">
+                <span class="step-info">Registro de Visita</span>
             </button>
 
-            <button class="step-progress-btn {{ Route::is('relatorios-step') ? 'active' : '' }}" role="option" aria-posinset="3"
-                aria-setsize="3" type="button" onclick="window.location.href='{{ route('relatorios-step') }}'">
-                <span class="step-info">Relatório</span>
+            <button id="atribuirCrachaStepBtn" class="step-progress-btn {{ Route::is('atribuir-cracha') ? 'active' : '' }}" role="option" aria-posinset="3"
+                aria-setsize="3" type="button" onclick="window.location.href='{{ route('atribuir-cracha') }}'">
+                <span class="step-info">Atribuir Crachá</span>
             </button>
         </div>
     </nav>

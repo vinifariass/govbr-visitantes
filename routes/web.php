@@ -64,3 +64,11 @@ Route::get('/cracha-step', function () {
 Route::get('/relatorios-step', function () {
     return view('relatorios-step');
 })->name('relatorios-step');
+
+Route::get('/registro-visita', function () {
+    return view('registro-visita');
+})->name('registro-visita');
+
+Route::get('/atribuir-cracha', function () {
+    return view('atribuir-cracha');
+})->name('atribuir-cracha');

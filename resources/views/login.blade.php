@@ -7,13 +7,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Login</title>
     <style>
-        /* Estilos globais */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Open Sans', sans-serif;
         }
-
 
         .header-title {
             margin-left: 10px;
@@ -38,7 +36,6 @@
             font-size: 2.5rem;
             font-weight: 650;
             margin-bottom: 10px;
-
         }
 
         .login-left hr {
@@ -53,9 +50,11 @@
             flex: 1;
             background-color: #fff;
             padding: 40px;
-            /* Adiciona margem à esquerda */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .form-login .form-group {
@@ -79,13 +78,11 @@
 
         .form-login button {
             background-color: #007bff;
-
         }
 
         .form-login button:hover {
             background-color: #0056b3;
         }
-
 
         .footer-logo {
             width: 150px;
@@ -96,12 +93,51 @@
             color: #0539af;
             font-weight: 500;
         }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .main-container {
+                flex-direction: column;
+                min-height: unset;
+            }
+            .login-left, .login-right {
+                flex: unset;
+                width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+                min-height: 35vh;
+            }
+            .login-right {
+                padding: 30px 10vw;
+            }
+            .login-left hr {
+                margin-left: 0;
+            }
+            .template-base {
+                min-height: 100vh;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .main-container {
+                padding: 0;
+            }
+            .login-right {
+                padding: 20px 5vw;
+            }
+            .login-left h1 {
+                font-size: 2rem;
+            }
+            .footer-logo {
+                width: 100px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- Cabeçalho -->
-    <div class="template-base">
+    <div class="template-base" style="min-height: auto;">
 
         @extends('login-base')
         @section('content')
@@ -123,18 +159,15 @@
                         </div>
                         <div class="form-group">
                             <div class="col col-6">
-
                                 <label for="senha">Senha</label>
                                 <input id="senha" type="password" placeholder="Digite sua senha">
                             </div>
-
                         </div>
                         <div class="col mb-5">
 
                             <button class="br-button primary active mr-3 mt-3" type="button">
                                 <a href="{{ route('template2') }}" style="color: white; text-decoration: none;">Entrar</a>
                             </button>
-
                         </div>
                     </form>
                 </div>
@@ -142,7 +175,5 @@
         </div>
     @endsection
 
-
 </body>
-
 </html>
