@@ -1,8 +1,8 @@
 <div class="my-5">
     <nav class="br-step" data-initial="1" data-label="bottom" role="none">
         <div class="step-progress" role="listbox" aria-orientation="horizontal" aria-label="Lista de Opções">
-            <button class="step-progress-btn {{ Route::is('template2') ? 'active' : '' }}" role="option" aria-posinset="1"
-                aria-setsize="3" type="button" onclick="window.location.href='{{ route('template2') }}'">
+            <button class="step-progress-btn {{ Route::is('cadastro-visitante') ? 'active' : '' }}" role="option" aria-posinset="1"
+                aria-setsize="3" type="button" onclick="window.location.href='{{ route('cadastro-visitante') }}'">
                 <span class="step-info">Cadastro de Visitantes</span>
             </button>
 

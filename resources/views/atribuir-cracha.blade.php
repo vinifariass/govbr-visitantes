@@ -197,7 +197,8 @@
                     </div>
                     <div class="menu-scrim" data-dismiss="menu" tabindex="0"></div>
                 </div>
-             
+
+                <hr class="br-divider" />
                 <h1>Atribuição de Crachá</h1>
                 <div class="col-md-10">
                     <fieldset>
@@ -235,9 +236,8 @@
                 </div>
 
 
-       
 
-       
+
 
                 <div class="p-3">
                     <button class="br-button primary active mr-3" type="button">Salvar
@@ -250,41 +250,6 @@
             </div>
 
         </div>
-        <div class="br-scrim-util foco" id="scrimutilexamplemodal" data-scrim="true" style="display: none;">
-            <div class="br-modal" aria-labelledby="titulomodalexemplo">
-                <div class="br-modal-header" id="titulomodalexemplo">Capturar Foto ou Fazer Upload</div>
-                <div class="br-modal-body">
-                    <div id="optionsSection">
-                        <button class="br-button primary w-100 " type="button" onclick="showWebcamOption()">Tirar
-                            foto</button>
-                        <button class="br-button secondary w-100" type="button" onclick="showUploadOption()">Fazer
-                            Upload de Foto</button>
-                    </div>
-                    <div id="webcamSection" class="d-none">
-                        <video id="webcam" autoplay playsinline
-                            style="width: 100%; max-width: 400px; margin: auto;"></video>
-                        <button class="br-button primary mt-3 w-100" type="button" onclick="capturePhoto()">Capturar
-                            Foto</button>
-                        <button class="br-button secondary mt-3 w-100" type="button"
-                            onclick="backToOptions()">Voltar</button>
-                        <canvas id="canvas" style="display: none;"></canvas>
-                    </div>
-                    <div id="uploadSection" class="d-none">
-                        <div class="br-upload">
-                            <input class="upload-input" id="file-upload" accept="image/*" type="file"
-                                aria-label="enviar arquivo" onchange="handleFileUpload()" />
-                            <label class="upload-input" for="file-upload">Selecione uma foto</label>
-                            <div class="upload-list"></div>
-                        </div>
-                        <button class="br-button secondary mt-3 w-100" type="button"
-                            onclick="backToOptions()">Voltar</button>
-                    </div>
-                </div>
-                <div class="br-modal-footer justify-content-center">
-                    <button class="br-button secondary" type="button" onclick="closeModal()">Cancelar</button>
-                </div>
-            </div>
-        </div>
 
 
 
@@ -293,6 +258,5 @@
 @endsection
 @push('scripts')
     <script>
-      
     </script>
 @endpush

@@ -50,9 +50,9 @@ Route::get('/qrcode', function () {
     return view('qrcode');
 })->name('qrcode');
 
-Route::get('/template2', function () {
-    return view('template2');
-})->name('template2');
+Route::get('/cadastro-visitante', function () {
+    return view('cadastro-visitante');
+})->name('cadastro-visitante');
 
 Route::post('/relatorios/pdf', [RelatorioController::class, 'exportPDF'])->name('relatorios.exportarPdf');
 Route::post('/relatorios/excel', [RelatorioController::class, 'exportarExcel'])->name('relatorios.exportarExcel');

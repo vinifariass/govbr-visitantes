@@ -166,7 +166,7 @@
                         <div class="col mb-5">
 
                             <button class="br-button primary active mr-3 mt-3" type="button">
-                                <a href="{{ route('template2') }}" style="color: white; text-decoration: none;">Entrar</a>
+                                <a href="{{ route('cadastro-visitante') }}" style="color: white; text-decoration: none;">Entrar</a>
                             </button>
                         </div>
                     </form>

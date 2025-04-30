@@ -1,8 +1,8 @@
 <div class="br-tab">
     <nav class="tab-nav">
         <ul>
-            <li class="tab-item {{ Route::is('template2') || Route::is('registro-visita') || Route::is('atribuir-cracha') ? 'active' : '' }}">
-                <button type="button" data-panel="panel-1-icon" onclick="window.location.href='{{ route('template2') }}'">
+            <li class="tab-item {{ Route::is('cadastro-visitante') || Route::is('registro-visita') || Route::is('atribuir-cracha') ? 'active' : '' }}">
+                <button type="button" data-panel="panel-1-icon" onclick="window.location.href='{{ route('cadastro-visitante') }}'">
                     <span class="name">
                         <span class="d-flex flex-column flex-sm-row">
                             <span class="icon mb-1 mb-sm-0 mr-sm-1"></span>

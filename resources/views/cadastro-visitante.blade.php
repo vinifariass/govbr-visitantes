@@ -22,178 +22,7 @@
                                 </button>
                             </div>
                         </div>
-                        <nav class="menu-body" role="tree">
-                            <div class="menu-folder"><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                        class="icon"><i class="fas fa-bell" aria-hidden="true"></i></span><span
-                                        class="content">Camada
-                                        1</span></a>
-                                <ul>
-                                    <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                class="icon"><i class="fas fa-heart" aria-hidden="true"></i></span><span
-                                                class="content">Camada
-                                                2</span></a></li>
-                                    <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                class="icon"><i class="fas fa-address-book"
-                                                    aria-hidden="true"></i></span><span class="content">Camada
-                                                2</span></a>
-                                        <ul>
-                                            <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                        class="icon"><i class="fas fa-book"
-                                                            aria-hidden="true"></i></span><span class="content">Camada
-                                                        3</span></a></li>
-                                            <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                        class="icon"><i class="fas fa-tree"
-                                                            aria-hidden="true"></i></span><span class="content">Camada
-                                                        3</span></a>
-                                                <ul>
-                                                    <li><a class="menu-item" href="javascript: void(0)"
-                                                            role="treeitem"><span class="content">Camada
-                                                                4</span></a></li>
-                                                    <li><a class="menu-item" href="javascript: void(0)"
-                                                            role="treeitem"><span class="content">Camada
-                                                                4</span></a></li>
-                                                    <li><a class="menu-item" href="javascript: void(0)"
-                                                            role="treeitem"><span class="content">Camada
-                                                                4</span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-item" href="javascript: void(0)"><span class="icon"><i
-                                                            class="fas fa-moon" aria-hidden="true"></i></span><span
-                                                        class="content">Camada
-                                                        3</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="javascript: void(0)"><span class="icon"><i
-                                                    class="fas fa-archive" aria-hidden="true"></i></span><span
-                                                class="content">Camada
-                                                2</span></a></li>
-                                </ul>
-                            </div>
-                            <div class="menu-folder"><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                        class="icon"><i class="fas fa-bell" aria-hidden="true"></i></span><span
-                                        class="content">Camada
-                                        1</span></a>
-                                <ul>
-                                    <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                class="icon"><i class="fas fa-heart" aria-hidden="true"></i></span><span
-                                                class="content">Camada
-                                                2</span></a></li>
-                                    <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                class="icon"><i class="fas fa-address-book"
-                                                    aria-hidden="true"></i></span><span class="content">Camada
-                                                2</span></a>
-                                        <ul>
-                                            <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                        class="icon"><i class="fas fa-book"
-                                                            aria-hidden="true"></i></span><span class="content">Camada
-                                                        3</span></a></li>
-                                            <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                        class="icon"><i class="fas fa-tree"
-                                                            aria-hidden="true"></i></span><span class="content">Camada
-                                                        3</span></a>
-                                                <ul>
-                                                    <li><a class="menu-item" href="javascript: void(0)"
-                                                            role="treeitem"><span class="content">Camada
-                                                                4</span></a></li>
-                                                    <li><a class="menu-item" href="javascript: void(0)"
-                                                            role="treeitem"><span class="content">Camada
-                                                                4</span></a></li>
-                                                    <li><a class="menu-item" href="javascript: void(0)"
-                                                            role="treeitem"><span class="content">Camada
-                                                                4</span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-item" href="javascript: void(0)"><span class="icon"><i
-                                                            class="fas fa-moon" aria-hidden="true"></i></span><span
-                                                        class="content">Camada
-                                                        3</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="javascript: void(0)"><span class="icon"><i
-                                                    class="fas fa-archive" aria-hidden="true"></i></span><span
-                                                class="content">Camada
-                                                2</span></a></li>
-                                </ul>
-                            </div>
-                            <div class="menu-folder"><a class="menu-item" href="javascript: void(0)"
-                                    role="treeitem"><span class="icon"><i class="fas fa-bell"
-                                            aria-hidden="true"></i></span><span class="content">Camada
-                                        1</span></a>
-                                <ul>
-                                    <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                class="icon"><i class="fas fa-heart"
-                                                    aria-hidden="true"></i></span><span class="content">Camada
-                                                2</span></a></li>
-                                    <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                class="icon"><i class="fas fa-address-book"
-                                                    aria-hidden="true"></i></span><span class="content">Camada
-                                                2</span></a>
-                                        <ul>
-                                            <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                        class="icon"><i class="fas fa-book"
-                                                            aria-hidden="true"></i></span><span class="content">Camada
-                                                        3</span></a></li>
-                                            <li><a class="menu-item" href="javascript: void(0)" role="treeitem"><span
-                                                        class="icon"><i class="fas fa-tree"
-                                                            aria-hidden="true"></i></span><span class="content">Camada
-                                                        3</span></a>
-                                                <ul>
-                                                    <li><a class="menu-item" href="javascript: void(0)"
-                                                            role="treeitem"><span class="content">Camada
-                                                                4</span></a></li>
-                                                    <li><a class="menu-item" href="javascript: void(0)"
-                                                            role="treeitem"><span class="content">Camada
-                                                                4</span></a></li>
-                                                    <li><a class="menu-item" href="javascript: void(0)"
-                                                            role="treeitem"><span class="content">Camada
-                                                                4</span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-item" href="javascript: void(0)"><span class="icon"><i
-                                                            class="fas fa-moon" aria-hidden="true"></i></span><span
-                                                        class="content">Camada
-                                                        3</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="javascript: void(0)"><span class="icon"><i
-                                                    class="fas fa-archive" aria-hidden="true"></i></span><span
-                                                class="content">Camada
-                                                2</span></a></li>
-                                </ul>
-                            </div><a class="menu-item divider" href="javascript: void(0)" role="treeitem"><span
-                                    class="icon"><i class="fas fa-bell" aria-hidden="true"></i></span><span
-                                    class="content">Item de Camada
-                                    1</span></a><a class="menu-item divider" href="javascript: void(0)"
-                                role="treeitem"><span class="icon"><i class="fas fa-bell"
-                                        aria-hidden="true"></i></span><span class="content">Item de Camada
-                                    1</span></a>
-                        </nav>
-                        <div class="menu-footer">
-                            <div class="menu-links"><a href="javascript: void(0)"><span class="mr-1">Link
-                                        externo 1</span><i class="fas fa-external-link-square-alt"
-                                        aria-hidden="true"></i></a><a href="javascript: void(0)"><span
-                                        class="mr-1">Link externo 2</span><i class="fas fa-external-link-square-alt"
-                                        aria-hidden="true"></i></a>
-                            </div>
-                            <div class="social-network">
-                                <div class="social-network-title">Redes Sociais</div>
-                                <div class="d-flex"><a class="br-button circle" href="javascript: void(0)"
-                                        aria-label="Compartilhar por Facebook"><i class="fab fa-facebook-f"
-                                            aria-hidden="true"></i></a><a class="br-button circle"
-                                        href="javascript: void(0)" aria-label="Compartilhar por Twitter"><i
-                                            class="fab fa-twitter" aria-hidden="true"></i></a><a class="br-button circle"
-                                        href="javascript: void(0)" aria-label="Compartilhar por Linkedin"><i
-                                            class="fab fa-linkedin-in" aria-hidden="true"></i></a><a
-                                        class="br-button circle" href="javascript: void(0)"
-                                        aria-label="Compartilhar por Whatsapp"><i class="fab fa-whatsapp"
-                                            aria-hidden="true"></i></a></div>
-                            </div>
-                            <div class="menu-info">
-                                <div class="text-center text-down-01">Todo o conteúdo deste site está publicado
-                                    sob a licença <strong>Creative Commons Atribuição-SemDerivações 3.0</strong>
-                                </div>
-                            </div>
-                        </div>
+                
                     </div>
                     <div class="menu-scrim" data-dismiss="menu" tabindex="0"></div>
                 </div>
@@ -353,7 +182,7 @@
             /* Cor padrão do botão ativo */
         }
 
-        #atribuirCrachaStepBtn{
+        #atribuirCrachaStepBtn {
             transition: opacity 0.3s ease;
         }
 
@@ -365,7 +194,6 @@
         #atribuirCrachaStepBtn.active {
             opacity: 1;
         }
-
     </style>
 @endsection
 @push('scripts')
@@ -517,16 +345,16 @@
                 const isAllFilled = tipoDocumento && numeroDocumento && nomeVisitante && telefone;
 
                 // Selecionar botão de próximo passo (ajuste o seletor conforme sua estrutura)
-                const nextStepBtn = document.getElementById("registroVisitaStepBtn");
+                const registroVisitaStepBtn = document.getElementById("registroVisitaStepBtn");
                 const atribuirCrachaStepBtn = document.getElementById("atribuirCrachaStepBtn");
                 // Habilitar/desabilitar botão de próximo passo
-                if (nextStepBtn) {
-                    nextStepBtn.disabled = !isAllFilled;
+                if (registroVisitaStepBtn) {
+                    registroVisitaStepBtn.disabled = !isAllFilled;
                 }
 
-                if (atribuirCrachaStepBtn) {
-                    atribuirCrachaStepBtn.disabled = !isAllFilled;
-                }
+                    atribuirCrachaStepBtn.disabled = true;
+
+                //Quando carregar a tela o botao de atribuirCracha deve estar desabilitado e depois que preencher os campos ele continua desabilitado
 
                 // Lógica existente para desabilitar outros campos (mantenha-a)
                 const selects = document.querySelectorAll(".br-select");
