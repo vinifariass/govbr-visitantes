@@ -6,7 +6,7 @@
                     <span class="name">
                         <span class="d-flex flex-column flex-sm-row">
                             <span class="icon mb-1 mb-sm-0 mr-sm-1"></span>
-                            <span class="name">Dados do Visitante</span>
+                            <span class="name">Gerenciamento de Visita</span>
                         </span>
                     </span>
                 </button>
