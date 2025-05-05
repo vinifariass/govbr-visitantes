@@ -32,7 +32,7 @@
                         <h1>Cadastro de Visitantes</h1>
                         <div class="row">
                             <!-- Campos do formulário -->
-                            <div class="col-md-10">
+                            <div class="col-md-10" id="cadastroVisitantesSection">
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <div class="br-select">
@@ -106,6 +106,125 @@
                         </div>
 
                         <!-- Botões de Ação -->
+                        <hr class="br-divider" />
+                        <h1>Registro de Visita</h1>
+
+                        <!-- Campos do formulário -->
+                        <div class="col-md-10">
+
+                            <fieldset>
+                                <div class="row" id="registroVisitaSection">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="br-select">
+                                            <div class="br-input">
+                                                <label for="destino">Destino</label>
+                                                <input id="destino" type="text" placeholder="Busque pela sala" />
+                                                <button class="br-button" type="button" aria-label="Exibir lista"
+                                                    tabindex="-1" data-trigger="data-trigger">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="br-list" tabindex="0">
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="destino-cbs0" name="destino-cbs0" type="radio" />
+                                                        <label for="destino-cbs0">DF > SUREG > Sala 03 >
+                                                            Gabinete</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="destino-cbs1" name="destino-cbs1" type="radio" />
+                                                        <label for="destino-cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                            Gestão Interna (Dgint)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <div class="br-select">
+                                            <div class="br-input">
+                                                <label for="tipoVisita">Tipo de Visita</label>
+                                                <input id="tipoVisita" type="text"
+                                                    placeholder="Selecione o tipo de Visita" />
+                                                <button class="br-button" type="button" aria-label="Exibir lista"
+                                                    tabindex="-1" data-trigger="data-trigger">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="br-list" tabindex="0">
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="tipoVisita-cbs0" name="tipoVisita-cbs0"
+                                                            type="radio" />
+                                                        <label for="tipoVisita-cbs0">Consulente</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="tipoVisita-cbs1" name="tipoVisita-cbs1"
+                                                            type="radio" />
+                                                        <label for="tipoVisita-cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                            Gestão Interna (Dgint)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 mb-3">
+                                        <div class="br-input">
+                                            {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
+                                            <label for="nomeAnfitriao">Nome do Anfitrião</label>
+                                            <input id="nomeAnfitriao" type="text" placeholder="Digite aqui" />
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <hr class="br-divider" />
+
+                        <h1>Atribuição de Crachá</h1>
+                        <div class="col-md-10" id="atribuirCrachaSection">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                        <div class="br-select">
+                                            <div class="br-input">
+                                                <label for="atribuirCracha">Atribuir Crachá</label>
+                                                <input id="atribuirCracha" type="text"
+                                                    placeholder="Selecione o crachá" />
+                                                <button class="br-button" type="button" aria-label="Exibir lista"
+                                                    tabindex="-1" data-trigger="data-trigger">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="br-list" tabindex="0">
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="atribuirCracha-cbs0" name="atribuirCracha-cbs0"
+                                                            type="radio" />
+                                                        <label for="atribuirCracha-cbs0">ANV001</label>
+                                                    </div>
+                                                </div>
+                                                <div class="br-item" tabindex="-1">
+                                                    <div class="br-radio">
+                                                        <input id="atribuirCracha-cbs1" name="atribuirCracha-cbs1"
+                                                            type="radio" />
+                                                        <label for="atribuirCracha-cbs1">ANV002</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
 
                     </div>
 
@@ -335,63 +454,45 @@
 
             function checkFieldsAndSetReadonly() {
                 // Obter valores dos campos
-                const tipoDocumento = $("#tipoDocumento").val().trim();
-                const numeroDocumento = $("#numero_documento").val().trim();
-                const nomeVisitante = $("#nomeVisitante").val().trim();
-                const telefone = $("#telefone").val().trim();
+                const cadastroOk = isSectionFilled('cadastroVisitantesSection');
+                const registroOk = isSectionFilled('registroVisitaSection');
+                const crachaOk = isSectionFilled('atribuirCrachaSection');
 
-                // Verificar se todos os campos estão preenchidos
-                const isAllFilled = tipoDocumento && numeroDocumento && nomeVisitante && telefone;
-
-                // Selecionar botão de próximo passo (ajuste o seletor conforme sua estrutura)
+                // Botões de step
                 const registroVisitaStepBtn = document.getElementById("registroVisitaStepBtn");
                 const atribuirCrachaStepBtn = document.getElementById("atribuirCrachaStepBtn");
-                // Habilitar/desabilitar botão de próximo passo
-                if (registroVisitaStepBtn) {
-                    registroVisitaStepBtn.disabled = !isAllFilled;
+
+                // Cadastro preenchido: habilita registroVisitaSection, desabilita atribuirCrachaSection
+                if (cadastroOk) {
+                    $("#registroVisitaSection").find('input, select, textarea').prop('disabled', false).prop(
+                        'readonly', false).css('background-color', '');
+                    if (registroVisitaStepBtn) registroVisitaStepBtn.disabled = false;
+                } else {
+                    $("#registroVisitaSection").find('input, select, textarea').prop('disabled', true).prop(
+                        'readonly', true).css('background-color', '#f2f2f2');
+                    if (registroVisitaStepBtn) registroVisitaStepBtn.disabled = true;
                 }
 
-                atribuirCrachaStepBtn.disabled = true;
+                // Cadastro e registro preenchidos: habilita atribuirCrachaSection e botão
+                if (cadastroOk && registroOk) {
+                    $("#atribuirCrachaSection").find('input, select, textarea').prop('disabled', false).prop(
+                        'readonly', false).css('background-color', '');
+                    if (atribuirCrachaStepBtn) atribuirCrachaStepBtn.disabled = false;
+                } else {
+                    $("#atribuirCrachaSection").find('input, select, textarea').prop('disabled', true).prop(
+                        'readonly', true).css('background-color', '#f2f2f2');
+                    if (atribuirCrachaStepBtn) atribuirCrachaStepBtn.disabled = true;
+                }
 
-                //Quando carregar a tela o botao de atribuirCracha deve estar desabilitado e depois que preencher os campos ele continua desabilitado
-
-                // Lógica existente para desabilitar outros campos (mantenha-a)
-                const selects = document.querySelectorAll(".br-select");
-                selects.forEach(select => {
-                    const input = select.querySelector('input[type="text"]');
-                    const button = select.querySelector('button');
-                    if (input && input.id === "tipoDocumento") return;
-
-                    if (isAllFilled) {
-                        if (input) {
-                            input.readOnly = true;
-                            input.disabled = true;
-                            input.style.backgroundColor = '#f2f2f2';
-                        }
-                        if (button) {
-                            button.disabled = true;
-                            button.style.pointerEvents = "none";
-                            button.style.opacity = "0.5";
-                        }
-                    } else {
-                        if (input) {
-                            input.readOnly = false;
-                            input.disabled = false;
-                            input.style.backgroundColor = '';
-                        }
-                        if (button) {
-                            button.disabled = false;
-                            button.style.pointerEvents = "auto";
-                            button.style.opacity = "1";
-                        }
-                    }
-                });
             }
 
             $("#tipoDocumento, #numero_documento, #nomeVisitante, #telefone")
                 .on("input change", checkFieldsAndSetReadonly);
 
             $('.br-radio input[type="radio"]').on('change', checkFieldsAndSetReadonly);
+
+            $("#nomeAnfitriao, #tipoVisita, #destino")
+                .on("input change", checkFieldsAndSetReadonly);
 
             checkFieldsAndSetReadonly()
 
@@ -413,7 +514,34 @@
 
             });
 
-        
+            $("#registroVisitaStepBtn").on("click", function() {
+                // Verifica se o botão está habilitado antes de prosseguir
+                if (!this.disabled) {
+                    // Lógica para avançar para a próxima seção (registroVisitaSection)
+                    document.getElementById("registroVisitaSection").scrollIntoView({
+                        behavior: "smooth"
+                    });
+                    document.getElementById("registroVisitaStepBtn").classList.add("active");
+                    document.getElementById("cadastroVisitaStepBtn").classList.remove("active");
+
+                }
+            });
+
+            function isSectionFilled(sectionId) {
+                let filled = true;
+                // Seleciona todos os inputs, selects e textareas visíveis e habilitados dentro da section
+                $(`#${sectionId}`).find('input, select, textarea').each(function() {
+                    // Só valida campos visíveis e não desabilitados
+                    if (!$(this).is(':disabled') && $(this).is(':visible')) {
+                        if (!$(this).val() || $(this).val().trim() === '') {
+                            filled = false;
+                            return false; // para o each
+                        }
+                    }
+                });
+                return filled;
+            }
+
         })
     </script>
 @endpush
