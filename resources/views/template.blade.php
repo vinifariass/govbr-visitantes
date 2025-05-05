@@ -234,8 +234,8 @@
                                     <div class="col-md-6 mb-3">
                                         <div class="br-input">
                                             {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
-                                            <label for="numero_documento">Número do Documento</label>
-                                            <input id="numero_documento" type="text" placeholder="Digite aqui" />
+                                            <label for="numeroDocumento">Número do Documento</label>
+                                            <input id="numeroDocumento" type="text" placeholder="Digite aqui" />
                                         </div>
                                         <span class="feedback warning" role="alert"><i
                                                 class="fas fa-exclamation-triangle" aria-hidden="true"></i>Não inserir
@@ -573,7 +573,7 @@
 
             function checkFieldsAndSetReadonly() {
                 const tipoDocumento = $("#tipoDocumento").val().trim();
-                const numeroDocumento = $("#numero_documento").val().trim();
+                const numeroDocumento = $("#numeroDocumento").val().trim();
                 const nomeVisitante = $("#nomeVisitante").val().trim();
                 const telefone = $("#telefone").val().trim();
 
@@ -614,7 +614,7 @@
                 });
             }
 
-            $("#tipoDocumento, #numero_documento, #nomeVisitante, #telefone")
+            $("#tipoDocumento, #numeroDocumento, #nomeVisitante, #telefone")
                 .on("input change", checkFieldsAndSetReadonly);
 
             checkFieldsAndSetReadonly();

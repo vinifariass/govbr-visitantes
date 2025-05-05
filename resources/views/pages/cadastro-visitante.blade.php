@@ -36,7 +36,7 @@
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <div class="br-select">
-                                            <div class="br-input">
+                                            <div class="br-input tipoDocumento">
                                                 <label for="tipoDocumento">Tipo de Documento</label>
                                                 <input id="tipoDocumento" type="text" placeholder="Selecione o item" />
                                                 <button class="br-button" type="button" aria-label="Exibir lista"
@@ -61,10 +61,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <div class="br-input">
+                                        <div class="br-input numeroDocumento">
                                             {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
-                                            <label for="numero_documento">Número do Documento</label>
-                                            <input id="numero_documento" type="text" placeholder="Digite aqui" />
+                                            <label for="numeroDocumento">Número do Documento</label>
+                                            <input id="numeroDocumento" type="text" placeholder="Digite aqui" />
                                         </div>
                                         <span class="feedback warning" role="alert"><i class="fas fa-exclamation-triangle"
                                                 aria-hidden="true"></i>Não inserir
@@ -452,6 +452,21 @@
         }
         $(document).ready(function() {
 
+            $("#tipoDocumento").removeClass("fas fa-search")
+            $(".tipoDocumento .input-group .input-icon").remove();
+            var $input = $("#numeroDocumento");
+            var $label = $("label[for='numeroDocumento']");
+
+            // Cria o grupo com o ícone
+            var $inputGroup = $(
+                '<div class="input-group"><div class="input-icon"><i class="fas fa-search"></i></div></div>');
+
+            // Coloca o input dentro do grupo
+            $inputGroup.append($input);
+
+            // Insere o grupo após a label
+            $label.after($inputGroup);
+
             function checkFieldsAndSetReadonly() {
                 // Obter valores dos campos
                 const cadastroOk = isSectionFilled('cadastroVisitantesSection');
@@ -479,26 +494,28 @@
                         'readonly', false).css('background-color', '');
                     if (atribuirCrachaStepBtn) atribuirCrachaStepBtn.disabled = false;
                 } else {
-                    $("#atribuirCrachaSection").find('input, select, textarea').prop('disabled', true).prop(
-                        'readonly', true).css('background-color', '#f2f2f2');
-                    if (atribuirCrachaStepBtn) atribuirCrachaStepBtn.disabled = true;
+                    const atribuirCracha = $("#atribuirCracha").val().trim();
+                    if (!atribuirCracha) {
+                        $("#atribuirCrachaSection").find('input, select, textarea').prop('disabled', true).prop(
+                            'readonly', true).css('background-color', '#f2f2f2');
+                        if (atribuirCrachaStepBtn) atribuirCrachaStepBtn.disabled = true;
+                    }
                 }
 
             }
 
-            $("#tipoDocumento, #numero_documento, #nomeVisitante, #telefone")
+            $("#tipoDocumento, #numeroDocumento, #nomeVisitante, #telefone, #nomeAnfitriao, #tipoVisita, #destino, #atribuirCracha")
                 .on("input change", checkFieldsAndSetReadonly);
 
             $('.br-radio input[type="radio"]').on('change', checkFieldsAndSetReadonly);
 
-            $("#nomeAnfitriao, #tipoVisita, #destino")
-                .on("input change", checkFieldsAndSetReadonly);
+
 
             checkFieldsAndSetReadonly()
 
             $('.br-button.primary.active').on('click', function(e) {
                 const tipoDocumento = $("#tipoDocumento").val().trim();
-                const numeroDocumento = $("#numero_documento").val().trim();
+                const numeroDocumento = $("#numeroDocumento").val().trim();
                 const nomeVisitante = $("#nomeVisitante").val().trim();
                 const telefone = $("#telefone").val().trim();
 
@@ -514,6 +531,19 @@
 
             });
 
+            $("#cadastroVisitaStepBtn").on("click", function() {
+                // Verifica se o botão está habilitado antes de prosseguir
+                if (!this.disabled) {
+                    document.getElementById("cadastroVisitantesSection").scrollIntoView({
+                        behavior: "smooth"
+                    });
+                    document.getElementById("cadastroVisitaStepBtn").classList.add("active");
+                    document.getElementById("registroVisitaStepBtn").classList.remove("active");
+                    document.getElementById("atribuirCrachaStepBtn").classList.remove("active");
+
+                }
+            });
+
             $("#registroVisitaStepBtn").on("click", function() {
                 // Verifica se o botão está habilitado antes de prosseguir
                 if (!this.disabled) {
@@ -522,6 +552,19 @@
                         behavior: "smooth"
                     });
                     document.getElementById("registroVisitaStepBtn").classList.add("active");
+                    document.getElementById("cadastroVisitaStepBtn").classList.remove("active");
+                    document.getElementById("atribuirCrachaStepBtn").classList.remove("active");
+
+                }
+            });
+
+            $("#atribuirCrachaStepBtn").on("click", function() {
+                if (!this.disabled) {
+                    document.getElementById("atribuirCrachaSection").scrollIntoView({
+                        behavior: "smooth"
+                    });
+                    document.getElementById("atribuirCrachaStepBtn").classList.add("active");
+                    document.getElementById("registroVisitaStepBtn").classList.remove("active");
                     document.getElementById("cadastroVisitaStepBtn").classList.remove("active");
 
                 }
