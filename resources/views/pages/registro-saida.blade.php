@@ -76,12 +76,23 @@
                                             <div class="br-input">
                                                 {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
                                                 <label for="nome_anfitriao">Nome do Anfitrião</label>
-                                                <input id="nome_anfitriao" type="text"  />
+                                                <input id="nome_anfitriao" type="text" />
                                             </div>
 
                                         </div>
                                     </div>
                                 </fieldset>
+                            </div>
+                            <div
+                                class="col-md-2 col-12 d-flex align-items-center justify-content-end justify-content-center justify-content-md-end flex-wrap flex-row-reverse mb-3 mb-md-0">
+                                <span class="br-avatar large mr-3" id="avatar-preview" title="Fulano da Silva">
+                                    <span class="content">
+                                        <img src="{{ asset('images/profile.jpg') }}" alt="Foto do visitante" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                                    </span>
+                                </span>
+                                <!-- Input de arquivo escondido -->
+                                <input type="file" id="foto-input" accept="image/*" style="display: none;"
+                                    onchange="mostrarFoto(event)">
                             </div>
 
 
@@ -91,7 +102,7 @@
 
                 <div class="p-3" style="  display: flex;
                 justify-content: end; ">
-                    <button class="br-button primary active mr-3" type="button">Liberar
+                    <button class="br-button primary mr-3" type="button">Liberar
                     </button>
 
 
