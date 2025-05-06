@@ -99,9 +99,18 @@
                         <i class="fas fa-file-pdf mr-2" style="font-size: 1.2em;"></i>
                         Exportar PDF
                     </button>
-                    <button id="exportarExcelBtn" class="br-button success" style="display: flex; align-items: center;">
+                    <button id="exportarExcelBtn" class="br-button success mr-2" style="display: flex; align-items: center;">
                         <i class="fas fa-file-excel mr-2" style="font-size: 1.2em;"></i>
                         Exportar Excel
+                    </button>
+                    <button id="exportarCsvBtn" class="br-button info mr-2" style="display: flex; align-items: center;">
+                        <i class="fas fa-file-csv mr-2" style="font-size: 1.2em;"></i>
+                        Exportar CSV
+                    </button>
+           
+                    <button id="exportarOdtBtn" class="br-button secondary" style="display: flex; align-items: center;">
+                        <i class="fas fa-file-word mr-2" style="font-size: 1.2em;"></i>
+                        Exportar ODT
                     </button>
                 </div>
 
@@ -173,14 +182,25 @@
 
             const exportarPdfBtn = document.getElementById('exportarPdfBtn');
             const exportarExcelBtn = document.getElementById('exportarExcelBtn');
+            const exportarCsvBtn = document.getElementById('exportarCsvBtn');
+            const exportarOdtBtn = document.getElementById('exportarOdtBtn');
 
-            if (exportarPdfBtn && exportarExcelBtn) {
+            if (exportarPdfBtn && exportarExcelBtn && exportarCsvBtn && exportarOdtBtn) {
                 exportarPdfBtn.addEventListener('click', function() {
                     exportarDados('pdf');
                 });
 
                 exportarExcelBtn.addEventListener('click', function() {
                     exportarDados('excel');
+                });
+
+                exportarCsvBtn.addEventListener('click', function() {
+                    exportarDados('csv');
+                });
+
+
+                exportarOdtBtn.addEventListener('click', function() {
+                    exportarDados('odt');
                 });
 
                 function mascararCPF(cpf) {

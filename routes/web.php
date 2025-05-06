@@ -56,6 +56,8 @@ Route::get('/cadastro-visitante', function () {
 
 Route::post('/relatorios/pdf', [RelatorioController::class, 'exportPDF'])->name('relatorios.exportarPdf');
 Route::post('/relatorios/excel', [RelatorioController::class, 'exportarExcel'])->name('relatorios.exportarExcel');
+Route::post('/relatorios/csv', [RelatorioController::class, 'exportarCsv'])->name('relatorios.exportarCsv');
+Route::post('/relatorios/odt', [RelatorioController::class, 'exportarOdt'])->name('relatorios.exportarOdt');
 
 Route::get('/cracha-step', function () {
     return view('cracha-step');
