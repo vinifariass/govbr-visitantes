@@ -121,12 +121,15 @@
 
             function parseDate(str) {
                 // Espera formato dd/mm/yyyy
+                str = str.split(' ')[0]; // Remove a hora se estiver presente
                 const [d, m, y] = str.split('/');
                 if (!d || !m || !y) return null;
                 return new Date(`${y}-${m}-${d}`);
             }
 
             function validarDatas() {
+                var dataInicio = document.getElementById('data_inicio');
+                var dataFim = document.getElementById('data_fim');
                 const inicio = parseDate(dataInicio.value);
                 const fim = parseDate(dataFim.value);
 
