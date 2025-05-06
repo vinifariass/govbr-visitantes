@@ -59,7 +59,7 @@
                                         <div class="br-input numero_documento">
                                             {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
                                             <label for="numero_documento">Número do Documento</label>
-                                            <input id="numero_documento" type="text" placeholder="Digite aqui" />
+                                            <input id="numero_documento" type="text" />
                                         </div>
 
                                     </div>
@@ -76,7 +76,7 @@
                                             <div class="br-input">
                                                 {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
                                                 <label for="nome_anfitriao">Nome do Anfitrião</label>
-                                                <input id="nome_anfitriao" type="text" placeholder="Digite aqui" />
+                                                <input id="nome_anfitriao" type="text"  />
                                             </div>
 
                                         </div>

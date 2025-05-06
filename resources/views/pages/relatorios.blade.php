@@ -99,7 +99,8 @@
                         <i class="fas fa-file-pdf mr-2" style="font-size: 1.2em;"></i>
                         Exportar PDF
                     </button>
-                    <button id="exportarExcelBtn" class="br-button success mr-2" style="display: flex; align-items: center;">
+                    <button id="exportarExcelBtn" class="br-button success mr-2"
+                        style="display: flex; align-items: center;">
                         <i class="fas fa-file-excel mr-2" style="font-size: 1.2em;"></i>
                         Exportar Excel
                     </button>
@@ -107,10 +108,14 @@
                         <i class="fas fa-file-csv mr-2" style="font-size: 1.2em;"></i>
                         Exportar CSV
                     </button>
-           
-                    <button id="exportarOdtBtn" class="br-button secondary" style="display: flex; align-items: center;">
+
+                    <button id="exportarOdtBtn" class="br-button secondary  mr-2" style="display: flex; align-items: center;">
                         <i class="fas fa-file-word mr-2" style="font-size: 1.2em;"></i>
                         Exportar ODT
+                    </button>
+                    <button id="exportarJsonBtn" class="br-button warning mr-2" style="display: flex; align-items: center;">
+                        <i class="fas fa-file-code mr-2" style="font-size: 1.2em;"></i>
+                        Exportar JSON
                     </button>
                 </div>
 
@@ -184,8 +189,9 @@
             const exportarExcelBtn = document.getElementById('exportarExcelBtn');
             const exportarCsvBtn = document.getElementById('exportarCsvBtn');
             const exportarOdtBtn = document.getElementById('exportarOdtBtn');
+            const exportarJsonBtn = document.getElementById('exportarJsonBtn');
 
-            if (exportarPdfBtn && exportarExcelBtn && exportarCsvBtn && exportarOdtBtn) {
+            if (exportarPdfBtn && exportarExcelBtn && exportarCsvBtn && exportarOdtBtn && exportarJsonBtn) {
                 exportarPdfBtn.addEventListener('click', function() {
                     exportarDados('pdf');
                 });
@@ -201,6 +207,10 @@
 
                 exportarOdtBtn.addEventListener('click', function() {
                     exportarDados('odt');
+                });
+
+                exportarJsonBtn.addEventListener('click', function() {
+                    exportarDados('json');
                 });
 
                 function mascararCPF(cpf) {

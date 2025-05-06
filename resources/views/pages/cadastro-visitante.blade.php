@@ -174,7 +174,7 @@
                                     <div class="col-md-5 mb-3">
                                         <div class="br-input">
                                             {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
-                                            <label for="nome_responsavel">Nome do Responsável</label>
+                                            <label for="nome_responsavel">Nome do Anfitrião</label>
                                             <input id="nome_responsavel" type="text" placeholder="Digite aqui" />
                                         </div>
 
@@ -188,7 +188,7 @@
                         <hr class="br-divider" />
 
                         <h1>Crachá</h1>
-                        <div class="col-md-10" id="atribuirCrachaSection">
+                        <div class="col-md-12" id="atribuirCrachaSection">
                             <fieldset>
                                 <div class="row">
                                     <div class="col-md-3 mb-3">
@@ -220,20 +220,25 @@
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
+
+                                <div class="p-3"
+                                    style="  display: flex;
+                                    justify-content: end; ">
+                                    <button class="br-button primary active mr-3" type="button">Salvar
+                                    </button>
+                                    <button class="br-button primary mr-3" type="button" disabled="disabled">Editar
+                                    </button>
+
+                                </div>
+
                             </fieldset>
                         </div>
 
                     </div>
                 </div>
 
-                <div class="p-3">
-                    <button class="br-button primary active mr-3" type="button">Salvar
-                    </button>
-                    <button class="br-button primary mr-3" type="button" disabled="disabled">Editar
-                    </button>
-
-                </div>
 
             </div>
 

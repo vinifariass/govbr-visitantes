@@ -145,4 +145,29 @@ class RelatorioController extends Controller
 
         return response()->download($tempFile, $filename)->deleteFileAfterSend(true);
     }
+
+    public function exportarJson(Request $request)
+    {
+        if (!$request->has('dados')) {
+            return back()->with('error', 'Nenhum dado recebido para exportação.');
+        }
+
+        $dados = json_decode($request->dados, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return back()->with('error', 'Erro ao processar os dados para exportação.');
+        }
+
+        if (empty($dados)) {
+            return back()->with('error', 'Nenhum dado válido para exportação.');
+        }
+
+        $filename = 'relatorio_visitantes.json';
+        $json = json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+        return response($json, 200, [
+            'Content-Type' => 'application/json',
+            'Content-Disposition' => "attachment; filename=\"$filename\"",
+        ]);
+    }
 }

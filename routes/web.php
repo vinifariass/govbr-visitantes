@@ -58,7 +58,7 @@ Route::post('/relatorios/pdf', [RelatorioController::class, 'exportPDF'])->name(
 Route::post('/relatorios/excel', [RelatorioController::class, 'exportarExcel'])->name('relatorios.exportarExcel');
 Route::post('/relatorios/csv', [RelatorioController::class, 'exportarCsv'])->name('relatorios.exportarCsv');
 Route::post('/relatorios/odt', [RelatorioController::class, 'exportarOdt'])->name('relatorios.exportarOdt');
-
+Route::post('/relatorios/json', [RelatorioController::class, 'exportarJson'])->name('relatorios.exportarJson');
 Route::get('/cracha-step', function () {
     return view('cracha-step');
 })->name('cracha-step');
@@ -75,9 +75,9 @@ Route::get('/atribuir-cracha', function () {
     return view('atribuir-cracha');
 })->name('atribuir-cracha');
 
-Route::get('/retorno-visita', function () {
-    return view('pages.retorno-visita');
-})->name('retorno-visita');
+Route::get('/registro-saida', function () {
+    return view('pages.registro-saida');
+})->name('registro-saida');
 
 /* Route::prefix('gerenciamento')->group(function () {
     Route::controller(VisitanteController::class)->group(function () {
@@ -104,3 +104,11 @@ Route::prefix('relatorios')->group(function () {
         Route::get('/crachas', 'cracha')->name('relatorio.cracha');
     });
 });
+
+Route::get('/gerenciamento-perfil', function () {
+    return view('pages.gerenciamento-perfil');
+})->name('gerenciamento-perfil');
+
+Route::get('/gerenciamento-perfil-create', function () {
+    return view('pages.gerenciamento-perfil-create');
+})->name('gerenciamento-perfil-create');
