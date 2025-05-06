@@ -72,3 +72,29 @@ Route::get('/registro-visita', function () {
 Route::get('/atribuir-cracha', function () {
     return view('atribuir-cracha');
 })->name('atribuir-cracha');
+
+/* Route::prefix('gerenciamento')->group(function () {
+    Route::controller(VisitanteController::class)->group(function () {
+        Route::get('/visitante', 'index')->name('visitante.index');
+        Route::post('/visitante/store', 'store')->name('visitante.store');
+        Route::get('/visitante/check-cpf', 'checkCpf')->name('visitante.checkCpf');
+    });
+
+    Route::controller(VisitaController::class)->group(function () {
+        Route::get('/visita', 'index')->name('visita.index');
+        Route::post('/visita/store', 'store')->name('visita.store');
+    });
+
+    Route::controller(CrachaController::class)->group(function () {
+        Route::get('/cracha', 'index')->name('cracha.index');
+        Route::post('/cracha/store', 'store')->name('cracha.store');
+        Route::post('/cracha/atribuir', 'atribuir')->name('cracha.atribuir');
+    });
+});
+ */
+Route::prefix('relatorios')->group(function () {
+    Route::controller(RelatorioController::class)->group(function () {
+        Route::get('/visitas', 'visita')->name('relatorio.visita');
+        Route::get('/crachas', 'cracha')->name('relatorio.cracha');
+    });
+});

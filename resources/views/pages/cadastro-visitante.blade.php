@@ -12,7 +12,7 @@
                 <div class="menu-container">
                     <div class="menu-panel">
                         <div class="menu-header">
-                       
+
                             <div class="menu-close">
                                 <button class="br-button circle" type="button" aria-label="Fechar o menu"
                                     data-dismiss="menu"><i class="fas fa-times" aria-hidden="true"></i>
@@ -26,16 +26,16 @@
                 <div class="col mb-5">
 
                     <div class="main-content pl-sm-3 mt-4" id="main-content">
-                        <h1>Visitantes</h1>
+                        <h1>Visitante</h1>
                         <div class="row">
                             <!-- Campos do formulário -->
                             <div class="col-md-10" id="cadastroVisitantesSection">
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <div class="br-select">
-                                            <div class="br-input tipoDocumento">
-                                                <label for="tipoDocumento">Tipo de Documento</label>
-                                                <input id="tipoDocumento" type="text" placeholder="Selecione o item" />
+                                            <div class="br-input tipo_documento">
+                                                <label for="tipo_documento">Tipo de Documento</label>
+                                                <input id="tipo_documento" type="text" placeholder="Selecione o item" />
                                                 <button class="br-button" type="button" aria-label="Exibir lista"
                                                     tabindex="-1" data-trigger="data-trigger">
                                                     <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -58,13 +58,14 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <div class="br-input numeroDocumento">
+                                        <div class="br-input numero_documento">
                                             {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
-                                            <label for="numeroDocumento">Número do Documento</label>
-                                            <input id="numeroDocumento" type="text" placeholder="Digite aqui" />
+                                            <label for="numero_documento">Número do Documento</label>
+                                            <input id="numero_documento" type="text" placeholder="Digite aqui" />
                                         </div>
                                         <span class="feedback warning" role="alert"><i class="fas fa-exclamation-triangle"
-                                                aria-hidden="true"></i>Não inserir
+                                                aria-hidden="true">
+                                            </i>Não inserir
                                             caracteres especiais</span>
                                     </div>
                                 </div>
@@ -72,8 +73,8 @@
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <div class="br-input">
-                                                <label for="nomeVisitante">Nome do Visitante</label>
-                                                <input id="nomeVisitante" type="text" />
+                                                <label for="nome_visitante">Nome do Visitante</label>
+                                                <input id="nome_visitante" type="text" />
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
@@ -173,8 +174,8 @@
                                     <div class="col-md-5 mb-3">
                                         <div class="br-input">
                                             {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
-                                            <label for="nomeAnfitriao">Nome do Anfitrião</label>
-                                            <input id="nomeAnfitriao" type="text" placeholder="Digite aqui" />
+                                            <label for="nome_responsavel">Nome do Responsável</label>
+                                            <input id="nome_responsavel" type="text" placeholder="Digite aqui" />
                                         </div>
 
                                     </div>
@@ -193,8 +194,8 @@
                                     <div class="col-md-3 mb-3">
                                         <div class="br-select">
                                             <div class="br-input">
-                                                <label for="atribuirCracha">Atribuir Crachá</label>
-                                                <input id="atribuirCracha" type="text"
+                                                <label for="atribuir_cracha">Atribuir Crachá</label>
+                                                <input id="atribuir_cracha" type="text"
                                                     placeholder="Selecione o crachá" />
                                                 <button class="br-button" type="button" aria-label="Exibir lista"
                                                     tabindex="-1" data-trigger="data-trigger">
@@ -204,16 +205,16 @@
                                             <div class="br-list" tabindex="0">
                                                 <div class="br-item" tabindex="-1">
                                                     <div class="br-radio">
-                                                        <input id="atribuirCracha-cbs0" name="atribuirCracha-cbs0"
+                                                        <input id="atribuir_cracha-cbs0" name="atribuir_cracha-cbs0"
                                                             type="radio" />
-                                                        <label for="atribuirCracha-cbs0">ANV001</label>
+                                                        <label for="atribuir_cracha-cbs0">ANV001</label>
                                                     </div>
                                                 </div>
                                                 <div class="br-item" tabindex="-1">
                                                     <div class="br-radio">
-                                                        <input id="atribuirCracha-cbs1" name="atribuirCracha-cbs1"
+                                                        <input id="atribuir_cracha-cbs1" name="atribuir_cracha-cbs1"
                                                             type="radio" />
-                                                        <label for="atribuirCracha-cbs1">ANV002</label>
+                                                        <label for="atribuir_cracha-cbs1">ANV002</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -224,11 +225,7 @@
                         </div>
 
                     </div>
-
-
                 </div>
-
-
 
                 <div class="p-3">
                     <button class="br-button primary active mr-3" type="button">Salvar
@@ -449,9 +446,9 @@
         }
         $(document).ready(function() {
 
-            $(".tipoDocumento .input-group .input-icon").remove();
-            var $input = $("#numeroDocumento");
-            var $label = $("label[for='numeroDocumento']");
+            $(".tipo_documento .input-group .input-icon").remove();
+            var $input = $("#numero_documento");
+            var $label = $("label[for='numero_documento']");
 
             // Cria o grupo com o ícone
             var $inputGroup = $(
@@ -490,19 +487,15 @@
                         'readonly', false).css('background-color', '');
                     if (atribuirCrachaStepBtn) atribuirCrachaStepBtn.disabled = false;
                 } else {
-                    const atribuirCracha = $("#atribuirCracha").val().trim();
-                    if (!atribuirCracha) {
-                        $("#atribuirCrachaSection").find('input, select, textarea').prop('disabled', true).prop(
-                            'readonly', true).css('background-color', '#f2f2f2');
-                        if (atribuirCrachaStepBtn) atribuirCrachaStepBtn.disabled = true;
-                    }
+                    $("#atribuirCrachaSection").find('input, select, textarea').prop('disabled', true).prop(
+                        'readonly', true).css('background-color', '#f2f2f2');
+                    if (atribuirCrachaStepBtn) atribuirCrachaStepBtn.disabled = true;
                 }
 
             }
 
-            $("#tipoDocumento, #numeroDocumento, #nomeVisitante, #telefone, #nomeAnfitriao, #tipoVisita, #destino, #atribuirCracha")
-                .on("input change", checkFieldsAndSetReadonly);
-
+            $("#cadastroVisitantesSection, #registroVisitaSection, #atribuirCrachaSection")
+                .on("input change", "input, select, textarea", checkFieldsAndSetReadonly);
             $('.br-radio input[type="radio"]').on('change', checkFieldsAndSetReadonly);
 
 
@@ -510,20 +503,18 @@
             checkFieldsAndSetReadonly()
 
             $('.br-button.primary.active').on('click', function(e) {
-                const tipoDocumento = $("#tipoDocumento").val().trim();
-                const numeroDocumento = $("#numeroDocumento").val().trim();
-                const nomeVisitante = $("#nomeVisitante").val().trim();
+                const tipo_documento = $("#tipo_documento").val().trim();
+                const numero_documento = $("#numero_documento").val().trim();
+                const nome_visitante = $("#nome_visitante").val().trim();
                 const telefone = $("#telefone").val().trim();
 
-                if (!tipoDocumento || !numeroDocumento || !nomeVisitante || !telefone) {
+                if (!tipo_documento || !numero_documento || !nome_visitante || !telefone) {
                     showBrMessage('danger', 'Campos obrigatórios',
                         'Preencha todos os campos antes de salvar.');
                     e.preventDefault();
                     return false;
                 }
-                // Se quiser impedir avanço para próxima tela, coloque aqui o return false ou lógica de navegação
 
-                window.location.href = "{{ route('registro-visita') }}";
 
             });
 

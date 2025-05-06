@@ -207,8 +207,8 @@
                                     <div class="col-md-4 mb-3">
                                         <div class="br-select">
                                             <div class="br-input">
-                                                <label for="tipoDocumento">Tipo de Documento</label>
-                                                <input id="tipoDocumento" type="text"
+                                                <label for="tipo_documento">Tipo de Documento</label>
+                                                <input id="tipo_documento" type="text"
                                                     placeholder="Selecione o item" />
                                                 <button class="br-button" type="button" aria-label="Exibir lista"
                                                     tabindex="-1" data-trigger="data-trigger">
@@ -234,8 +234,8 @@
                                     <div class="col-md-6 mb-3">
                                         <div class="br-input">
                                             {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
-                                            <label for="numeroDocumento">Número do Documento</label>
-                                            <input id="numeroDocumento" type="text" placeholder="Digite aqui" />
+                                            <label for="numero_documento">Número do Documento</label>
+                                            <input id="numero_documento" type="text" placeholder="Digite aqui" />
                                         </div>
                                         <span class="feedback warning" role="alert"><i
                                                 class="fas fa-exclamation-triangle" aria-hidden="true"></i>Não inserir
@@ -246,8 +246,8 @@
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <div class="br-input">
-                                                <label for="nomeVisitante">Nome do Visitante</label>
-                                                <input id="nomeVisitante" type="text" />
+                                                <label for="nome_visitante">Nome do Visitante</label>
+                                                <input id="nome_visitante" type="text" />
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
@@ -355,8 +355,8 @@
                                 <div class="col-md-3 mb-3">
                                     <div class="br-select">
                                         <div class="br-input">
-                                            <label for="atribuirCracha">Atribuir Crachá</label>
-                                            <input id="atribuirCracha" type="text" placeholder="Selecione o crachá" />
+                                            <label for="atribuir_cracha">Atribuir Crachá</label>
+                                            <input id="atribuir_cracha" type="text" placeholder="Selecione o crachá" />
                                             <button class="br-button" type="button" aria-label="Exibir lista"
                                                 tabindex="-1" data-trigger="data-trigger">
                                                 <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -365,14 +365,14 @@
                                         <div class="br-list" tabindex="0">
                                             <div class="br-item" tabindex="-1">
                                                 <div class="br-radio">
-                                                    <input id="atribuirCracha-cbs0" name="atribuirCracha-cbs0" type="radio" />
-                                                    <label for="atribuirCracha-cbs0">ANV001</label>
+                                                    <input id="atribuir_cracha-cbs0" name="atribuir_cracha-cbs0" type="radio" />
+                                                    <label for="atribuir_cracha-cbs0">ANV001</label>
                                                 </div>
                                             </div>
                                             <div class="br-item" tabindex="-1">
                                                 <div class="br-radio">
-                                                    <input id="atribuirCracha-cbs1" name="atribuirCracha-cbs1" type="radio" />
-                                                    <label for="atribuirCracha-cbs1">ANV002</label>
+                                                    <input id="atribuir_cracha-cbs1" name="atribuir_cracha-cbs1" type="radio" />
+                                                    <label for="atribuir_cracha-cbs1">ANV002</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -572,12 +572,12 @@
         $(document).ready(function() {
 
             function checkFieldsAndSetReadonly() {
-                const tipoDocumento = $("#tipoDocumento").val().trim();
-                const numeroDocumento = $("#numeroDocumento").val().trim();
-                const nomeVisitante = $("#nomeVisitante").val().trim();
+                const tipo_documento = $("#tipo_documento").val().trim();
+                const numero_documento = $("#numero_documento").val().trim();
+                const nome_visitante = $("#nome_visitante").val().trim();
                 const telefone = $("#telefone").val().trim();
 
-                const isAllEmpty = !(tipoDocumento && numeroDocumento && nomeVisitante && telefone);
+                const isAllEmpty = !(tipo_documento && numero_documento && nome_visitante && telefone);
 
                 // Seleciona todos os .br-select já inicializados
                 const selects = document.querySelectorAll(".br-select");
@@ -585,7 +585,7 @@
                 selects.forEach(select => {
                     const input = select.querySelector('input[type="text"]');
                     const button = select.querySelector('button');
-                    if (input && input.id === "tipoDocumento") {
+                    if (input && input.id === "tipo_documento") {
                         return;
                     }
                     if (isAllEmpty) {
@@ -614,7 +614,7 @@
                 });
             }
 
-            $("#tipoDocumento, #numeroDocumento, #nomeVisitante, #telefone")
+            $("#tipo_documento, #numero_documento, #nome_visitante, #telefone")
                 .on("input change", checkFieldsAndSetReadonly);
 
             checkFieldsAndSetReadonly();

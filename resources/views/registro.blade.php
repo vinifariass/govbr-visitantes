@@ -252,16 +252,16 @@
                                         </div> --}}
                                         <div class="col-md-4 mb-3">
                                             <div class="br-input">
-                                                <label for="numeroDocumento">Documento</label>
-                                                <input id="numeroDocumento" type="text"
+                                                <label for="numero_documento">Documento</label>
+                                                <input id="numero_documento" type="text"
                                                     placeholder="Informe o CPF ou Passaporte" />
                                             </div>
 
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <div class="br-input">
-                                                <label for="numeroDocumento">Nome do visitante</label>
-                                                <input id="numeroDocumento" type="text" />
+                                                <label for="numero_documento">Nome do visitante</label>
+                                                <input id="numero_documento" type="text" />
                                             </div>
 
                                         </div>

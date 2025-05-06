@@ -206,8 +206,8 @@
                             <div class="col-md-3 mb-3">
                                 <div class="br-select">
                                     <div class="br-input">
-                                        <label for="atribuirCracha">Atribuir Crachá</label>
-                                        <input id="atribuirCracha" type="text" placeholder="Selecione o crachá" />
+                                        <label for="atribuir_cracha">Atribuir Crachá</label>
+                                        <input id="atribuir_cracha" type="text" placeholder="Selecione o crachá" />
                                         <button class="br-button" type="button" aria-label="Exibir lista"
                                             tabindex="-1" data-trigger="data-trigger">
                                             <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -216,16 +216,16 @@
                                     <div class="br-list" tabindex="0">
                                         <div class="br-item" tabindex="-1">
                                             <div class="br-radio">
-                                                <input id="atribuirCracha-cbs0" name="atribuirCracha-cbs0"
+                                                <input id="atribuir_cracha-cbs0" name="atribuir_cracha-cbs0"
                                                     type="radio" />
-                                                <label for="atribuirCracha-cbs0">ANV001</label>
+                                                <label for="atribuir_cracha-cbs0">ANV001</label>
                                             </div>
                                         </div>
                                         <div class="br-item" tabindex="-1">
                                             <div class="br-radio">
-                                                <input id="atribuirCracha-cbs1" name="atribuirCracha-cbs1"
+                                                <input id="atribuir_cracha-cbs1" name="atribuir_cracha-cbs1"
                                                     type="radio" />
-                                                <label for="atribuirCracha-cbs1">ANV002</label>
+                                                <label for="atribuir_cracha-cbs1">ANV002</label>
                                             </div>
                                         </div>
                                     </div>
