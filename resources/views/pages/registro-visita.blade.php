@@ -238,8 +238,8 @@
                             <div class="col-md-3 mb-3">
                                 <div class="br-select">
                                     <div class="br-input">
-                                        <label for="tipoVisita">Tipo de Visita</label>
-                                        <input id="tipoVisita" type="text" placeholder="Selecione o tipo de Visita" />
+                                        <label for="tipo_visita">Tipo de Visita</label>
+                                        <input id="tipo_visita" type="text" placeholder="Selecione o tipo de Visita" />
                                         <button class="br-button" type="button" aria-label="Exibir lista"
                                             tabindex="-1" data-trigger="data-trigger">
                                             <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -248,14 +248,14 @@
                                     <div class="br-list" tabindex="0">
                                         <div class="br-item" tabindex="-1">
                                             <div class="br-radio">
-                                                <input id="tipoVisita-cbs0" name="tipoVisita-cbs0" type="radio" />
-                                                <label for="tipoVisita-cbs0">Consulente</label>
+                                                <input id="tipo_visita-cbs0" name="tipo_visita-cbs0" type="radio" />
+                                                <label for="tipo_visita-cbs0">Consulente</label>
                                             </div>
                                         </div>
                                         <div class="br-item" tabindex="-1">
                                             <div class="br-radio">
-                                                <input id="tipoVisita-cbs1" name="tipoVisita-cbs1" type="radio" />
-                                                <label for="tipoVisita-cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                <input id="tipo_visita-cbs1" name="tipo_visita-cbs1" type="radio" />
+                                                <label for="tipo_visita-cbs1">DF > SUREG > Sala 06 > Divisão de
                                                     Gestão Interna (Dgint)</label>
                                             </div>
                                         </div>
@@ -341,8 +341,8 @@
         $(document).ready(function() {
             function checkFieldsAndSetReadonly() {
                 const destino = $("#destino").val().trim();
-                const tipoVisita = $("#tipoVisita").val().trim();
-                const isAllFilled = destino && tipoVisita;
+                const tipo_visita = $("#tipo_visita").val().trim();
+                const isAllFilled = destino && tipo_visita;
 
                 const selects = document.querySelectorAll(".br-select");
 
@@ -356,7 +356,7 @@
 
             }
 
-            $("#destino, #tipoVisita").on("input change", checkFieldsAndSetReadonly);
+            $("#destino, #tipo_visita").on("input change", checkFieldsAndSetReadonly);
 
             $('.br-radio input[type="radio"]').on('change', function() {
                 checkFieldsAndSetReadonly();
@@ -366,9 +366,9 @@
             
             $('.br-button.primary.active').on('click', function(e) {
                 const destino = $("#destino").val().trim();
-                const tipoVisita = $("#tipoVisita").val().trim();
+                const tipo_visita = $("#tipo_visita").val().trim();
 
-                if (!destino || !tipoVisita) {
+                if (!destino || !tipo_visita) {
                     showBrMessage('danger', 'Campos obrigatórios',
                         'Preencha todos os campos antes de salvar.');
                     e.preventDefault();

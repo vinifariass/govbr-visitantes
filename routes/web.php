@@ -73,6 +73,10 @@ Route::get('/atribuir-cracha', function () {
     return view('atribuir-cracha');
 })->name('atribuir-cracha');
 
+Route::get('/retorno-visita', function () {
+    return view('pages.retorno-visita');
+})->name('retorno-visita');
+
 /* Route::prefix('gerenciamento')->group(function () {
     Route::controller(VisitanteController::class)->group(function () {
         Route::get('/visitante', 'index')->name('visitante.index');

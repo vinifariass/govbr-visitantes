@@ -6,7 +6,6 @@
         <div class="container-lg">
 
             @include('layouts.tab')
-            @include('layouts.step')
 
             <div class="br-menu" id="main-navigation">
                 <div class="menu-container">
@@ -26,16 +25,15 @@
                 <div class="col mb-5">
 
                     <div class="main-content pl-sm-3 mt-4" id="main-content">
-                        <h1>Visitante</h1>
                         <div class="row">
                             <!-- Campos do formulário -->
                             <div class="col-md-10" id="cadastroVisitantesSection">
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <div class="br-select">
-                                            <div class="br-input tipo_documento">
-                                                <label for="tipo_documento">Tipo de Documento</label>
-                                                <input id="tipo_documento" type="text" placeholder="Selecione o item" />
+                                            <div class="br-input cracha">
+                                                <label for="cracha">Crachás em Uso</label>
+                                                <input id="cracha" type="text" placeholder="Selecione o crachá" />
                                                 <button class="br-button" type="button" aria-label="Exibir lista"
                                                     tabindex="-1" data-trigger="data-trigger">
                                                     <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -45,13 +43,13 @@
                                                 <div class="br-item" tabindex="-1">
                                                     <div class="br-radio">
                                                         <input id="cbs0" name="cbs0" type="radio" />
-                                                        <label for="cbs0">CPF</label>
+                                                        <label for="cbs0">ANV001</label>
                                                     </div>
                                                 </div>
                                                 <div class="br-item" tabindex="-1">
                                                     <div class="br-radio">
                                                         <input id="cbs1" name="cbs1" type="radio" />
-                                                        <label for="cbs1">Passaporte</label>
+                                                        <label for="cbs1">ANV002</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -63,10 +61,7 @@
                                             <label for="numero_documento">Número do Documento</label>
                                             <input id="numero_documento" type="text" placeholder="Digite aqui" />
                                         </div>
-                                        <span class="feedback warning" role="alert"><i class="fas fa-exclamation-triangle"
-                                                aria-hidden="true">
-                                            </i>Não inserir
-                                            caracteres especiais</span>
+
                                     </div>
                                 </div>
                                 <fieldset>
@@ -77,161 +72,28 @@
                                                 <input id="nome_visitante" type="text" />
                                             </div>
                                         </div>
-                                        <div class="col-md-4 mb-3">
+                                        <div class="col-md-5 mb-3">
                                             <div class="br-input">
-                                                <label for="telefone">Telefone</label>
-                                                <input id="telefone" type="text" placeholder="(21) 99999-9999" />
+                                                {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
+                                                <label for="nome_anfitriao">Nome do Anfitrião</label>
+                                                <input id="nome_anfitriao" type="text" placeholder="Digite aqui" />
                                             </div>
+
                                         </div>
                                     </div>
                                 </fieldset>
                             </div>
 
-                            <!-- Avatar -->
-                            <div
-                                class="col-md-2 col-12 d-flex align-items-center justify-content-end justify-content-center justify-content-md-end flex-wrap flex-row-reverse mb-3 mb-md-0">
-                                <span class="br-avatar large mr-3" id="avatar-preview" title="Fulano da Silva">
-                                    <span class="content"><i class="fas fa-user" aria-hidden="true"></i></span>
-                                </span>
-                                <div class="scrimutilexamplemodal">
-                                    <button class="br-button primary" type="button" id="buttonactivatemodal">Capturar
-                                        Foto</button>
-                                </div>
-                                <!-- Input de arquivo escondido -->
-                                <input type="file" id="foto-input" accept="image/*" style="display: none;"
-                                    onchange="mostrarFoto(event)">
-                            </div>
+
                         </div>
-
-                        <!-- Botões de Ação -->
-                        <hr class="br-divider" />
-                        <h1>Visita</h1>
-
-                        <!-- Campos do formulário -->
-                        <div class="col-md-10">
-
-                            <fieldset>
-                                <div class="row" id="registroVisitaSection">
-                                    <div class="col-md-4 mb-3">
-                                        <div class="br-select">
-                                            <div class="br-input">
-                                                <label for="destino">Destino</label>
-                                                <input id="destino" type="text" placeholder="Busque pela sala" />
-                                                <button class="br-button" type="button" aria-label="Exibir lista"
-                                                    tabindex="-1" data-trigger="data-trigger">
-                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                                </button>
-                                            </div>
-                                            <div class="br-list" tabindex="0">
-                                                <div class="br-item" tabindex="-1">
-                                                    <div class="br-radio">
-                                                        <input id="destino-cbs0" name="destino-cbs0" type="radio" />
-                                                        <label for="destino-cbs0">DF > SUREG > Sala 03 >
-                                                            Gabinete</label>
-                                                    </div>
-                                                </div>
-                                                <div class="br-item" tabindex="-1">
-                                                    <div class="br-radio">
-                                                        <input id="destino-cbs1" name="destino-cbs1" type="radio" />
-                                                        <label for="destino-cbs1">DF > SUREG > Sala 06 > Divisão de
-                                                            Gestão Interna (Dgint)</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <div class="br-select">
-                                            <div class="br-input">
-                                                <label for="tipo_visita">Tipo de Visita</label>
-                                                <input id="tipo_visita" type="text"
-                                                    placeholder="Selecione o tipo de Visita" />
-                                                <button class="br-button" type="button" aria-label="Exibir lista"
-                                                    tabindex="-1" data-trigger="data-trigger">
-                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                                </button>
-                                            </div>
-                                            <div class="br-list" tabindex="0">
-                                                <div class="br-item" tabindex="-1">
-                                                    <div class="br-radio">
-                                                        <input id="tipo_visita-cbs0" name="tipo_visita-cbs0"
-                                                            type="radio" />
-                                                        <label for="tipo_visita-cbs0">Consulente</label>
-                                                    </div>
-                                                </div>
-                                                <div class="br-item" tabindex="-1">
-                                                    <div class="br-radio">
-                                                        <input id="tipo_visita-cbs1" name="tipo_visita-cbs1"
-                                                            type="radio" />
-                                                        <label for="tipo_visita-cbs1">DF > SUREG > Sala 06 > Divisão de
-                                                            Gestão Interna (Dgint)</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-5 mb-3">
-                                        <div class="br-input">
-                                            {{--  Ao preencher o campo abaixo preenche o nome do visitante o telefone automaticamente --}}
-                                            <label for="nome_responsavel">Nome do Responsável</label>
-                                            <input id="nome_responsavel" type="text" placeholder="Digite aqui" />
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-                            </fieldset>
-                        </div>
-
-                        <hr class="br-divider" />
-
-                        <h1>Crachá</h1>
-                        <div class="col-md-10" id="atribuirCrachaSection">
-                            <fieldset>
-                                <div class="row">
-                                    <div class="col-md-3 mb-3">
-                                        <div class="br-select">
-                                            <div class="br-input">
-                                                <label for="atribuir_cracha">Atribuir Crachá</label>
-                                                <input id="atribuir_cracha" type="text"
-                                                    placeholder="Selecione o crachá" />
-                                                <button class="br-button" type="button" aria-label="Exibir lista"
-                                                    tabindex="-1" data-trigger="data-trigger">
-                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                                </button>
-                                            </div>
-                                            <div class="br-list" tabindex="0">
-                                                <div class="br-item" tabindex="-1">
-                                                    <div class="br-radio">
-                                                        <input id="atribuir_cracha-cbs0" name="atribuir_cracha-cbs0"
-                                                            type="radio" />
-                                                        <label for="atribuir_cracha-cbs0">ANV001</label>
-                                                    </div>
-                                                </div>
-                                                <div class="br-item" tabindex="-1">
-                                                    <div class="br-radio">
-                                                        <input id="atribuir_cracha-cbs1" name="atribuir_cracha-cbs1"
-                                                            type="radio" />
-                                                        <label for="atribuir_cracha-cbs1">ANV002</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-
                     </div>
                 </div>
 
-                <div class="p-3">
-                    <button class="br-button primary active mr-3" type="button">Salvar
+                <div class="p-3" style="  display: flex;
+                justify-content: end; ">
+                    <button class="br-button primary active mr-3" type="button">Liberar
                     </button>
-                    <button class="br-button primary mr-3" type="button" disabled="disabled">Editar
-                    </button>
+
 
                 </div>
 
@@ -314,9 +176,9 @@
         let stream = null;
         let capturedPhoto = null;
 
-        // Inicialização quando o DOM estiver pronto
-        document.getElementById('buttonactivatemodal').addEventListener('click', openPhotoModal);
-        // Função para abrir o modal
+
+        // Evento ao mudar o select
+
         function openPhotoModal() {
             document.getElementById('scrimutilexamplemodal').style.display = 'flex';
             document.getElementById('optionsSection').classList.remove('d-none');
@@ -445,6 +307,54 @@
             document.getElementById('file-upload').value = '';
         }
         $(document).ready(function() {
+
+            $('#cracha').on('change', function() {
+                const selectedCracha = $(this).val();
+                if (selectedCracha) {
+                    preencherCamposCracha();
+                } else {
+                    $('#cpf, #nome_visitante, #nome_anfitriao').val('');
+                }
+            });
+            $('.br-radio input[type="radio"]').on('change', preencherCamposCracha);
+
+
+
+            // Exemplo de dados (substitua por sua fonte real, como AJAX ou dataset no HTML)
+            const crachas = [{
+                    id: 'ANV001',
+                    cpf: '123.456.789-00',
+                    nomeVisitante: 'João Silva',
+                    nomeAnfitriao: 'Maria Souza'
+                },
+                {
+                    id: 'ANV002',
+                    cpf: '987.654.321-00',
+                    nomeVisitante: 'Ana Lima',
+                    nomeAnfitriao: 'Carlos Mendes'
+                }
+            ];
+
+            // Função para preencher os campos ao selecionar um crachá
+            function preencherCamposCracha() {
+                const crachaId = $('#cracha').val();
+                const cracha = crachas.find(c => c.id === crachaId);
+                if (cracha) {
+                    $('#numero_documento').val(cracha.cpf);
+                    $('#nome_visitante').val(cracha.nomeVisitante);
+                    $('#nome_anfitriao').val(cracha.nomeAnfitriao);
+                    $("#numero_documento").attr('readonly', true);
+                    $("#numero_documento").css('background-color', '#f2f2f2');
+                    $("#nome_visitante").attr('readonly', true);
+                    $("#nome_visitante").css('background-color', '#f2f2f2');
+                    $("#nome_anfitriao").attr('readonly', true);
+                    $("#nome_anfitriao").css('background-color', '#f2f2f2');
+                    // Adicione outros campos se necessário
+                } else {
+                    $('#cpf, #nome_visitante, #nome_anfitriao').val('');
+                }
+            }
+
 
             $(".tipo_documento .input-group .input-icon").remove();
             var $input = $("#numero_documento");

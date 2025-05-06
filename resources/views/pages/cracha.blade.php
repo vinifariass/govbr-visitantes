@@ -271,8 +271,8 @@
                     <x-modal id="scrimutilexamplemodal" labelledby="titulomodalexemplo" title="Inclusão de crachá" size="large">
                         <p>Insira o número de crachás que deseja inserir e o tipo.</p>
                         <div class="form-group">
-                            <label for="quantity">Quantidade</label>
-                            <input type="number" id="quantity" class="form-control" placeholder="Digite somente números" required>
+                            <label for="quantidade">Quantidade</label>
+                            <input type="number" id="quantidade" class="form-control" placeholder="Digite somente números" required>
                         </div>
                         <div class="form-group">
                             <div class="br-select">
@@ -360,11 +360,12 @@
             const modal = document.querySelector('.br-modal');
             modal.classList.remove('large');
             modal.style.display = 'none';
+        
         }
 
         function openConfirmModal() {
             // Pega valores do modal anterior
-            const quantidade = document.getElementById('quantity').value;
+            const quantidade = document.getElementById('quantidade').value;
             // Pega o tipo selecionado
             const tipoCrachaSelect = document.querySelector('.br-select');
             let tipo = '';
@@ -398,6 +399,9 @@
         }
 
         function closeConfirmModal() {
+            $("#quantidade").val('');
+            $("#tipoCracha").val(''); 
+
             document.getElementById('confirmModalScrim').style.display = 'none';
         }
 

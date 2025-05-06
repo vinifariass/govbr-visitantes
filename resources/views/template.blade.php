@@ -326,8 +326,8 @@
                                 <div class="col-md-3 mb-3">
                                     <div class="br-select">
                                         <div class="br-input">
-                                            <label for="tipoVisita">Tipo de Visita</label>
-                                            <input id="tipoVisita" type="text"
+                                            <label for="tipo_visita">Tipo de Visita</label>
+                                            <input id="tipo_visita" type="text"
                                                 placeholder="Selecione o tipo de Visita" />
                                             <button class="br-button" type="button" aria-label="Exibir lista"
                                                 tabindex="-1" data-trigger="data-trigger">
@@ -337,14 +337,14 @@
                                         <div class="br-list" tabindex="0">
                                             <div class="br-item" tabindex="-1">
                                                 <div class="br-radio">
-                                                    <input id="tipoVisita-cbs0" name="tipoVisita-cbs0" type="radio" />
-                                                    <label for="tipoVisita-cbs0">Consulente</label>
+                                                    <input id="tipo_visita-cbs0" name="tipo_visita-cbs0" type="radio" />
+                                                    <label for="tipo_visita-cbs0">Consulente</label>
                                                 </div>
                                             </div>
                                             <div class="br-item" tabindex="-1">
                                                 <div class="br-radio">
-                                                    <input id="tipoVisita-cbs1" name="tipoVisita-cbs1" type="radio" />
-                                                    <label for="tipoVisita-cbs1">DF > SUREG > Sala 06 > Divisão de
+                                                    <input id="tipo_visita-cbs1" name="tipo_visita-cbs1" type="radio" />
+                                                    <label for="tipo_visita-cbs1">DF > SUREG > Sala 06 > Divisão de
                                                         Gestão Interna (Dgint)</label>
                                                 </div>
                                             </div>

@@ -20,8 +20,10 @@
 
                                         <input id="data_inicio" type="datetime-local"
                                             placeholder="exemplo: 02/02/2024 02:02" data-input="data-input" />
-                                            <button class="br-button circle small" type="button" aria-label="Abrir Timepicker" data-toggle="data-toggle" id="data_inicio-btn" tabindex="-1" aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                                            </button>
+                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker"
+                                            data-toggle="data-toggle" id="data_inicio-btn" tabindex="-1"
+                                            aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        </button>
                                     </div>
 
                                 </div>
@@ -31,10 +33,12 @@
                                     <div class="br-input has-icon">
                                         <label for="data_fim">Data Fim</label>
 
-                                        <input id="data_fim" type="datetime-local"
-                                            placeholder="exemplo: 02/02/2024 02:02" data-input="data-input" />
-                                            <button class="br-button circle small" type="button" aria-label="Abrir Timepicker" data-toggle="data-toggle" id="data_fim-btn" tabindex="-1" aria-hidden="true"><i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                                            </button>
+                                        <input id="data_fim" type="datetime-local" placeholder="exemplo: 02/02/2024 02:02"
+                                            data-input="data-input" />
+                                        <button class="br-button circle small" type="button" aria-label="Abrir Timepicker"
+                                            data-toggle="data-toggle" id="data_fim-btn" tabindex="-1" aria-hidden="true"><i
+                                                class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -120,11 +124,27 @@
             const form = document.querySelector('form');
 
             function parseDate(str) {
-                // Espera formato dd/mm/yyyy
-                str = str.split(' ')[0]; // Remove a hora se estiver presente
-                const [d, m, y] = str.split('/');
+                if (!str) return null;
+
+                // Separa a parte da data e da hora
+                const [datePart, timePart] = str.split(' ');
+
+                // Divide a data em dia, mês e ano
+                const [d, m, y] = datePart.split('/');
+
                 if (!d || !m || !y) return null;
-                return new Date(`${y}-${m}-${d}`);
+
+                // Se tiver hora, divide em horas e minutos
+                let hh = 0;
+                let mm = 0;
+                if (timePart) {
+                    const [hours, minutes] = timePart.split(':');
+                    hh = parseInt(hours);
+                    mm = parseInt(minutes);
+                }
+
+                // Retorna objeto Date ajustado (mês é 0-indexed)
+                return new Date(y, m - 1, d, hh, mm);
             }
 
             function validarDatas() {
