@@ -9,31 +9,33 @@
                     <p class="mb-0">Ministério da Gestão e da Inovação em Serviços Públicos</p>
                 </div>
             </div>
-            <div class="header-actions">
 
+            <div class="header-actions">
                 <div class="header-login">
-                    <div class="header-sign-in">
+                    <div class="dropdown">
                         <button class="br-sign-in" type="button" id="avatar-dropdown-trigger" data-toggle="dropdown"
                             data-target="avatar-menu" aria-label="Olá, Fulano"><span class="br-avatar"
                                 title="Fulano da Silva"><span
-                                    class="content bg-orange-vivid-30 text-pure-0">F</span></span><span
+                                    class="content bg-orange-vivid-30 text-pure-0">J</span></span><span
                                 class="ml-2 text-gray-80 text-weight-regular">Olá, <span
                                     class="text-weight-semi-bold">Juliana</span></span><i class="fas fa-caret-down"
                                 aria-hidden="true"></i>
                         </button>
                         <div class="br-list" id="avatar-menu" hidden="hidden" role="menu"
-                            aria-labelledby="avatar-dropdown-trigger"><a class="br-item" href="javascript:void(0)"
-                                role="menuitem">Dados pessoais</a><a class="br-item" href="javascript:void(0)"
-                                role="menuitem">Privacidade</a><a class="br-item" href="javascript:void(0)"
-                                role="menuitem">Notificações</a><a class="br-item" href="javascript:void(0)"
-                                role="menuitem">Perguntas frequentes</a>
+                            aria-labelledby="avatar-dropdown-trigger"
+                            style="
+                            width: 100%;
+                        ">
+                            <a class="br-item" href="{{route('login')}}" role="menuitem" >
+                                <i class="fas fa-sign-out-alt mr-2" aria-hidden="true"></i>Sair
+                            </a>
+
+
                         </div>
                     </div>
-                    <div class="header-avatar"></div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
 </header>

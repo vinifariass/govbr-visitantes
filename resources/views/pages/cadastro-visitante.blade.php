@@ -69,7 +69,6 @@
                                             caracteres especiais</span>
                                     </div>
                                 </div>
-                                <fieldset>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <div class="br-input">
@@ -79,12 +78,19 @@
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <div class="br-input">
-                                                <label for="telefone">Telefone</label>
-                                                <input id="telefone" type="text" placeholder="(21) 99999-9999" />
+                                                <label for="nome_social">Nome Social</label>
+                                                <input id="nome_social" type="text" placeholder="(21) 99999-9999" />
                                             </div>
                                         </div>
                                     </div>
-                                </fieldset>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="br-input">
+                                            <label for="telefone">Telefone</label>
+                                            <input id="telefone" type="text" placeholder="(21) 99999-9999" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Avatar -->

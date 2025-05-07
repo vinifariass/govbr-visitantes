@@ -33,6 +33,7 @@
     <script src="{{ asset('govbr/core.min.js') }}"></script>
     <script src="{{ asset('js/brselect.js') }}"></script>
     <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
+    <script src="https://docs-ds.estaleiro.serpro.gov.br/govbr-ds-core/dist/core-init.js"></script>
 
     <script>
         window.addEventListener('load', () => {
@@ -71,6 +72,7 @@
                     new core.BRDateTimePicker('br-datetimepicker', brDateTimePicker, {})
                 );
             }
+
         });
     </script>
 

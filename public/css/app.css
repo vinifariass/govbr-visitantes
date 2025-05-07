@@ -92,7 +92,6 @@
 }
 .br-upload .upload-button.active, .br-upload .upload-button.is-active, .br-upload .upload-button[active] {
   --hover: var(--hover-dark);
-  background-color: var(--active);
   color: var(--color-dark);
 }
 .br-upload .upload-button.loading {
@@ -130,4 +129,19 @@
 #avatar-dropdown-trigger {
   height: auto;
   padding: var(--spacing-scale-base);
+}
+
+#avatar-dropdown-trigger.active,
+#avatar-dropdown-trigger:active { /* :active é para o estado de clique do mouse */
+  background-image: none; /* Remove qualquer gradiente ou imagem de fundo */
+  background-color: #f8f8f8; /* Ou a cor de fundo que o botão tem no estado normal */
+  /* Se houver outras alterações de estilo como borda ou sombra, reverta-as aqui também.
+     Exemplo:
+     border-color: transparent;
+     box-shadow: none;
+  */
+}
+
+.br-cookiebar {
+  display: none !important;
 }
