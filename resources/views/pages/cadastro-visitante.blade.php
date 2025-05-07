@@ -95,7 +95,7 @@
 
                             <!-- Avatar -->
                             <div
-                                class="col-md-2 col-12 d-flex align-items-center justify-content-end justify-content-center justify-content-md-end flex-wrap flex-row-reverse mb-3 mb-md-0" id="avatarCadastro">
+                                class="col-md-2 col-12 d-flex align-items-center justify-content-end justify-content-center justify-content-md-end flex-wrap  mb-3 mb-md-0" id="avatarCadastro">
                                 <span class="br-avatar large mr-3" id="avatar-preview" title="Fulano da Silva">
                                     <span class="content"><i class="fas fa-user" aria-hidden="true"></i></span>
                                 </span>
