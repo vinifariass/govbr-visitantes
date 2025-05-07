@@ -5,7 +5,7 @@
     <div class="template-base">
         <div class="container-lg">
             @include('layouts.tab')
-
+            {{-- TODO: Gerenciamento de perfil, crachá e relatorios somente ADM pode ver --}}
             <div class="br-menu" id="main-navigation">
                 <div class="main-content pl-sm-3 mt-4" id="main-content">
 
@@ -15,7 +15,7 @@
                                 <div class="br-select">
                                     <div class="br-input">
                                         <label for="nome">Nome</label>
-                                        <input id="nome" type="text" placeholder="Selecione o crachá" />
+                                        <input id="nome" type="text" placeholder="Selecione o usuário" />
                                         <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
                                             data-trigger="data-trigger">
                                             <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -41,7 +41,7 @@
                                 <div class="br-select">
                                     <div class="br-input">
                                         <label for="tipo_usuario">Tipo de Usuário</label>
-                                        <input id="tipo_usuario" type="text" placeholder="Selecione o crachá" />
+                                        <input id="tipo_usuario" type="text" placeholder="Selecione o tipo de usuário" />
                                         <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
                                             data-trigger="data-trigger">
                                             <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -66,6 +66,55 @@
                         </div>
                         <div class="" style="display: flex; justify-content: flex-end;">
                             <button class="br-button primary" type="submit">Salvar</button>
+                        </div>
+
+                        <div class="col mb-5">
+
+                            <div class="main-content pl-sm-3 mt-4" id="main-content">
+        
+                                <div class="br-table" title="Tabela irregular 1">
+                                    <div class="table-header">
+                                        <div class="top-bar">
+                                            <div class="actions-trigger text-nowrap">
+        
+                                                <div class="br-list" id="target01-4200" role="menu"
+                                                    aria-labelledby="button-dropdown-density" hidden="hidden">
+                                                    <button class="br-item" type="button" data-density="small"
+                                                        role="menuitem">Densidade alta
+                                                    </button><span class="br-divider"></span>
+                                                    <button class="br-item" type="button" data-density="medium"
+                                                        role="menuitem">Densidade média
+                                                    </button><span class="br-divider"></span>
+                                                    <button class="br-item" type="button" data-density="large"
+                                                        role="menuitem">Densidade baixa
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <colgroup span="3"></colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="border-bottom border-left" colspan="6" scope="col">Nome</th>
+                                                <th class="border-bottom border-left" colspan="1" scope="colgroup">Tipo de Usuário
+                                                </th>
+                                            </tr>
+                                        </thead>
+                               
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="6">Vinicius Farias Silva</td>
+                                                <td>Admin</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6">João Marcos Castro</td>
+                                                <td>Técnico</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
 
                     </form>

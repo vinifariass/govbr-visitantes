@@ -23,10 +23,8 @@
                         </button>
                         <div class="br-list" id="avatar-menu" hidden="hidden" role="menu"
                             aria-labelledby="avatar-dropdown-trigger"
-                            style="
-                            width: 100%;
-                        ">
-                            <a class="br-item" href="{{route('login')}}" role="menuitem" >
+                            style="width: 100%;">
+                            <a class="br-item" href="{{route('login')}}" role="menuitem" style="color: #071d41;">
                                 <i class="fas fa-sign-out-alt mr-2" aria-hidden="true"></i>Sair
                             </a>
 

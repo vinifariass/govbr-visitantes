@@ -145,3 +145,13 @@
 .br-cookiebar {
   display: none !important;
 }
+
+.br-item{
+  color: #071d41;
+}
+
+@media (max-width: 900px) {
+  #avatarCadastro{
+    flex-direction: column;
+  }
+}

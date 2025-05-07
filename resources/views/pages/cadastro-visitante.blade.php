@@ -79,7 +79,7 @@
                                         <div class="col-md-4 mb-3">
                                             <div class="br-input">
                                                 <label for="nome_social">Nome Social</label>
-                                                <input id="nome_social" type="text" placeholder="(21) 99999-9999" />
+                                                <input id="nome_social" type="text" placeholder="" />
                                             </div>
                                         </div>
                                     </div>
@@ -95,7 +95,7 @@
 
                             <!-- Avatar -->
                             <div
-                                class="col-md-2 col-12 d-flex align-items-center justify-content-end justify-content-center justify-content-md-end flex-wrap flex-row-reverse mb-3 mb-md-0">
+                                class="col-md-2 col-12 d-flex align-items-center justify-content-end justify-content-center justify-content-md-end flex-wrap flex-row-reverse mb-3 mb-md-0" id="avatarCadastro">
                                 <span class="br-avatar large mr-3" id="avatar-preview" title="Fulano da Silva">
                                     <span class="content"><i class="fas fa-user" aria-hidden="true"></i></span>
                                 </span>
